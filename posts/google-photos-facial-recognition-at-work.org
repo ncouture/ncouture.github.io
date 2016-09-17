@@ -1,0 +1,18 @@
+#+BEGIN_COMMENT
+.. title: Google Photos Facial Recognition at Work
+.. slug: google-photos-facial-recognition-at-work
+.. date: 2016-09-17 15:27:31 UTC
+.. tags: facial recognition, google photos
+.. category: facial recognition
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+It blew me away to find out these two pictures of myself were determined to be `myself' in Google Photos. 
+
+Look for yourself:
+
+#+begin_html
+<img src="/images/animated.gif" />
+#+end_html
