@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ncouture.github.io/</loc>
-  <lastmod>2016-09-17T14:53:00Z</lastmod>
+  <lastmod>2016-09-17T15:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/2016/</loc>
@@ -31,6 +31,10 @@
  </url>
  <url>
   <loc>https://ncouture.github.io/posts/test/</loc>
-  <lastmod>2016-09-17T14:26:00Z</lastmod>
+  <lastmod>2016-09-17T14:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://ncouture.github.io/stories/google-cloud-command-line-examples/</loc>
+  <lastmod>2016-09-17T15:01:00Z</lastmod>
  </url>
 </urlset>
