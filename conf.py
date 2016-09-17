@@ -319,11 +319,11 @@ POSTS_SECTIONS = True
 
 # Associate a description with a section. For use in meta description on
 # section index pages or elsewhere in themes.
-# POSTS_SECTION_DESCRIPTIONS = {
-#     DEFAULT_LANG: {
-#         'how-to': 'Learn how-to things properly with these amazing tutorials.',
-#     },
-# }
+POSTS_SECTION_DESCRIPTIONS = {
+    DEFAULT_LANG: {
+        'cloud': 'Cloud-related things & stuff I use.',
+    },
+}
 
 # Sections are determined by their output directory as set in POSTS by default,
 # but can alternatively be determined from file metadata instead.

@@ -1,0 +1,90 @@
+#+BEGIN_COMMENT
+.. title: Google I/O 2016 Web Application Installation Steps
+.. slug: google-io-2016-web-application-installation-steps
+.. date: 2016-09-17 15:09:12 UTC
+.. tags: progressive web application, io2016
+.. category: web
+.. link: 
+.. description: Step-by-step installation instructions for the I/O 2016 progressive web application.
+.. type: text
+#+END_COMMENT
+
+
+My personal notes on installing the I/O 2016 Web Application (in March 2016).
+
+goapp deploy -application <app-id> -version <v> dist/backend/.
+
+* Configure Firebase 
+You must use the legacy Firebase dashboard. Do not use the gcloud console. --2016-05-30
+
+1. Create firebase.com legacy application (<app>.firebaseio.com)
+1. Get application secret from https://<app ID>.firebaseio.com/?page=Admin
+1. Insert secret in backend/server.config.<env>
+#+begin_src 
+  "firebase": {
+    "secret": "<secret key>",
+    "shards": [
+      "https://<app ID>.firebaseio.com/"
+    ]
+  },
+#+end_src
+1. Enable Google Plus API
+   - https://console.cloud.google.com/apis/
+1. Configure credentials
+** CANCELLED Google Cloud Firebase Console does *not* work :CANCELLED:
+CLOSED: [2016-05-30 Mon 00:44]
+:LOGBOOK:
+- State "CANCELLED"  from              [2016-05-30 Mon 00:44]
+:END:
+https://github.com/GoogleChrome/ioweb2016/pull/514#issuecomment-205866122
+
+- https://console.firebase.google.com/project/<project name>/settings/database
+- Database
+- Database secrets
+ + Show existing legacy token
+ + Create custom database authentication tokens using a legacy Firebase token generator. At least one secret must exist at all times.
+
+* Deploy
+These are my personal notes. Tested on Debian stretch.
+
+See https://github.com/GoogleChrome/ioweb2016 for more detailed instructions.
+
+** Download Google App Engine SDK for Go
+   - https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go
+#+begin_src shell
+unzip go_appengine_sdk_linux_<arch>_<version>.zip
+#+end_src
+
+** Configure
+#+begin_src shell
+mv go_appengine ~/.go_appengine
+export PATH=~/.go_appengine:"$PATH"
+export GOPATH=~/.go_appengine/gopath
+export GOROOT=~/.go_appengine/goroot
+#+end_src
+
+** Install node dependencies 
+#+begin_src shell
+npm install
+#+end_src
+
+** Build
+#+begin_src shell
+gulp serve:dist --env prod
+#+end_src
+
+** Deploy
+#+begin_src shell
+gulp deploy:firebaserules --env prod
+goapp deploy -application <application ID> -version <version number> dist/backend/.
+#+end_src
+
+* Temporary API
+** Enable in dist
+After building the app:
+#+begin_src shell
+cp -r app/temporary_api/ dist/app/
+#+end_src
+
+* Live Stream
+- http://localhost:3000/io2016/api/v1/livestream
