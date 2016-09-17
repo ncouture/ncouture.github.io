@@ -7,74 +7,70 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://ncouture.github.io/</loc>
-  <lastmod>2016-09-17T15:01:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/2016/</loc>
-  <lastmod>2016-09-17T14:17:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/archive.html</loc>
-  <lastmod>2016-09-17T15:24:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/app-engine/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/cat_cloud/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/cat_web/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/cloud-dns/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/cloud-storage/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/gcloud/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/google-cloud/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/gsutil/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/io2016/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/categories/progressive-web-application/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/posts/google-cloud-command-line-examples/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/posts/google-io-2016-web-application-installation-steps/</loc>
-  <lastmod>2016-09-17T15:15:00Z</lastmod>
- </url>
- <url>
-  <loc>https://ncouture.github.io/posts/test/</loc>
-  <lastmod>2016-09-17T14:55:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://ncouture.github.io/stories/google-io-2016-web-application-installation-steps/</loc>
-  <lastmod>2016-09-17T15:24:00Z</lastmod>
+  <lastmod>2016-09-17T15:25:00Z</lastmod>
  </url>
 </urlset>
