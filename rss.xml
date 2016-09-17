@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture
+.github.io</title><link>https://ncouture.github.io/</link><description>Nicolas Couture's Github pages</description><atom:link type="application/rss+xml" rel="self" href="https://ncouture.github.io/rss.xml"></atom:link><language>en</language><lastBuildDate>Sat, 17 Sep 2016 14:26:15 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Test</title><link>https://ncouture.github.io/posts/test/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;p&gt;
+Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. 
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. Write your post here. 
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isdir&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/etc'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/etc/ is a directory."&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Write your post here. Write your post here.
+&lt;/p&gt;</description><guid>https://ncouture.github.io/posts/test/</guid><pubDate>Sat, 17 Sep 2016 14:24:26 GMT</pubDate></item></channel></rss>
