@@ -6,19 +6,15 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://ncouture.github.io/galleries/rss.xml</loc>
-  <lastmod>2016-09-17T14:53:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://ncouture.github.io/index.atom</loc>
   <lastmod>2016-09-17T14:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/rss.xml</loc>
-  <lastmod>2016-09-17T15:01:00Z</lastmod>
+  <lastmod>2016-09-17T15:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/sitemap.xml</loc>
-  <lastmod>2016-09-17T15:01:00Z</lastmod>
+  <lastmod>2016-09-17T15:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>
