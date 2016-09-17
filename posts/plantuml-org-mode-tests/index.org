@@ -1,0 +1,266 @@
+#+BEGIN_COMMENT
+.. title: PlantUML Org-Mode Tests
+.. slug: plantuml-org-mode-tests
+.. date: 2016-09-17 15:43:08 UTC
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+http://plantuml.com/PlantUML_Language_Reference_Guide.pdf
+
+* Sequence diagram
+#+begin_src plantuml :file seqdiag1.png
+@startuml
+'
+' everything that starts with a single quote is a comment
+'
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+#+end_src
+
+#+results:
+[[file:seqdiag1.png]]
+
+* Participants
+#+begin_src plantuml :file partord1.png
+@startuml
+actor Foo1
+boundary Foo2
+control Foo3
+entity Foo4
+database Foo5
+Foo1 -> Foo2 : To boundary
+Foo1 -> Foo3 : To control
+Foo1 -> Foo4 : To entity
+Foo1 -> Foo5 : To database
+@enduml
+#+end_src
+
+#+results:
+[[file:partord1.png]]
+
+* Colors
+#+begin_src plantuml :file suml1.png
+@startuml
+actor Bob #red
+' The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99FF99
+/' You can also declare:
+participant L as "I have a really\nlong name" #99FF99
+'/
+Alice->Bob: Authentication Request
+Bob->Alice: Authentication Response
+Bob->L: Log transaction
+@enduml
+#+end_src
+
+#+results:
+[[file:suml1.png]]
+
+* Special characters in participant names
+#+begin_src plantuml :file suml2.png
+@startuml
+Alice -> "Bob()" : Hello
+"Bob()" -> "This is very\nlong" as Long
+' You can also declare:
+' "Bob()" -> Long as "This is very\nlong"
+Long --> "Bob()" : ok
+@enduml
+#+end_src
+
+#+results:
+[[file:suml2.png]]
+* Self-Addressed Message
+#+begin_src plantuml :file suml3.png
+@startuml
+Alice->Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
+@enduml
+#+end_src
+
+#+results:
+[[file:suml3.png]]
+
+* Arrow styles
+#+begin_src plantuml :file suml4.png
+@startuml
+Bob ->x Alice
+Bob -> Alice
+Bob ->> Alice
+Bob -\ Alice
+Bob \\- Alice
+Bob //-- Alice
+Bob ->o Alice
+Bob o\\-- Alice
+Bob <-> Alice
+Bob <->o Alice
+@enduml
+#+end_src
+
+#+results:
+[[file:suml4.png]]
+
+* Arrow colors
+#+begin_src plantuml :file suml5.png
+@startuml
+Bob -[#red]> Alice : hello
+Alice -[#0000FF]->Bob : ok
+@enduml
+#+end_src
+
+#+results:
+[[file:suml5.png]]
+
+* Message sequence numbering
+#+begin_src plantuml :file suml6.png
+@startuml
+autonumber
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+@enduml
+#+end_src
+
+#+results:
+[[file:suml6.png]]
+
+** autonumber arguments
+#+begin_src plantuml :file zuml1.png
+@startuml
+autonumber
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+autonumber 15
+Bob -> Alice : Another authentication Request
+Bob <- Alice : Another authentication Response
+autonumber 40 10
+Bob -> Alice : Yet another authentication Request
+Bob <- Alice : Yet another authentication Response
+@enduml
+#+end_src
+
+#+results:
+[[file:zuml1.png]]
+
+** autonumber HTML properties
+#+begin_src plantuml :file somefileagain1.png
+@startuml
+autonumber "<b>[000]"
+Bob -> Alice : Authentication Request
+Bob <- Alice : Authentication Response
+autonumber 15 "<b>(<u>##</u>)"
+Bob -> Alice : Another authentication Request
+Bob <- Alice : Another authentication Response
+autonumber 40 10 "<font color=red><b>Message 0 "
+Bob -> Alice : Yet another authentication Request
+Bob <- Alice : Yet another authentication Response
+@enduml
+#+end_src
+
+#+results:
+[[file:somefileagain1.png]]
+
+* Title
+#+begin_src plantuml :file title1.png
+@startuml
+title Simple communication example
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+@enduml
+#+end_src
+
+#+results:
+[[file:title1.png]]
+
+* Caption
+#+begin_src plantuml :file caption1.png
+@startuml
+caption fig. 1
+Alice <-> Bob: Swap position
+Bob --> Alice: Who is who?
+@enduml
+#+end_src
+
+#+results:
+[[file:caption1.png]]
+
+* Legend
+#+begin_src plantuml :file legend1.png
+@startuml
+Alice -> Bob : Hello
+legend right
+Short
+legend
+endlegend
+@enduml
+#+end_src
+
+#+results:
+[[file:legend1.png]]
+
+* Splitting diagram
+#+begin_src plantuml :file splitting1.png
+@startuml
+Alice -> Bob : message 1
+Alice -> Bob : message 2
+newpage
+Alice -> Bob : message 3
+Alice -> Bob : message 4
+newpage A title for the\nlast page
+Alice -> Bob : message 5
+Alice -> Bob : message 6
+@enduml
+#+end_src
+
+#+results:
+[[file:splitting1.png]]
+
+* Grouping sequences
+#+begin_src plantuml :file grpseq1.png
+@startuml
+Alice -> Bob: Authentication Request
+alt successful case
+Bob -> Alice: Authentication Accepted
+else some kind of failure
+Bob -> Alice: Authentication Failure
+group My own label
+Alice -> Log : Log attack start
+loop 1000 times
+Alice -> Bob: DNS Attack
+end
+Alice -> Log : Log attack end
+end
+else Another type of failure
+Bob -> Alice: Please repeat
+end
+@enduml
+#+end_src
+
+#+results:
+[[file:grpseq1.png]]
+
+* Notes
+#+begin_src plantuml :file notes1.png
+@startuml
+Alice->Bob : hello
+note left: this is a first note
+Bob->Alice : ok
+note right: this is another note
+Bob->Bob : I am thinking
+note left
+a note
+can also be defined
+on several lines
+end note
+@enduml
+#+end_src
+
+#+results:
+[[file:notes1.png]]

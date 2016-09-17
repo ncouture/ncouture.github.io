@@ -17,7 +17,7 @@ article: http://ogp.me/ns/article#
 <!--[if lt IE 9]>
             <script src="assets/js/html5shiv.min.js"></script>
             <script src="assets/js/respond.min.js"></script>
-        <![endif]--><link rel="prefetch" href="posts/google-photos-facial-recognition-at-work/" type="text/html">
+        <![endif]--><link rel="prefetch" href="posts/plantuml-org-mode-tests/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -50,29 +50,276 @@ article: http://ogp.me/ns/article#
                 <div class="col-xs-12 col-md-11 content-material">
 
     <div class="postindex well post-material ">
-        <article class="h-entry post-text"><header><h1 class="p-name entry-title header"><a href="posts/google-photos-facial-recognition-at-work/" class="u-url">Google Photos Facial Recognition at Work</a></h1>
+        <article class="h-entry post-text"><header><h1 class="p-name entry-title header"><a href="posts/plantuml-org-mode-tests/" class="u-url">PlantUML Org-Mode Tests</a></h1>
             <div class="metadata">
                 <span class="byline author vcard">
                         <i class="mdi-action-face-unlock"></i>
                     Nicolas Couture
                 </span>
-                <span class="dateline"><a href="posts/google-photos-facial-recognition-at-work/" rel="bookmark">
-                    <i class="mdi-device-access-time"></i><time class="published dt-published" datetime="2016-09-17T15:27:31+00:00" title="2016-09-17 15:27">2016-09-17 15:27</time></a></span>
-                    <span class="commentline">            <a href="posts/google-photos-facial-recognition-at-work/#disqus_thread" data-disqus-identifier="cache/posts/google-photos-facial-recognition-at-work.html">Comments</a>
+                <span class="dateline"><a href="posts/plantuml-org-mode-tests/" rel="bookmark">
+                    <i class="mdi-device-access-time"></i><time class="published dt-published" datetime="2016-09-17T15:43:08+00:00" title="2016-09-17 15:43">2016-09-17 15:43</time></a></span>
+                    <span class="commentline">            <a href="posts/plantuml-org-mode-tests/#disqus_thread" data-disqus-identifier="cache/posts/plantuml-org-mode-tests.html">Comments</a>
 
 </span>
             </div>
             <hr></header><div class="e-content entry-content">
         <p>
-It blew me away to find out these two pictures of myself were determined to be `myself' in Google Photos. 
+<a href="http://plantuml.com/PlantUML_Language_Reference_Guide.pdf">http://plantuml.com/PlantUML_Language_Reference_Guide.pdf</a>
 </p>
 
-<p>
-See for yourself:
-</p>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Sequence diagram</h2>
+<div class="outline-text-2" id="text-1">
+<div class="highlight"><pre><span></span>@startuml
+'
+' everything that starts with a single quote is a comment
+'
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
 
-<img width="400" src="images/animated.1.gif"><img width="400" src="images/animated.2.gif">
+Alice -&gt; Bob: Another authentication Request
+Alice &lt;-- Bob: Another authentication Response
+</pre></div>
 </div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Participants</h2>
+<div class="outline-text-2" id="text-2">
+<div class="highlight"><pre><span></span>@startuml
+actor Foo1
+boundary Foo2
+control Foo3
+entity Foo4
+database Foo5
+Foo1 -&gt; Foo2 : To boundary
+Foo1 -&gt; Foo3 : To control
+Foo1 -&gt; Foo4 : To entity
+Foo1 -&gt; Foo5 : To database
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Colors</h2>
+<div class="outline-text-2" id="text-3">
+<div class="highlight"><pre><span></span>@startuml
+actor Bob #red
+' The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99FF99
+/' You can also declare:
+participant L as "I have a really\nlong name" #99FF99
+'/
+Alice-&gt;Bob: Authentication Request
+Bob-&gt;Alice: Authentication Response
+Bob-&gt;L: Log transaction
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Special characters in participant names</h2>
+<div class="outline-text-2" id="text-4">
+<div class="highlight"><pre><span></span>@startuml
+Alice -&gt; "Bob()" : Hello
+"Bob()" -&gt; "This is very\nlong" as Long
+' You can also declare:
+' "Bob()" -&gt; Long as "This is very\nlong"
+Long --&gt; "Bob()" : ok
+@enduml
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Self-Addressed Message</h2>
+<div class="outline-text-2" id="text-5">
+<div class="highlight"><pre><span></span>@startuml
+Alice-&gt;Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Arrow styles</h2>
+<div class="outline-text-2" id="text-6">
+<div class="highlight"><pre><span></span>@startuml
+Bob -&gt;x Alice
+Bob -&gt; Alice
+Bob -&gt;&gt; Alice
+Bob -\ Alice
+Bob \\- Alice
+Bob //-- Alice
+Bob -&gt;o Alice
+Bob o\\-- Alice
+Bob &lt;-&gt; Alice
+Bob &lt;-&gt;o Alice
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Arrow colors</h2>
+<div class="outline-text-2" id="text-7">
+<div class="highlight"><pre><span></span>@startuml
+Bob -[#red]&gt; Alice : hello
+Alice -[#0000FF]-&gt;Bob : ok
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">Message sequence numbering</h2>
+<div class="outline-text-2" id="text-8">
+<div class="highlight"><pre><span></span>@startuml
+autonumber
+Bob -&gt; Alice : Authentication Request
+Bob &lt;- Alice : Authentication Response
+@enduml
+</pre></div>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">autonumber arguments</h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="highlight"><pre><span></span>@startuml
+autonumber
+Bob -&gt; Alice : Authentication Request
+Bob &lt;- Alice : Authentication Response
+autonumber 15
+Bob -&gt; Alice : Another authentication Request
+Bob &lt;- Alice : Another authentication Response
+autonumber 40 10
+Bob -&gt; Alice : Yet another authentication Request
+Bob &lt;- Alice : Yet another authentication Response
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2">autonumber HTML properties</h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="highlight"><pre><span></span>@startuml
+autonumber "&lt;b&gt;[000]"
+Bob -&gt; Alice : Authentication Request
+Bob &lt;- Alice : Authentication Response
+autonumber 15 "&lt;b&gt;(&lt;u&gt;##&lt;/u&gt;)"
+Bob -&gt; Alice : Another authentication Request
+Bob &lt;- Alice : Another authentication Response
+autonumber 40 10 "&lt;font color=red&gt;&lt;b&gt;Message 0 "
+Bob -&gt; Alice : Yet another authentication Request
+Bob &lt;- Alice : Yet another authentication Response
+@enduml
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">Title</h2>
+<div class="outline-text-2" id="text-9">
+<div class="highlight"><pre><span></span>@startuml
+title Simple communication example
+Alice -&gt; Bob: Authentication Request
+Bob --&gt; Alice: Authentication Response
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">Caption</h2>
+<div class="outline-text-2" id="text-10">
+<div class="highlight"><pre><span></span>@startuml
+caption fig. 1
+Alice &lt;-&gt; Bob: Swap position
+Bob --&gt; Alice: Who is who?
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">Legend</h2>
+<div class="outline-text-2" id="text-11">
+<div class="highlight"><pre><span></span>@startuml
+Alice -&gt; Bob : Hello
+legend right
+Short
+legend
+endlegend
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">Splitting diagram</h2>
+<div class="outline-text-2" id="text-12">
+<div class="highlight"><pre><span></span>@startuml
+Alice -&gt; Bob : message 1
+Alice -&gt; Bob : message 2
+newpage
+Alice -&gt; Bob : message 3
+Alice -&gt; Bob : message 4
+newpage A title for the\nlast page
+Alice -&gt; Bob : message 5
+Alice -&gt; Bob : message 6
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13">Grouping sequences</h2>
+<div class="outline-text-2" id="text-13">
+<div class="highlight"><pre><span></span>@startuml
+Alice -&gt; Bob: Authentication Request
+alt successful case
+Bob -&gt; Alice: Authentication Accepted
+else some kind of failure
+Bob -&gt; Alice: Authentication Failure
+group My own label
+Alice -&gt; Log : Log attack start
+loop 1000 times
+Alice -&gt; Bob: DNS Attack
+end
+Alice -&gt; Log : Log attack end
+end
+else Another type of failure
+Bob -&gt; Alice: Please repeat
+end
+@enduml
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14">Notes</h2>
+<div class="outline-text-2" id="text-14">
+<div class="highlight"><pre><span></span>@startuml
+Alice-&gt;Bob : hello
+note left: this is a first note
+Bob-&gt;Alice : ok
+note right: this is another note
+Bob-&gt;Bob : I am thinking
+note left
+a note
+can also be defined
+on several lines
+end note
+@enduml
+</pre></div>
+</div>
+</div>
+        </div>
         </article><article class="h-entry post-text"><header><h1 class="p-name entry-title header"><a href="posts/google-io-2016-web-application-installation-steps/" class="u-url">Google I/O 2016 Web Application Installation Steps</a></h1>
             <div class="metadata">
                 <span class="byline author vcard">
