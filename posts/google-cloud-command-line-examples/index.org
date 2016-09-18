@@ -9,7 +9,6 @@
 .. type: text
 #+END_COMMENT
 
-
 #+TITLE: Google Cloud Command-line Examples
 #+AUTHOR: Nicolas Couture
 #+EMAIL: (concat "nicolas.couture" at-sign "gmail.com")
@@ -19,6 +18,297 @@
 
 
 These are my personal notes, refer to the official documentation for complete details.
+
+* Google Cloud Commands
+All Google Cloud commands are _self-documented_, most ship with Bash and Zsh auto-completion profiles.
+
+Their official documentation is available online at https://cloud.google.com/sdk/gcloud/reference/.
+** =gcloud=
+You can use gcloud to create and manage:
+
+- Google Compute Engine virtual machine instances and other resources
+- Google Cloud SQL instances
+- Google Container Engine clusters
+- Google Cloud Dataproc clusters and jobs
+- Google Cloud DNS managed zones and record sets
+- Google Cloud Deployment manager deployments
+- Deploy App Engine applications
+- Perform other tasks against Alpha and Beta Cloud Platform services
+
+** =gsutil=
+You can use gsutil to:
+
+- Create and manage Cloud Storage buckets
+- Upload objects to buckets, and download and delete them
+- Move, copy and rename objects
+- Manage access to stored data
+
+** =bq=
+You can use bq to manage datasets, tables and other entities in BigQuery, as well as run
+queries on your data.
+** =appcfg.py= 
+Manage App Engine instances.
+** =dev_appserver.py=
+Local App Engine development server.
+
+* Configuration
+** Install Google Cloud SDK
+   #+begin_src shell
+   curl https://sdk.cloud.google.com | bash
+   #+end_src
+
+   *Warning*: You can verify the SSL certificate using /curl --cacert <certificate>/ and this root CA:
+   #+begin_src ascii
+# Operating CA: Symantec (GeoTrust)
+# Issuer: CN=GeoTrust Global CA O=GeoTrust Inc.
+# Subject: CN=GeoTrust Global CA O=GeoTrust Inc.
+# Label: "GeoTrust Global CA"
+# Serial: 144470
+# MD5 Fingerprint: f7:75:ab:29:fb:51:4e:b7:77:5e:ff:05:3c:99:8e:f5
+# SHA1 Fingerprint: de:28:f4:a4:ff:e5:b9:2f:a3:c5:03:d1:a3:49:a7:f9:96:2a:82:12
+# SHA256 Fingerprint: ff:85:6a:2d:25:1d:cd:88:d3:66:56:f4:50:12:67:98:cf:ab:aa:de:40:79:9c:72:2d:e4:d2:b5:db:36:a7:3a
+-----BEGIN CERTIFICATE-----
+MIIDVDCCAjygAwIBAgIDAjRWMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAlVT
+MRYwFAYDVQQKEw1HZW9UcnVzdCBJbmMuMRswGQYDVQQDExJHZW9UcnVzdCBHbG9i
+YWwgQ0EwHhcNMDIwNTIxMDQwMDAwWhcNMjIwNTIxMDQwMDAwWjBCMQswCQYDVQQG
+EwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEbMBkGA1UEAxMSR2VvVHJ1c3Qg
+R2xvYmFsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2swYYzD9
+9BcjGlZ+W988bDjkcbd4kdS8odhM+KhDtgPpTSEHCIjaWC9mOSm9BXiLnTjoBbdq
+fnGk5sRgprDvgOSJKA+eJdbtg/OtppHHmMlCGDUUna2YRpIuT8rxh0PBFpVXLVDv
+iS2Aelet8u5fa9IAjbkU+BQVNdnARqN7csiRv8lVK83Qlz6cJmTM386DGXHKTubU
+1XupGc1V3sjs0l44U+VcT4wt/lAjNvxm5suOpDkZALeVAjmRCw7+OC7RHQWa9k0+
+bw8HHa8sHo9gOeL6NlMTOdReJivbPagUvTLrGAMoUgRx5aszPeE4uwc2hGKceeoW
+MPRfwCvocWvk+QIDAQABo1MwUTAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTA
+ephojYn7qwVkDBF9qn1luMrMTjAfBgNVHSMEGDAWgBTAephojYn7qwVkDBF9qn1l
+uMrMTjANBgkqhkiG9w0BAQUFAAOCAQEANeMpauUvXVSOKVCUn5kaFOSPeCpilKIn
+Z57QzxpeR+nBsqTP3UEaBU6bS+5Kb1VSsyShNwrrZHYqLizz/Tt1kL/6cdjHPTfS
+tQWVYrmm3ok9Nns4d0iXrKYgjy6myQzCsplFAMfOEVEiIuCl6rYVSAlk6l5PdPcF
+PseKUgzbFbS9bZvlxrFUaKnjaZC2mqUPuLk/IH2uSrW4nOQdtqvmlKXBx4Ot2/Un
+hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
+5fEWCRE11azbJHFwLJhWC9kXtNHjUStedejV0NxPNO3CBWaAocvmMw==
+-----END CERTIFICATE-----
+   #+end_src
+
+** Install App Engine Python Standard Environment
+#+begin_src shell
+gcloud components install app-engine-python
+#+end_src
+
+** List Available Components
+#+begin_src shell
+gcloud components list
+
+Your current Cloud SDK version is: 123.0.0
+The latest available version is: 123.0.0
+
+┌──────────────────────────────────────────────────────────────────────────────────────────┐
+│                                        Components                                        │
+├───────────────┬───────────────────────────────────┬──────────────────────────┬───────────┤
+│     Status    │                Name               │            ID            │    Size   │
+├───────────────┼───────────────────────────────────┼──────────────────────────┼───────────┤
+│ Not Installed │ App Engine Go Extensions          │ app-engine-go            │  46.3 MiB │
+│ Not Installed │ Cloud Datastore Emulator          │ cloud-datastore-emulator │  16.1 MiB │
+│ Not Installed │ Cloud Datastore Emulator (Legacy) │ gcd-emulator             │  38.1 MiB │
+│ Not Installed │ Cloud Pub/Sub Emulator            │ pubsub-emulator          │  16.3 MiB │
+│ Not Installed │ gcloud Alpha Commands             │ alpha                    │   < 1 MiB │
+│ Not Installed │ gcloud Beta Commands              │ beta                     │   < 1 MiB │
+│ Not Installed │ gcloud app Java Extensions        │ app-engine-java          │ 135.6 MiB │
+│ Not Installed │ gcloud app Python Extensions      │ app-engine-python        │   7.2 MiB │
+│ Not Installed │ kubectl                           │ kubectl                  │  11.4 MiB │
+│ Installed     │ BigQuery Command Line Tool        │ bq                       │   < 1 MiB │
+│ Installed     │ Cloud SDK Core Libraries          │ core                     │   4.1 MiB │
+│ Installed     │ Cloud Storage Command Line Tool   │ gsutil                   │   2.8 MiB │
+│ Installed     │ Default set of gcloud commands    │ gcloud                   │           │
+└───────────────┴───────────────────────────────────┴──────────────────────────┴───────────┘
+To install or remove components at your current SDK version [123.0.0], run:
+  gcloud components install COMPONENT_ID
+  gcloud components remove COMPONENT_ID
+
+To update your SDK installation to the latest version [123.0.0], run:
+  gcloud components update
+
+#+end_src
+** Update Components
+#+begin_src shell
+gcloud components update
+#+end_src
+** Install App Engine Components
+#+begin_src shell
+gcloud components install app-engine-python gcd-emulator pubsub-emulator cloud-datastore-emulator
+
+
+Your current Cloud SDK version is: 123.0.0
+Installing components from version: 123.0.0
+
+┌──────────────────────────────────────────────────────────────┐
+│             These components will be installed.              │
+├───────────────────────────────────┬───────────────┬──────────┤
+│                Name               │    Version    │   Size   │
+├───────────────────────────────────┼───────────────┼──────────┤
+│ Cloud Datastore Emulator          │         1.1.1 │ 16.1 MiB │
+│ Cloud Datastore Emulator (Legacy) │ v1beta3-1.0.0 │ 38.1 MiB │
+│ Cloud Pub/Sub Emulator            │    2016.08.19 │ 16.3 MiB │
+│ gcloud app Python Extensions      │        1.9.40 │  7.2 MiB │
+└───────────────────────────────────┴───────────────┴──────────┘
+
+[...]
+
+#+end_src
+** GCloud Authentication
+Project-level authentication:
+#+begin_src shell
+gcloud auth login --project=<project ID>
+#+end_src
+** Configure Default Command Line Project
+#+begin_src shell
+gcloud config set project <project ID>
+#+end_src
+
+* Cloud Storage
+** Create a Cloud Storage bucket
+#+begin_src shell
+gsutil mb gs://<bucket name>
+#+end_src
+** List files in a Cloud Storage bucket
+#+begin_src shell
+gsutil ls gs://<bucket>
+#+end_src
+** Synchronize buckets and directories files
+#+begin_src shell
+gsutil -m rsync --help
+#+end_src
+** Cloud Storage ACL with gsutil
+Make bucket files world-readable:
+#+begin_src shell
+gsutil acl ch -u AllUsers:R gs://<bucket>/<object>
+#+end_src
+** HTTPS Load-balancing with Cloud CDN 
+- https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage
+* Compute Engine
+** Copy files to/from a Compute Engine instance
+#+begin_src shell
+gcloud compute copy-files [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/
+#+end_src
+** List Compute Engine Instances
+#+begin_src shell
+gcloud compute instances list
+#+end_src
+** Connect via SSH
+#+begin_src shell
+gcloud compute ssh <instance name>
+#+end_src
+* App Engine
+** Deploy Application
+#+begin_src shell
+appcfg.py update -A <project ID> -V <version> <src>
+#+end_src
+** Run Python App Engine application locally 
+#+begin_src shell
+dev_appserver.py <src>
+#+end_src
+
+with application debug log level:
+#+begin_src shell
+dev_appserver.py --log_level debug <src>
+#+end_src
+
+with application server debug logging:
+#+begin_src shell
+dev_appserver.py --dev_appserver_log_level debug <src>
+#+end_src
+
+
+with both:
+#+begin_src shell
+dev_appserver.py --log_level debug --dev_appserver_log_level debug <src>
+#+end_src
+** List App Engine Instances
+#+begin_src shell
+gcloud app instances list
+#+end_src
+** Read App Engine Logs
+#+begin_src shell
+gcloud app logs read
+#+end_src
+** Stop App 
+#+begin_src shell
+gcloud compute instances stop <instance-name> <instance-name> ...
+#+end_src
+** Spawn a remote Python shell
+In order to have access to the remote_api, it must first be deployed with the option enabled[fn:1]:
+#+begin_src ascii
+builtins:
+  - remote_api: on
+#+end_src
+
+#+begin_src shell
+remote_api_shell.py -s <project>.appspot.com
+#+end_src
+
+ref: https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
+* Cloud DNS
+** List Managed Zones
+#+begin_src shell
+gcloud dns managed-zones list
+#+end_src
+
+output:
+#+begin_src shell
+NAME              DNS_NAME           DESCRIPTION
+example-zone      example.com.
+#+end_src
+
+** Describe Existing Zone
+#+begin_src shell
+gcloud dns managed-zones describe <zone-name>
+#+end_src
+** Add DNS Record
+Here is an example of creating a CNAME record named _my-cname.example.com_ that points to _cname.value.example.org_
+#+begin_src shell
+$ gcloud dns record-sets transaction start -z <zone-name>
+Transaction started [transaction.yaml]
+$ gcloud dns record-sets transaction add -z <zone-name> --ttl <seconds> --type CNAME --name my-cname.example.com cname.value.example.org.
+Record addition appended to transaction at [transaction.yaml]
+$ gcloud dns record-sets transaction describe -z <zone-name>
+additions:
+- kind: dns#resourceRecordSet
+  name: example.com
+  rrdatas:
+  - ns-cloud-e1.googledomains.com. cloud-dns-hostmaster.google.com. 3 21600 3600 259200
+    <ttl seconds>
+  ttl: 21600
+  type: SOA
+- kind: dns#resourceRecordSet
+  name: mycname.example.com
+  rrdatas:
+  - cname.value.example.org.
+  ttl: <ttl seconds>
+  type: CNAME
+deletions:
+- kind: dns#resourceRecordSet
+  name: example.com
+  rrdatas:
+  - ns-cloud-e1.googledomains.com. cloud-dns-hostmaster.google.com. 2 21600 3600 259200
+    <ttl seconds>
+  ttl: 21600
+  type: SOA
+
+$ gcloud dns record-sets transaction execute -z <zone-name>
+Executed transaction [transaction.yaml] for managed-zone [<zone-name>].
+Created [https://www.googleapis.com/dns/v1/projects/<project id>/managedZones/<zone-name>/changes/1].
+ID  START_TIME                STATUS
+1   2016-06-16T13:10:50.051Z  pending
+#+end_src
+
+Plain commands list:
+#+begin_src shell
+gcloud dns record-sets transaction start -z <zone-name>
+gcloud dns record-sets transaction add -z <zone-name> --name my-cname.example.com --ttl 300 --type CNAME cname.value.example.org.
+gcloud dns record-sets transaction describe -z <zone-name>
+gcloud dns record-sets transaction execute -z <zone-name>
+#+end_src
+* Footnotes
+[fn:1] https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
 
 * Google Cloud Commands
 All Google Cloud commands are _self-documented_, most ship with Bash and Zsh auto-completion profiles.
