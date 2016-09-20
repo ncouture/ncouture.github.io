@@ -1,0 +1,51 @@
+#+BEGIN_COMMENT
+.. title: Google IRC Channels on Freenode
+.. slug: google-freenode-irc-channels
+.. date: 2016-09-20 23:09:09 UTC
+.. tags: gcloud, google cloud, gsutil, app engine, cloud storage, cloud dns, 
+.. category: cloud
+.. link: 
+.. description: Google Cloud command-line examples outlined by service for Cloud Storage, Compute Engine, App Engine, Cloud DNS
+.. type: text
+#+END_COMMENT
+
+#+TITLE: Google IRC Channels on Freenode
+#+AUTHOR: Nicolas Couture
+#+EMAIL: (concat "nicolas.couture" at-sign "gmail.com")
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 num:nil toc:2
+
+There are a few official Google channels on the Freenode network but it can be a bit hard to find which ones. Hopefully this list will help people looking for help with Google technologies on freenode.
+
+_Note:_ the recognized official support channels for Google products do not include IRC channels, for example refer to https://cloud.google.com/support/ for a list of Google Cloud related resources.
+
+* #google
+* ##googleinterns
+       - https://productforums.google.com/#!forum/en
+       - https://www.google.com/contact
+       - https://www.google.com/appsstatus
+* #android
+* #android-dev
+* #chromium-extensions
+* #chromium-os-users
+* #chromium-support
+* #firebase
+- http://firebase-community.appspot.com/
+* #googleglass
+* #googlemaps
+* #google-at-home
+* #google-containers
+Kubernetes, containers, cAdvisor
+- http://stackoverflow.com/questions/tagged/kubernetes
+- https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ
+- https://groups.google.com/forum/#!forum/google-containers
+* #kubernetes-ui
+/previously #google-containers-ui/
+* #googleajaxapis
+* #googleapis
+* #googleglass
+- https://developers.google.com/glass
+- https://github.com/googleglass
+* #googleio
+* #googlemaps
+* #ubuntu-google
