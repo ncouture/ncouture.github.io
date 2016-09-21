@@ -4,7 +4,7 @@
 .. date: 2016-09-17 14:57:26 UTC
 .. tags: gcloud, google cloud, gsutil, app engine, cloud storage, cloud dns
 .. category: cloud
-.. link: 
+.. link:
 .. description: Google Cloud command-line examples outlined by service for Cloud Storage, Compute Engine, App Engine, Cloud DNS
 .. type: text
 #+END_COMMENT
@@ -587,4 +587,21 @@ gcloud dns record-sets transaction start -z <zone-name>
 gcloud dns record-sets transaction add -z <zone-name> --name my-cname.example.com --ttl 300 --type CNAME cname.value.example.org.
 gcloud dns record-sets transaction describe -z <zone-name>
 gcloud dns record-sets transaction execute -z <zone-name>
+#+end_src
+* BigQuery
+=bq help= includes a lot of great info, the official documentation is available at https://cloud.google.com/bigquery/bq-command-line-tool.
+** Default Configuration
+#+begin_src shell
+cat > ~/.bigqueryrc <<EOF
+> project_id = <project-id>
+> dataset_id = <dataset-id>
+> EOF
+#+end_src
+** Interactive Shell
+#+begin_src shell
+bq shell
+#+end_src
+** List common flags
+#+begin_src shell
+bq --format=json ls -d
 #+end_src
