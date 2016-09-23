@@ -250,12 +250,12 @@ quit
 ** Backup keys
 Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
 #+begin_src shell
-mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+mkdir -p ~/gpg_backup/{primary_keys,sub_keys,laptop_keys}
 cp -r ~/.gnupg ~/gpg_backup/dot-gnupg-backup
 gpg --armor --export <key-id> > ~/gpg_backup/primary_keys/public_key.gpg
 gpg --armor --export-secret-key <key-id> > ~/gpg_backup/primary_keys/secret_key.gpg
-gpg --armor --gen-revoke <key-id> > ~/gpg_backup/primary_keys/recovation_cert.gpg
 gpg -a --export-secret-subkeys <key-id> > ~/gpg_backup/sub_keys/secret_subkeys.gpg
+gpg --armor --gen-revoke <key-id> > ~/gpg_backup/primary_keys/recovation_cert.gpg
 #+end_src
 
 ** Upload your keys
