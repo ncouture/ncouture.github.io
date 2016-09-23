@@ -274,48 +274,6 @@ gpg> keytocard
 gpg> save
 #+end_src
 
-** Delete primary secret key
-Confirm you're using your primary key:
-#+begin_src shell
-$ gpg -K
-/home/self/.gnupg/secring.gpg
------------------------------
-sec   2048R/2883A65F 2016-09-23
-uid                  Nicolas Couture <nicolas.couture@gmail.com>
-uid                  [jpeg image of size 27968]
-ssb   2048R/78D783BC 2016-09-23
-ssb   2048R/20D87F97 2016-09-23
-ssb   2048R/71F7D661 2016-09-23
-#+end_src
-*** Delete secret key:
-#+begin_src shell
-gpg --delete-secret-keys <key-id>
-$ gpg -K  # observe change
-#+end_src
-
-Import secret sub-keys:
-#+begin_src shell
-gpg --import ~/gpg_backup/sub_keys/secret_subkeys.gpg
-#+end_src
-
-In the output of =gpg -K=, a *#* after the letters *sec* means that the secret key is not usable.
-
-Using =gpg -K=, confirm you're no longer using your primary key:
-#+begin_src shell
-$ gpg -K
-/home/self/.gnupg/secring.gpg
------------------------------
-sec#  2048R/2883A65F 2016-09-23
-uid                  Nicolas Couture <nicolas.couture@gmail.com>
-ssb   2048R/78D783BC 2016-09-23
-ssb   2048R/20D87F97 2016-09-23
-ssb   2048R/71F7D661 2016-09-23
-#+end_src
-*** Create "laptop keys"
-#+begin_src shell
-gpg -a --export <key-id> > ~/gpg_backup/laptop_keys/public_key.gpg
-gpg -a --export-secret-keys <key-id> > ~/gpg_backup/laptop_keys/secret_key_laptop.gpg
-#+end_src
 * Send your public key to keyserver
 #+begin_src shell
 gpg --send-key <key-id>
