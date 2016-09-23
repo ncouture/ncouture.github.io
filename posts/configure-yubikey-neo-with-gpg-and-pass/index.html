@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Step-by-step configuration instructions for using pass with gpg-enabled Yubikey NEO.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configure Yubikey NEO with GPG and Pass | ncouture
+.github.io</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="../../index.atom">
+<link rel="canonical" href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/">
+<!--[if lt IE 9]>
+            <script src="../../assets/js/html5shiv.min.js"></script>
+            <script src="../../assets/js/respond.min.js"></script>
+        <![endif]--><meta name="description" itemprop="description" content="Step-by-step configuration instructions for using pass with gpg-enabled Yubikey NEO.">
+<meta name="author" content="Nicolas Couture">
+<link rel="prev" href="../google-freenode-irc-channels/" title="Google IRC Channels on Freenode" type="text/html">
+<meta property="og:site_name" content="ncouture
+.github.io">
+<meta property="og:title" content="Configure Yubikey NEO with GPG and Pass">
+<meta property="og:url" content="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/">
+<meta property="og:description" content="Step-by-step configuration instructions for using pass with gpg-enabled Yubikey NEO.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-09-23T15:39:19+00:00">
+<meta property="article:tag" content="gpg">
+<meta property="article:tag" content="pass">
+<meta property="article:tag" content="yubikey">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar  header-panel shadow-z-3" role="navigation"><div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-3">
+            <h1 class="title-blog">
+                <a href="https://ncouture.github.io/">
+                        <span id="blog-title">ncouture
+.github.io</span>
+                    </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+<!-- /.container-fluid -->
+</nav><div class="container-fluid main" id="content" role="main">
+        <div class="row">
+            <nav class="col-xs-3 menu"><ul>
+<li class="withripple"><a href="../../archive.html">Archive</a></li>
+                <li class="withripple"><a href="../../categories/">Tags</a></li>
+                <li class="withripple"><a href="../../rss.xml">RSS feed</a></li>
+
+                    
+                </ul>
+<ul class="nav navbar-nav"></ul></nav><div class="posts-material col-xs-9">
+                <div class="col-xs-12 col-md-11 content-material">
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Configure Yubikey NEO with GPG and Pass</a></h1>
+<hr>
+<div class="metadata">
+            <span class="byline author vcard">
+                <a href=".">
+                        <i class="mdi-action-face-unlock"></i>
+                    Nicolas Couture
+                </a>
+            </span>
+            <span class="dateline">
+                <a href="." rel="bookmark"><i class="mdi-device-access-time"></i>
+                    <time class="published dt-published" datetime="2016-09-23T15:39:19+00:00" itemprop="datePublished" title="2016-09-23 15:39">2016-09-23 15:39</time></a>
+            </span>
+                <span class="commentline">            <a href="#disqus_thread" data-disqus-identifier="cache/posts/configure-yubikey-neo-with-gpg-and-pass.html">Comments</a>
+
+</span>
+                <meta name="description" itemprop="description" content="Step-by-step configuration instructions for using pass with gpg-enabled Yubikey NEO.">
+</div>
+        
+        <hr></header><div class="e-content entry-content" itemprop="articleBody text">
+    <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li>
+<a href="#sec-1">Environment configuration</a>
+<ul>
+<li><a href="#sec-1-1">Software dependencies</a></li>
+<li><a href="#sec-1-2">Xorg environment</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Create GPG keys</a></li>
+<li><a href="#sec-3">Backup keys</a></li>
+<li><a href="#sec-4">Delete primary secret key</a></li>
+<li><a href="#sec-5">Create "laptop keys"</a></li>
+<li><a href="#sec-6">Upload keys to GPG card</a></li>
+<li><a href="#sec-7">Send your public key to keyserver</a></li>
+<li><a href="#sec-8">Remove new keys from keyring</a></li>
+<li><a href="#sec-9">Configure `pass'</a></li>
+<li><a href="#sec-10">Reference</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Environment configuration</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Software dependencies</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Install requirements and configure gpg2 to be the default gpg:
+</p>
+<div class="highlight"><pre><span></span>sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico python-yubico-tools yhsm-yubikey-ksm yubikey-personalization yubikey-personalization-gui gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
+alias gpg=gpg2
+echo !! &gt;&gt; ~/.bashrc
+</pre></div>
+
+<p>
+Uninstall gnome-keyring:
+</p>
+<div class="highlight"><pre><span></span>sudo apt remove libpam-gnome-keyring gnome-keyring
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Xorg environment</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+This is a matter of preferences, I do no use a display manager and if you do you may want to tweak this to be used in your <code>.xsession</code> file instead.
+</p>
+
+<p>
+<b>Warning:</b> this configuration allows a single state for your gpg-agent and ssh-agent (which is gpg-agent) throughout your window manager. This means that all applications may be able to access resources available using some keys after you have provided sufficient information for gpg-agent to use these keys. If you're not sure of what you're doing <b>do not</b> use my Xorg configuration.
+<code>.xinitrc</code>
+</p>
+<div class="highlight"><pre><span></span>pkill -u "$USER" -x gpg-agent
+pkill -u "$USER" -x ssh-agent
+pkill -u "$USER" -x xss-lock
+pkill -u "$USER" -x xscreensaver
+
+xscreensaver -nosplash &amp;&gt; /dev/null &amp;
+xss-lock -- xscreensaver-command -lock  &amp;&gt; /dev/null &amp;
+setxkbmap us                    # kbd layout preset
+xmodmap ~/.Xmodmap              # kbd styling
+xrdb -merge ~/.Xresources       # X styling
+xhost +SI:localuser:$USER       # Disable access control
+xsetroot -cursor_name left_ptr  # Fallback cursor
+xset r rate 200 60              # Keyboard repeat rate
+
+# start the `notion' window manager
+exec dbus-launch --exit-with-session \
+     eval "$(gpg-agent --daemon \
+		       --scdaemon-program pscsd \
+		       --enable-ssh-support \
+		       --write-env-file \
+		       "$HOME/.gnupg/gpg-agent.env" notion)"
+</pre></div>
+
+<p>
+<code>.bashrc</code>
+</p>
+<div class="highlight"><pre><span></span>export GNUPGHOME="$HOME"/.gnupg
+
+if [ -f "${HOME}/.gnupg/gpg-agent.env" ]; then
+    source "${HOME}/.gnupg/gpg-agent.env"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
+</pre></div>
+<p>
+Make yourself the owner of the Yubikey
+</p>
+<div class="highlight"><pre><span></span>eval $(lsusb -v | grep Yubi -A1  | egrep 'idVend|idProd' | awk '{ print $1"="$2 }')
+echo SUBSYSTEM=="usb", ATTR{idVendor}=="$idVendor", ATTR{idProduct}=="$idProduct", OWNER="$USER" &gt; /tmp/tmptmp
+sudo cp -v /tmp/tmptmp /etc/udev/rules.d/99-yubikey.rules
+sudo chown root.root /etc/udev/rules.d/99-yubikey.rules
+rm /tmp/tmptmp
+</pre></div>
+
+<p>
+At this point you should restart Xorg:
+</p>
+<div class="highlight"><pre><span></span>pkill -u $USER
+
+[...]
+
+startx
+</pre></div>
+
+<p>
+Review gpg programs:
+</p>
+<div class="highlight"><pre><span></span>gpgconf --check-programs
+</pre></div>
+</div>
+
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">Validate configuration</h4>
+<div class="outline-text-4" id="text-1-2-1">
+</div>
+<div id="outline-container-sec-1-2-1-1" class="outline-5">
+<h5 id="sec-1-2-1-1">Smart card access</h5>
+<div class="outline-text-5" id="text-1-2-1-1">
+<p>
+Verify you have sufficient privs to access the yubikey through gpg2:
+</p>
+<div class="highlight"><pre><span></span>gpg --card-status
+</pre></div>
+
+<p>
+If you get an error, see if you can access the key from the superuser and troubleshoot ACL.
+</p>
+<div class="highlight"><pre><span></span>sudo gpg2 --card-status
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-1-2" class="outline-5">
+<h5 id="sec-1-2-1-2">Gnupg agent wrapping</h5>
+<div class="outline-text-5" id="text-1-2-1-2">
+<p>
+With this configuration your gpg-agent wraps your entire window manager.
+</p>
+
+<p>
+This means that if you do add an ssh key to the agent from <code>/dev/pts/1</code>, you will be able to access
+it from <code>/dev/pts/1</code> if this respects the way you've configured your agent.
+</p>
+
+<p>
+To test this behavior:
+</p>
+
+<ol class="org-ol">
+<li>Open a terminal
+</li>
+<li>Add an ssh key to the agent
+</li>
+</ol>
+<div class="highlight"><pre><span></span>ssh-add -i ~/.ssh/somekey
+&lt;feed password prompt&gt;
+</pre></div>
+<ol class="org-ol">
+<li>Verify you can use the key
+</li>
+</ol>
+<div class="highlight"><pre><span></span>ssh user@somehost-allowing-somekey-logins
+</pre></div>
+<ol class="org-ol">
+<li>Open a second terminal
+</li>
+<li>Verify you can use the key without being prompted for password
+</li>
+</ol>
+<div class="highlight"><pre><span></span>ssh user@somehost-allowing-somekey-logins
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Create GPG keys</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Generate a certification key:
+</p>
+<div class="highlight"><pre><span></span>gpg --expert --gen-key
+
+gpg (GnuPG) 2.0.26; Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+Your selection? 8
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? E
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? S
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? Q
+
+[...]
+</pre></div>
+
+<p>
+Generate sub-keys for Encryption, Signing, and Authentication:
+</p>
+<div class="highlight"><pre><span></span>gpg --expert --edit-key
+
+gpg&gt; addkey
+Key is protected.
+
+[...]
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Backup keys</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Backup private key:
+</p>
+<div class="highlight"><pre><span></span>gpg --armor --export-secret-key &lt;key-id&gt; &gt; secretkey.gpg
+</pre></div>
+
+<p>
+Backup revocation certificate for the primary key:
+</p>
+<div class="highlight"><pre><span></span>gpg --armor --gen-revoke &lt;key-id&gt; &gt; recovation.gpg
+</pre></div>
+
+<p>
+Backup public key:
+</p>
+<div class="highlight"><pre><span></span>gpg --armor --export &lt;key-id&gt; &gt; pubkey.gpg
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Delete primary secret key</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Export secret subkeys:
+</p>
+<div class="highlight"><pre><span></span>gpg -a --export-secret-subkeys &lt;key-id&gt; &gt; secretsubkeys.gpg
+</pre></div>
+
+<p>
+Delete secret key:
+</p>
+<div class="highlight"><pre><span></span>gpg --delete-secret-keys &lt;key-id&gt;
+</pre></div>
+
+<p>
+Import secret sub-keys:
+</p>
+<div class="highlight"><pre><span></span>gpg --import secret_subkeys.gpg
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Create "laptop keys"</h2>
+<div class="outline-text-2" id="text-5">
+<div class="highlight"><pre><span></span>gpg -a --export &lt;key-id&gt; &gt; laptop_keys_public.gpg
+gpg -a --export-secret-keys &lt;key-id&gt; &gt; laptop_keys_secret.gpg
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Upload keys to GPG card</h2>
+<div class="outline-text-2" id="text-6">
+<div class="highlight"><pre><span></span>gpg --expert --edit-key &lt;key-id&gt;
+gpg&gt; toggle
+gpg&gt; key 1
+gpg&gt; keytocard
+Your selection? 1
+gpg&gt; key 1
+gpg&gt; key 2
+gpg&gt; keytocard
+gpg&gt; key 2
+gpg&gt; key 3
+gpg&gt; keytocard
+gpg&gt; save
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Send your public key to keyserver</h2>
+<div class="outline-text-2" id="text-7">
+<div class="highlight"><pre><span></span>gpg --send-key &lt;key-id&gt;
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">Remove new keys from keyring</h2>
+<div class="outline-text-2" id="text-8">
+<div class="highlight"><pre><span></span>gpg --delete-secret-keys &lt;key-id&gt;
+gpg --delete-key &lt;key-id&gt;
+</pre></div>
+
+<p>
+Import laptop keys:
+</p>
+<div class="highlight"><pre><span></span>gpg --import laptop_keys_public.gpg
+gpg --import laptop_keys_secret.gpg
+</pre></div>
+
+<p>
+Trust your encryption key:
+</p>
+<div class="highlight"><pre><span></span>gpg --edit-key &lt;key-id&gt;
+gpg&gt; trust
+5
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">Configure `pass'</h2>
+<div class="outline-text-2" id="text-9">
+<div class="highlight"><pre><span></span>pass init &lt;key-id&gt;
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">Reference</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/">https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</a>
+</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><div itemprop="keywords" class="tags">
+            <a class="tag p-category btn btn-success btn-raised btn-sm" href="../../categories/gpg/" rel="tag">gpg</a>
+            <a class="tag p-category btn btn-success btn-raised btn-sm" href="../../categories/pass/" rel="tag">pass</a>
+            <a class="tag p-category btn btn-success btn-raised btn-sm" href="../../categories/yubikey/" rel="tag">yubikey</a>
+        </div>
+
+            <ul class="pager">
+<li class="previous">
+                <a href="../google-freenode-irc-channels/" rel="prev" title="Google IRC Channels on Freenode">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments"><h2>
+<i class="mdi-communication-forum"></i>Comments</h2>
+        <hr>
+<div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="nicolas-couture-github-pages",
+            disqus_url="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/",
+        disqus_title="Configure Yubikey NEO with GPG and Pass",
+        disqus_identifier="cache/posts/configure-yubikey-neo-with-gpg-and-pass.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="nicolas-couture-github-pages";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script>
+</div>
+            </div>
+        </div>
+        <button class="btn btn-fab btn-raised btn-material-green btn-footer" data-toggle="modal" data-target="#footer-dialog">
+            <i class="mdi-communication-message"></i>
+        </button>
+        <div id="footer-dialog" class="modal fade" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">ncouture
+.github.io credits</h4>
+ 
+              </div>
+              <div class="modal-body">
+                    Contents © 2016         <a href="mailto:nicolas.couture@gmail.com">Nicolas Couture</a>
+                    
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="source-button">
+    <a class="btn btn-fab btn-raised btn-material-indigo" target="_blank" href="index.org" title="Source">
+        <i class="mdi-file-cloud-download"></i>
+    </a>
+
+        </div>
+</div>
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>
+
+            $(document).ready(function() {
+                // This command is used to initialize some elements and make them work properly
+                $.material.init();
+            });
+
+            $(window).on("resize", function() {
+                $("html, body").height($(window).height());
+                $(".main, .menu").height($(window).height() - $(".header-panel").outerHeight() - 76 ); // footer margin: $("footer.footer").outerHeight()
+                $(".posts-material").height($(window).height());
+            }).trigger("resize");
+        </script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84015735-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

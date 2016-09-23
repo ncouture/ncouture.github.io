@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet href="https://ncouture.github.io/assets/xml/atom.xsl" type="text/xsl media="all"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom">
+  <title>Posts about pass</title>
+  <id>https://ncouture.github.io/categories/pass.atom</id>
+  <updated>2016-09-23T15:42:46Z</updated>
+  <author>
+    <name>Nicolas Couture</name>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://ncouture.github.io/categories/pass.atom"/>
+  <link rel="alternate" type="text/html" href="https://ncouture.github.io/categories/pass/"/>
+  <generator uri="https://getnikola.com/">Nikola</generator>
+  <entry>
+    <title>Configure Yubikey NEO with GPG and Pass</title>
+    <id>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</id>
+    <updated>2016-09-23T15:39:19Z</updated>
+    <published>2016-09-23T15:39:19Z</published>
+    <author>
+      <name>Nicolas Couture</name>
+    </author>
+    <link rel="alternate" type="text/html" href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/"/>
+    <summary type="html">&lt;div id="table-of-contents"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1"&gt;Environment configuration&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1-1"&gt;Software dependencies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1-2"&gt;Xorg environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-2"&gt;Create GPG keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3"&gt;Backup keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4"&gt;Delete primary secret key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-5"&gt;Create "laptop keys"&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-6"&gt;Upload keys to GPG card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-7"&gt;Send your public key to keyserver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-8"&gt;Remove new keys from keyring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-9"&gt;Configure `pass'&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-10"&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Environment configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
+&lt;h3 id="sec-1-1"&gt;Software dependencies&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;p&gt;
+Install requirements and configure gpg2 to be the default gpg:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico python-yubico-tools yhsm-yubikey-ksm yubikey-personalization yubikey-personalization-gui gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
+alias gpg=gpg2
+echo !! &amp;gt;&amp;gt; ~/.bashrc
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Uninstall gnome-keyring:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt remove libpam-gnome-keyring gnome-keyring
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
+&lt;h3 id="sec-1-2"&gt;Xorg environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+This is a matter of preferences, I do no use a display manager and if you do you may want to tweak this to be used in your &lt;code&gt;.xsession&lt;/code&gt; file instead.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;Warning:&lt;/b&gt; this configuration allows a single state for your gpg-agent and ssh-agent (which is gpg-agent) throughout your window manager. This means that all applications may be able to access resources available using some keys after you have provided sufficient information for gpg-agent to use these keys. If you're not sure of what you're doing &lt;b&gt;do not&lt;/b&gt; use my Xorg configuration.
+&lt;code&gt;.xinitrc&lt;/code&gt;
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pkill -u "$USER" -x gpg-agent
+pkill -u "$USER" -x ssh-agent
+pkill -u "$USER" -x xss-lock
+pkill -u "$USER" -x xscreensaver
+
+xscreensaver -nosplash &amp;amp;&amp;gt; /dev/null &amp;amp;
+xss-lock -- xscreensaver-command -lock  &amp;amp;&amp;gt; /dev/null &amp;amp;
+setxkbmap us                    # kbd layout preset
+xmodmap ~/.Xmodmap              # kbd styling
+xrdb -merge ~/.Xresources       # X styling
+xhost +SI:localuser:$USER       # Disable access control
+xsetroot -cursor_name left_ptr  # Fallback cursor
+xset r rate 200 60              # Keyboard repeat rate
+
+# start the `notion' window manager
+exec dbus-launch --exit-with-session \
+     eval "$(gpg-agent --daemon \
+		       --scdaemon-program pscsd \
+		       --enable-ssh-support \
+		       --write-env-file \
+		       "$HOME/.gnupg/gpg-agent.env" notion)"
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+&lt;code&gt;.bashrc&lt;/code&gt;
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export GNUPGHOME="$HOME"/.gnupg
+
+if [ -f "${HOME}/.gnupg/gpg-agent.env" ]; then
+    source "${HOME}/.gnupg/gpg-agent.env"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+Make yourself the owner of the Yubikey
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;eval $(lsusb -v | grep Yubi -A1  | egrep 'idVend|idProd' | awk '{ print $1"="$2 }')
+echo SUBSYSTEM=="usb", ATTR{idVendor}=="$idVendor", ATTR{idProduct}=="$idProduct", OWNER="$USER" &amp;gt; /tmp/tmptmp
+sudo cp -v /tmp/tmptmp /etc/udev/rules.d/99-yubikey.rules
+sudo chown root.root /etc/udev/rules.d/99-yubikey.rules
+rm /tmp/tmptmp
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+At this point you should restart Xorg:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pkill -u $USER
+
+[...]
+
+startx
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Review gpg programs:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpgconf --check-programs
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2-1" class="outline-4"&gt;
+&lt;h4 id="sec-1-2-1"&gt;Validate configuration&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2-1"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-1-2-1-1" class="outline-5"&gt;
+&lt;h5 id="sec-1-2-1-1"&gt;Smart card access&lt;/h5&gt;
+&lt;div class="outline-text-5" id="text-1-2-1-1"&gt;
+&lt;p&gt;
+Verify you have sufficient privs to access the yubikey through gpg2:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --card-status
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+If you get an error, see if you can access the key from the superuser and troubleshoot ACL.
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gpg2 --card-status
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2-1-2" class="outline-5"&gt;
+&lt;h5 id="sec-1-2-1-2"&gt;Gnupg agent wrapping&lt;/h5&gt;
+&lt;div class="outline-text-5" id="text-1-2-1-2"&gt;
+&lt;p&gt;
+With this configuration your gpg-agent wraps your entire window manager.
+&lt;/p&gt;
+
+&lt;p&gt;
+This means that if you do add an ssh key to the agent from &lt;code&gt;/dev/pts/1&lt;/code&gt;, you will be able to access
+it from &lt;code&gt;/dev/pts/1&lt;/code&gt; if this respects the way you've configured your agent.
+&lt;/p&gt;
+
+&lt;p&gt;
+To test this behavior:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Open a terminal
+&lt;/li&gt;
+&lt;li&gt;Add an ssh key to the agent
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-add -i ~/.ssh/somekey
+&amp;lt;feed password prompt&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Verify you can use the key
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh user@somehost-allowing-somekey-logins
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Open a second terminal
+&lt;/li&gt;
+&lt;li&gt;Verify you can use the key without being prompted for password
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh user@somehost-allowing-somekey-logins
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Create GPG keys&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+Generate a certification key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --expert --gen-key
+
+gpg (GnuPG) 2.0.26; Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+Your selection? 8
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? E
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? S
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? Q
+
+[...]
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Generate sub-keys for Encryption, Signing, and Authentication:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --expert --edit-key
+
+gpg&amp;gt; addkey
+Key is protected.
+
+[...]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Backup keys&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+Backup private key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --armor --export-secret-key &amp;lt;key-id&amp;gt; &amp;gt; secretkey.gpg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Backup revocation certificate for the primary key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; recovation.gpg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Backup public key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --armor --export &amp;lt;key-id&amp;gt; &amp;gt; pubkey.gpg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;Delete primary secret key&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;p&gt;
+Export secret subkeys:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg -a --export-secret-subkeys &amp;lt;key-id&amp;gt; &amp;gt; secretsubkeys.gpg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Delete secret key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --delete-secret-keys &amp;lt;key-id&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Import secret sub-keys:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --import secret_subkeys.gpg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;Create "laptop keys"&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg -a --export &amp;lt;key-id&amp;gt; &amp;gt; laptop_keys_public.gpg
+gpg -a --export-secret-keys &amp;lt;key-id&amp;gt; &amp;gt; laptop_keys_secret.gpg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-6" class="outline-2"&gt;
+&lt;h2 id="sec-6"&gt;Upload keys to GPG card&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --expert --edit-key &amp;lt;key-id&amp;gt;
+gpg&amp;gt; toggle
+gpg&amp;gt; key 1
+gpg&amp;gt; keytocard
+Your selection? 1
+gpg&amp;gt; key 1
+gpg&amp;gt; key 2
+gpg&amp;gt; keytocard
+gpg&amp;gt; key 2
+gpg&amp;gt; key 3
+gpg&amp;gt; keytocard
+gpg&amp;gt; save
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-7" class="outline-2"&gt;
+&lt;h2 id="sec-7"&gt;Send your public key to keyserver&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --send-key &amp;lt;key-id&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-8" class="outline-2"&gt;
+&lt;h2 id="sec-8"&gt;Remove new keys from keyring&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --delete-secret-keys &amp;lt;key-id&amp;gt;
+gpg --delete-key &amp;lt;key-id&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Import laptop keys:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --import laptop_keys_public.gpg
+gpg --import laptop_keys_secret.gpg
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Trust your encryption key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --edit-key &amp;lt;key-id&amp;gt;
+gpg&amp;gt; trust
+5
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-9" class="outline-2"&gt;
+&lt;h2 id="sec-9"&gt;Configure `pass'&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-9"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pass init &amp;lt;key-id&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-10" class="outline-2"&gt;
+&lt;h2 id="sec-10"&gt;Reference&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-10"&gt;
+&lt;p&gt;
+&lt;a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/"&gt;https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</summary>
+    <category term="gpg" label="gpg"/>
+    <category term="pass" label="pass"/>
+    <category term="yubikey" label="yubikey"/>
+  </entry>
+</feed>

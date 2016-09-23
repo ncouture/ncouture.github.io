@@ -1,0 +1,275 @@
+#+BEGIN_COMMENT
+.. title: Configure Yubikey NEO with GPG and Pass
+.. slug: configure-yubikey-neo-with-gpg-and-pass
+.. date: 2016-09-23 15:39:19 UTC
+.. tags: yubikey, gpg, pass
+.. category: password management, yubikey
+.. link:
+.. description: Step-by-step configuration instructions for using pass with gpg-enabled Yubikey NEO.
+.. type: text
+#+END_COMMENT
+
+#+TITLE: Configure Yubikey NEO with GPG and Pass
+#+AUTHOR: Nicolas Couture
+#+EMAIL: (concat "nicolas.couture" at-sign "gmail.com")
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 num:nil toc:2
+
+* Environment configuration
+** Software dependencies
+Install requirements and configure gpg2 to be the default gpg:
+#+begin_src shell
+sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico python-yubico-tools yhsm-yubikey-ksm yubikey-personalization yubikey-personalization-gui gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
+alias gpg=gpg2
+echo !! >> ~/.bashrc
+#+end_src
+
+Uninstall gnome-keyring:
+#+begin_src shell
+sudo apt remove libpam-gnome-keyring gnome-keyring
+#+end_src
+
+** Xorg environment
+This is a matter of preferences, I do no use a display manager and if you do you may want to tweak this to be used in your =.xsession= file instead.
+
+*Warning:* this configuration allows a single state for your gpg-agent and ssh-agent (which is gpg-agent) throughout your window manager. This means that all applications may be able to access resources available using some keys after you have provided sufficient information for gpg-agent to use these keys. If you're not sure of what you're doing *do not* use my Xorg configuration.
+=.xinitrc=
+#+begin_src text
+pkill -u "$USER" -x gpg-agent
+pkill -u "$USER" -x ssh-agent
+pkill -u "$USER" -x xss-lock
+pkill -u "$USER" -x xscreensaver
+
+xscreensaver -nosplash &> /dev/null &
+xss-lock -- xscreensaver-command -lock  &> /dev/null &
+setxkbmap us                    # kbd layout preset
+xmodmap ~/.Xmodmap              # kbd styling
+xrdb -merge ~/.Xresources       # X styling
+xhost +SI:localuser:$USER       # Disable access control
+xsetroot -cursor_name left_ptr  # Fallback cursor
+xset r rate 200 60              # Keyboard repeat rate
+
+# start the `notion' window manager
+exec dbus-launch --exit-with-session \
+     eval "$(gpg-agent --daemon \
+                       --scdaemon-program pscsd \
+                       --enable-ssh-support \
+                       --write-env-file \
+                       "$HOME/.gnupg/gpg-agent.env" notion)"
+#+end_src
+
+=.bashrc=
+#+begin_src shell
+export GNUPGHOME="$HOME"/.gnupg
+
+if [ -f "${HOME}/.gnupg/gpg-agent.env" ]; then
+    source "${HOME}/.gnupg/gpg-agent.env"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
+#+end_src
+Make yourself the owner of the Yubikey
+#+begin_src ascii
+eval $(lsusb -v | grep Yubi -A1  | egrep 'idVend|idProd' | awk '{ print $1"="$2 }')
+echo SUBSYSTEM=="usb", ATTR{idVendor}=="$idVendor", ATTR{idProduct}=="$idProduct", OWNER="$USER" > /tmp/tmptmp
+sudo cp -v /tmp/tmptmp /etc/udev/rules.d/99-yubikey.rules
+sudo chown root.root /etc/udev/rules.d/99-yubikey.rules
+rm /tmp/tmptmp
+#+end_src
+
+At this point you should restart Xorg:
+#+begin_src shell
+pkill -u $USER
+
+[...]
+
+startx
+#+end_src
+
+Review gpg programs:
+#+begin_src shell
+gpgconf --check-programs
+#+end_src
+
+*** Validate configuration
+**** Smart card access
+Verify you have sufficient privs to access the yubikey through gpg2:
+#+begin_src shell
+gpg --card-status
+#+end_src
+
+If you get an error, see if you can access the key from the superuser and troubleshoot ACL.
+#+begin_src shell
+sudo gpg2 --card-status
+#+end_src
+
+**** Gnupg agent wrapping
+With this configuration your gpg-agent wraps your entire window manager.
+
+This means that if you do add an ssh key to the agent from =/dev/pts/1=, you will be able to access
+it from =/dev/pts/1= if this respects the way you've configured your agent.
+
+To test this behavior:
+
+1. Open a terminal
+1. Add an ssh key to the agent
+#+begin_src shell
+ssh-add -i ~/.ssh/somekey
+<feed password prompt>
+#+end_src
+1. Verify you can use the key
+#+begin_src shell
+ssh user@somehost-allowing-somekey-logins
+#+end_src
+1. Open a second terminal
+1. Verify you can use the key without being prompted for password
+#+begin_src 
+ssh user@somehost-allowing-somekey-logins
+#+end_src
+
+* Create GPG keys
+Generate a certification key:
+#+begin_src text
+gpg --expert --gen-key
+
+gpg (GnuPG) 2.0.26; Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+Your selection? 8
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? E
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? S
+
+Possible actions for a RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Certify
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection? Q
+
+[...]
+#+end_src
+
+Generate sub-keys for Encryption, Signing, and Authentication:
+#+begin_src text
+gpg --expert --edit-key
+
+gpg> addkey
+Key is protected.
+
+[...]
+#+end_src
+
+* Backup keys
+Backup private key:
+#+begin_src shell
+gpg --armor --export-secret-key <key-id> > secretkey.gpg
+#+end_src
+
+Backup revocation certificate for the primary key:
+#+begin_src shell
+gpg --armor --gen-revoke <key-id> > recovation.gpg
+#+end_src
+
+Backup public key:
+#+begin_src shell
+gpg --armor --export <key-id> > pubkey.gpg
+#+end_src
+
+
+* Delete primary secret key
+Export secret subkeys:
+#+begin_src shell
+gpg -a --export-secret-subkeys <key-id> > secretsubkeys.gpg
+#+end_src
+
+Delete secret key:
+#+begin_src shell
+gpg --delete-secret-keys <key-id>
+#+end_src
+
+Import secret sub-keys:
+#+begin_src shell
+gpg --import secret_subkeys.gpg
+#+end_src
+* Create "laptop keys"
+#+begin_src shell
+gpg -a --export <key-id> > laptop_keys_public.gpg
+gpg -a --export-secret-keys <key-id> > laptop_keys_secret.gpg
+#+end_src
+* Upload keys to GPG card
+#+begin_src shell
+gpg --expert --edit-key <key-id>
+gpg> toggle
+gpg> key 1
+gpg> keytocard
+Your selection? 1
+gpg> key 1
+gpg> key 2
+gpg> keytocard
+gpg> key 2
+gpg> key 3
+gpg> keytocard
+gpg> save
+#+end_src
+* Send your public key to keyserver
+#+begin_src shell
+gpg --send-key <key-id>
+#+end_src
+* Remove new keys from keyring
+#+begin_src shell
+gpg --delete-secret-keys <key-id>
+gpg --delete-key <key-id>
+#+end_src
+
+Import laptop keys:
+#+begin_src shell
+gpg --import laptop_keys_public.gpg
+gpg --import laptop_keys_secret.gpg
+#+end_src
+
+Trust your encryption key:
+#+begin_src shell
+gpg --edit-key <key-id>
+gpg> trust
+5
+#+end_src
+
+* Configure `pass'
+#+begin_src shell
+pass init <key-id>
+#+end_src
+* Reference
+https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/
