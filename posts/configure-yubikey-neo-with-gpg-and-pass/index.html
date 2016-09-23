@@ -392,6 +392,35 @@ gpg -a --export-secret-keys &lt;key-id&gt; &gt; laptop_keys_secret.gpg
 <div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6">Upload keys to GPG card</h2>
 <div class="outline-text-2" id="text-6">
+<p>
+Optionally you may reset the status of your yubikey by doing this:
+</p>
+<div class="highlight"><pre><span></span>cat &gt; /tmp/reset_yubikey&lt;&lt;EOF
+/hex
+scd serialno
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 e6 00 00
+scd apdu 00 44 00 00
+/echo Card has been successfully reset.
+EOF
+</pre></div>
+
+<div class="highlight"><pre><span></span>gpg-connect-agent -r /tmp/reset_yubikey
+</pre></div>
+
+
+<p>
+#+end<sub>src</sub></p>
+
+<p>
+#+end<sub>src</sub></p>
 <div class="highlight"><pre><span></span>gpg --expert --edit-key &lt;key-id&gt;
 gpg&gt; toggle
 gpg&gt; key 1
