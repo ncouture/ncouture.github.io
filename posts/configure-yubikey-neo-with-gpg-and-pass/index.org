@@ -129,7 +129,6 @@ ssh user@somehost-allowing-somekey-logins
 #+begin_src 
 ssh user@somehost-allowing-somekey-logins
 #+end_src
-
 * Create GPG keys
 Generate a certification key:
 #+begin_src text
@@ -190,46 +189,20 @@ gpg> addkey
 Key is protected.
 
 [...]
-#+end_src
 
-* Backup keys
-Backup private key:
-#+begin_src shell
-gpg --armor --export-secret-key <key-id> > secretkey.gpg
+gpg> save
 #+end_src
+** Optionally add your picture
+#+begin_src shell
+gpg --edit-key <key-id>
+addphoto
 
-Backup revocation certificate for the primary key:
-#+begin_src shell
-gpg --armor --gen-revoke <key-id> > recovation.gpg
-#+end_src
+[...]
 
-Backup public key:
-#+begin_src shell
-gpg --armor --export <key-id> > pubkey.gpg
+save
 #+end_src
-
-
-* Delete primary secret key
-Export secret subkeys:
-#+begin_src shell
-gpg -a --export-secret-subkeys <key-id> > secretsubkeys.gpg
-#+end_src
-
-Delete secret key:
-#+begin_src shell
-gpg --delete-secret-keys <key-id>
-#+end_src
-
-Import secret sub-keys:
-#+begin_src shell
-gpg --import secret_subkeys.gpg
-#+end_src
-* Create "laptop keys"
-#+begin_src shell
-gpg -a --export <key-id> > laptop_keys_public.gpg
-gpg -a --export-secret-keys <key-id> > laptop_keys_secret.gpg
-#+end_src
-* Upload keys to GPG card
+* Configure your Yubikey
+** Resetting defaults
 Optionally you may reset the status of your yubikey by doing this:
 #+begin_src shell
 cat > /tmp/reset_yubikey<<EOF
@@ -247,16 +220,89 @@ scd apdu 00 e6 00 00
 scd apdu 00 44 00 00
 /echo Card has been successfully reset.
 EOF
-#+end_src
 
-#+begin_src shell
 gpg-connect-agent -r /tmp/reset_yubikey
 #+end_src
-
-
+** Test
+List devices
+#+begin_src shell
+ykneomgr -l
+#+end_src
+** Configuration
+Configure for HID/CCID with touch eject
+#+begin_src shell
+ykneomgr -M 82
 #+end_src
 
+Configure key for OTP/U2F/CCID composite device with touch eject.
+#+begin_src shell
+ykpersonalize -m 86
 #+end_src
+** Default PINs
+The default PIN is =123456= and the default admin PIN is =12345678=.
+
+To change the default admin PIN perform the following:
+#+begin_src shell
+gpg --card-edit
+admin
+passwd
+3
+12345678
+<confirm new admin PIN>
+<confirm new admin PIN>
+#+end_src
+
+To change the default PIN
+#+begin_src shell
+gpg --card-edit
+admin
+passwd
+1
+123456
+<confirm new PIN>
+<confirm new PIN>
+#+end_src
+** Identification details
+Your key stores personal information, to customize it follow these steps:
+#+begin_src shell
+gpg --card-edit
+admin
+name
+sex
+lang
+url
+list
+quit
+#+end_src
+* Upload keys to GPG card
+** Backup keys
+Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
+#+begin_src shell
+mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+cp -r ~/.gnupg ~/gpg-backup/dot-gnupg-backup
+gpg --armor --export <key-id> > ~/gpg_backup/primary_keys/public_key.gpg
+gpg --armor --export-secret-key <key-id> > ~/gpg_backup/primary_keys/secret_key.gpg
+gpg --armor --gen-revoke <key-id> > ~/gpg_backup/primary_keys/recovation_cert.gpg
+gpg -a --export-secret-subkeys <key-id> > ~/gpg_backup/sub_keys/secret_subkeys.gpg
+#+end_src
+
+** Delete primary secret key
+Delete secret key:
+#+begin_src shell
+gpg --delete-secret-keys <key-id>
+#+end_src
+
+Import secret sub-keys:
+#+begin_src shell
+gpg --import secret_subkeys.gpg
+#+end_src
+*** Create "laptop keys"
+#+begin_src shell
+gpg -a --export <key-id> > laptop_keys_public.gpg
+gpg -a --export-secret-keys <key-id> > laptop_keys_secret.gpg
+#+end_src
+
+** Upload your keys
 #+begin_src shell
 gpg --expert --edit-key <key-id>
 gpg> toggle
@@ -298,5 +344,6 @@ gpg> trust
 #+begin_src shell
 pass init <key-id>
 #+end_src
-* Reference
-https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/
+* References
+- https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf
+- https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/

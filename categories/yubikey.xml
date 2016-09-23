@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture
-.github.io (yubikey)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/yubikey.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 23 Sep 2016 15:51:58 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
+.github.io (yubikey)</title><link>https://ncouture.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://ncouture.github.io/categories/yubikey.xml"></atom:link><language>en</language><lastBuildDate>Fri, 23 Sep 2016 17:36:46 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
@@ -10,15 +10,31 @@
 &lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1-2"&gt;Xorg environment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-2"&gt;Create GPG keys&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3"&gt;Backup keys&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4"&gt;Delete primary secret key&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-5"&gt;Create "laptop keys"&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-6"&gt;Upload keys to GPG card&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-7"&gt;Send your public key to keyserver&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-8"&gt;Remove new keys from keyring&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-9"&gt;Configure `pass'&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-10"&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-2"&gt;Create GPG keys&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-2-1"&gt;Optionally add your picture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3"&gt;Configure your Yubikey&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-1"&gt;Resetting defaults&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-2"&gt;Test&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-3"&gt;Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-4"&gt;Default PINs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-5"&gt;Identification details&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4"&gt;Upload keys to GPG card&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4-1"&gt;Backup keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4-2"&gt;Delete primary secret key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4-3"&gt;Upload your keys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-5"&gt;Send your public key to keyserver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-6"&gt;Remove new keys from keyring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-7"&gt;Configure `pass'&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-8"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -184,7 +200,6 @@ To test this behavior:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;div id="outline-container-sec-2" class="outline-2"&gt;
 &lt;h2 id="sec-2"&gt;Create GPG keys&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-2"&gt;
@@ -249,67 +264,29 @@ gpg&amp;gt; addkey
 Key is protected.
 
 [...]
+
+gpg&amp;gt; save
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
+&lt;h3 id="sec-2-1"&gt;Optionally add your picture&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --edit-key &amp;lt;key-id&amp;gt;
+addphoto
+
+[...]
+
+save
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;/div&gt;
 &lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;Backup keys&lt;/h2&gt;
+&lt;h2 id="sec-3"&gt;Configure your Yubikey&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-3"&gt;
-&lt;p&gt;
-Backup private key:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --armor --export-secret-key &amp;lt;key-id&amp;gt; &amp;gt; secretkey.gpg
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Backup revocation certificate for the primary key:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; recovation.gpg
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Backup public key:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --armor --export &amp;lt;key-id&amp;gt; &amp;gt; pubkey.gpg
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;Delete primary secret key&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;p&gt;
-Export secret subkeys:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg -a --export-secret-subkeys &amp;lt;key-id&amp;gt; &amp;gt; secretsubkeys.gpg
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Delete secret key:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --delete-secret-keys &amp;lt;key-id&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-Import secret sub-keys:
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --import secret_subkeys.gpg
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;Create "laptop keys"&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-5"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg -a --export &amp;lt;key-id&amp;gt; &amp;gt; laptop_keys_public.gpg
-gpg -a --export-secret-keys &amp;lt;key-id&amp;gt; &amp;gt; laptop_keys_secret.gpg
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;Upload keys to GPG card&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
+&lt;h3 id="sec-3-1"&gt;Resetting defaults&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-1"&gt;
 &lt;p&gt;
 Optionally you may reset the status of your yubikey by doing this:
 &lt;/p&gt;
@@ -328,19 +305,134 @@ scd apdu 00 e6 00 00
 scd apdu 00 44 00 00
 /echo Card has been successfully reset.
 EOF
-&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg-connect-agent -r /tmp/reset_yubikey
+gpg-connect-agent -r /tmp/reset_yubikey
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
+&lt;h3 id="sec-3-2"&gt;Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-2"&gt;
+&lt;p&gt;
+List devices
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ykneomgr -l
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
+&lt;h3 id="sec-3-3"&gt;Configuration&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-3"&gt;
+&lt;p&gt;
+Configure for HID/CCID with touch eject
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ykneomgr -M 82
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-#+end&lt;sub&gt;src&lt;/sub&gt;
+Configure key for OTP/U2F/CCID composite device with touch eject.
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ykpersonalize -m 86
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3-4" class="outline-3"&gt;
+&lt;h3 id="sec-3-4"&gt;Default PINs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-4"&gt;
+&lt;p&gt;
+The default PIN is &lt;code&gt;123456&lt;/code&gt; and the default admin PIN is &lt;code&gt;12345678&lt;/code&gt;.
 &lt;/p&gt;
 
 &lt;p&gt;
-#+end&lt;sub&gt;src&lt;/sub&gt;
+To change the default admin PIN perform the following:
 &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --card-edit
+admin
+passwd
+3
+12345678
+&amp;lt;confirm new admin PIN&amp;gt;
+&amp;lt;confirm new admin PIN&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+To change the default PIN
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --card-edit
+admin
+passwd
+1
+123456
+&amp;lt;confirm new PIN&amp;gt;
+&amp;lt;confirm new PIN&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-3-5" class="outline-3"&gt;
+&lt;h3 id="sec-3-5"&gt;Identification details&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-5"&gt;
+&lt;p&gt;
+Your key stores personal information, to customize it follow these steps:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --card-edit
+admin
+name
+sex
+lang
+url
+list
+quit
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;Upload keys to GPG card&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
+&lt;h3 id="sec-4-1"&gt;Backup keys&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-1"&gt;
+&lt;p&gt;
+Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+cp -r ~/.gnupg ~/gpg-backup/dot-gnupg-backup
+gpg --armor --export &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/public_key.gpg
+gpg --armor --export-secret-key &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/secret_key.gpg
+gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
+gpg -a --export-secret-subkeys &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/sub_keys/secret_subkeys.gpg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
+&lt;h3 id="sec-4-2"&gt;Delete primary secret key&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-2"&gt;
+&lt;p&gt;
+Delete secret key:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --delete-secret-keys &amp;lt;key-id&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Import secret sub-keys:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --import secret_subkeys.gpg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-4-2-1" class="outline-4"&gt;
+&lt;h4 id="sec-4-2-1"&gt;Create "laptop keys"&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-4-2-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg -a --export &amp;lt;key-id&amp;gt; &amp;gt; laptop_keys_public.gpg
+gpg -a --export-secret-keys &amp;lt;key-id&amp;gt; &amp;gt; laptop_keys_secret.gpg
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-4-3" class="outline-3"&gt;
+&lt;h3 id="sec-4-3"&gt;Upload your keys&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --expert --edit-key &amp;lt;key-id&amp;gt;
 gpg&amp;gt; toggle
 gpg&amp;gt; key 1
@@ -356,16 +448,17 @@ gpg&amp;gt; save
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;Send your public key to keyserver&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;Send your public key to keyserver&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --send-key &amp;lt;key-id&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8" class="outline-2"&gt;
-&lt;h2 id="sec-8"&gt;Remove new keys from keyring&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;div id="outline-container-sec-6" class="outline-2"&gt;
+&lt;h2 id="sec-6"&gt;Remove new keys from keyring&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --delete-secret-keys &amp;lt;key-id&amp;gt;
 gpg --delete-key &amp;lt;key-id&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -387,18 +480,21 @@ gpg&amp;gt; trust
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-9" class="outline-2"&gt;
-&lt;h2 id="sec-9"&gt;Configure `pass'&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-9"&gt;
+&lt;div id="outline-container-sec-7" class="outline-2"&gt;
+&lt;h2 id="sec-7"&gt;Configure `pass'&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pass init &amp;lt;key-id&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-10" class="outline-2"&gt;
-&lt;h2 id="sec-10"&gt;Reference&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-10"&gt;
-&lt;p&gt;
-&lt;a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/"&gt;https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/&lt;/a&gt;
-&lt;/p&gt;
+&lt;div id="outline-container-sec-8" class="outline-2"&gt;
+&lt;h2 id="sec-8"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf"&gt;https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/"&gt;https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><category>gpg</category><category>pass</category><category>yubikey</category><guid>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</guid><pubDate>Fri, 23 Sep 2016 15:39:19 GMT</pubDate></item></channel></rss>

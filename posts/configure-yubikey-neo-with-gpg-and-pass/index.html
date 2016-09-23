@@ -90,15 +90,34 @@ article: http://ogp.me/ns/article#
 <li><a href="#sec-1-2">Xorg environment</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">Create GPG keys</a></li>
-<li><a href="#sec-3">Backup keys</a></li>
-<li><a href="#sec-4">Delete primary secret key</a></li>
-<li><a href="#sec-5">Create "laptop keys"</a></li>
-<li><a href="#sec-6">Upload keys to GPG card</a></li>
-<li><a href="#sec-7">Send your public key to keyserver</a></li>
-<li><a href="#sec-8">Remove new keys from keyring</a></li>
-<li><a href="#sec-9">Configure `pass'</a></li>
-<li><a href="#sec-10">Reference</a></li>
+<li>
+<a href="#sec-2">Create GPG keys</a>
+<ul>
+<li><a href="#sec-2-1">Optionally add your picture</a></li>
+</ul>
+</li>
+<li>
+<a href="#sec-3">Configure your Yubikey</a>
+<ul>
+<li><a href="#sec-3-1">Resetting defaults</a></li>
+<li><a href="#sec-3-2">Test</a></li>
+<li><a href="#sec-3-3">Configuration</a></li>
+<li><a href="#sec-3-4">Default PINs</a></li>
+<li><a href="#sec-3-5">Identification details</a></li>
+</ul>
+</li>
+<li>
+<a href="#sec-4">Upload keys to GPG card</a>
+<ul>
+<li><a href="#sec-4-1">Backup keys</a></li>
+<li><a href="#sec-4-2">Delete primary secret key</a></li>
+<li><a href="#sec-4-3">Upload your keys</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">Send your public key to keyserver</a></li>
+<li><a href="#sec-6">Remove new keys from keyring</a></li>
+<li><a href="#sec-7">Configure `pass'</a></li>
+<li><a href="#sec-8">References</a></li>
 </ul>
 </div>
 </div>
@@ -266,7 +285,6 @@ To test this behavior:
 </div>
 </div>
 </div>
-
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Create GPG keys</h2>
 <div class="outline-text-2" id="text-2">
@@ -331,67 +349,30 @@ gpg&gt; addkey
 Key is protected.
 
 [...]
+
+gpg&gt; save
+</pre></div>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Optionally add your picture</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="highlight"><pre><span></span>gpg --edit-key &lt;key-id&gt;
+addphoto
+
+[...]
+
+save
 </pre></div>
 </div>
 </div>
-
+</div>
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Backup keys</h2>
+<h2 id="sec-3">Configure your Yubikey</h2>
 <div class="outline-text-2" id="text-3">
-<p>
-Backup private key:
-</p>
-<div class="highlight"><pre><span></span>gpg --armor --export-secret-key &lt;key-id&gt; &gt; secretkey.gpg
-</pre></div>
-
-<p>
-Backup revocation certificate for the primary key:
-</p>
-<div class="highlight"><pre><span></span>gpg --armor --gen-revoke &lt;key-id&gt; &gt; recovation.gpg
-</pre></div>
-
-<p>
-Backup public key:
-</p>
-<div class="highlight"><pre><span></span>gpg --armor --export &lt;key-id&gt; &gt; pubkey.gpg
-</pre></div>
 </div>
-</div>
-
-
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Delete primary secret key</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-Export secret subkeys:
-</p>
-<div class="highlight"><pre><span></span>gpg -a --export-secret-subkeys &lt;key-id&gt; &gt; secretsubkeys.gpg
-</pre></div>
-
-<p>
-Delete secret key:
-</p>
-<div class="highlight"><pre><span></span>gpg --delete-secret-keys &lt;key-id&gt;
-</pre></div>
-
-<p>
-Import secret sub-keys:
-</p>
-<div class="highlight"><pre><span></span>gpg --import secret_subkeys.gpg
-</pre></div>
-</div>
-</div>
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Create "laptop keys"</h2>
-<div class="outline-text-2" id="text-5">
-<div class="highlight"><pre><span></span>gpg -a --export &lt;key-id&gt; &gt; laptop_keys_public.gpg
-gpg -a --export-secret-keys &lt;key-id&gt; &gt; laptop_keys_secret.gpg
-</pre></div>
-</div>
-</div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">Upload keys to GPG card</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">Resetting defaults</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Optionally you may reset the status of your yubikey by doing this:
 </p>
@@ -410,17 +391,135 @@ scd apdu 00 e6 00 00
 scd apdu 00 44 00 00
 /echo Card has been successfully reset.
 EOF
+
+gpg-connect-agent -r /tmp/reset_yubikey
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2">Test</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+List devices
+</p>
+<div class="highlight"><pre><span></span>ykneomgr -l
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3">Configuration</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Configure for HID/CCID with touch eject
+</p>
+<div class="highlight"><pre><span></span>ykneomgr -M 82
 </pre></div>
 
-<div class="highlight"><pre><span></span>gpg-connect-agent -r /tmp/reset_yubikey
+<p>
+Configure key for OTP/U2F/CCID composite device with touch eject.
+</p>
+<div class="highlight"><pre><span></span>ykpersonalize -m 86
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4">Default PINs</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+The default PIN is <code>123456</code> and the default admin PIN is <code>12345678</code>.
+</p>
+
+<p>
+To change the default admin PIN perform the following:
+</p>
+<div class="highlight"><pre><span></span>gpg --card-edit
+admin
+passwd
+3
+12345678
+&lt;confirm new admin PIN&gt;
+&lt;confirm new admin PIN&gt;
 </pre></div>
 
+<p>
+To change the default PIN
+</p>
+<div class="highlight"><pre><span></span>gpg --card-edit
+admin
+passwd
+1
+123456
+&lt;confirm new PIN&gt;
+&lt;confirm new PIN&gt;
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5">Identification details</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Your key stores personal information, to customize it follow these steps:
+</p>
+<div class="highlight"><pre><span></span>gpg --card-edit
+admin
+name
+sex
+lang
+url
+list
+quit
+</pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Upload keys to GPG card</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Backup keys</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
+</p>
+<div class="highlight"><pre><span></span>mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+cp -r ~/.gnupg ~/gpg-backup/dot-gnupg-backup
+gpg --armor --export &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/public_key.gpg
+gpg --armor --export-secret-key &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/secret_key.gpg
+gpg --armor --gen-revoke &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
+gpg -a --export-secret-subkeys &lt;key-id&gt; &gt; ~/gpg_backup/sub_keys/secret_subkeys.gpg
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">Delete primary secret key</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Delete secret key:
+</p>
+<div class="highlight"><pre><span></span>gpg --delete-secret-keys &lt;key-id&gt;
+</pre></div>
 
 <p>
-#+end<sub>src</sub></p>
+Import secret sub-keys:
+</p>
+<div class="highlight"><pre><span></span>gpg --import secret_subkeys.gpg
+</pre></div>
+</div>
+<div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1">Create "laptop keys"</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<div class="highlight"><pre><span></span>gpg -a --export &lt;key-id&gt; &gt; laptop_keys_public.gpg
+gpg -a --export-secret-keys &lt;key-id&gt; &gt; laptop_keys_secret.gpg
+</pre></div>
+</div>
+</div>
+</div>
 
-<p>
-#+end<sub>src</sub></p>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3">Upload your keys</h3>
+<div class="outline-text-3" id="text-4-3">
 <div class="highlight"><pre><span></span>gpg --expert --edit-key &lt;key-id&gt;
 gpg&gt; toggle
 gpg&gt; key 1
@@ -436,16 +535,17 @@ gpg&gt; save
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">Send your public key to keyserver</h2>
-<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Send your public key to keyserver</h2>
+<div class="outline-text-2" id="text-5">
 <div class="highlight"><pre><span></span>gpg --send-key &lt;key-id&gt;
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">Remove new keys from keyring</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Remove new keys from keyring</h2>
+<div class="outline-text-2" id="text-6">
 <div class="highlight"><pre><span></span>gpg --delete-secret-keys &lt;key-id&gt;
 gpg --delete-key &lt;key-id&gt;
 </pre></div>
@@ -467,19 +567,24 @@ gpg&gt; trust
 </div>
 </div>
 
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9">Configure `pass'</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Configure `pass'</h2>
+<div class="outline-text-2" id="text-7">
 <div class="highlight"><pre><span></span>pass init &lt;key-id&gt;
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10">Reference</h2>
-<div class="outline-text-2" id="text-10">
-<p>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">References</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>
+<a href="https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf">https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf</a>
+</li>
+<li>
 <a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/">https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</a>
-</p>
+</li>
+</ul>
 </div>
 </div>
     </div>
