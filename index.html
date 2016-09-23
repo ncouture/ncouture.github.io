@@ -438,12 +438,12 @@ quit
 <p>
 Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
 </p>
-<div class="highlight"><pre><span></span>mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+<div class="highlight"><pre><span></span>mkdir -p ~/gpg_backup/{primary_keys,sub_keys,laptop_keys}
 cp -r ~/.gnupg ~/gpg_backup/dot-gnupg-backup
 gpg --armor --export &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/public_key.gpg
 gpg --armor --export-secret-key &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/secret_key.gpg
-gpg --armor --gen-revoke &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
 gpg -a --export-secret-subkeys &lt;key-id&gt; &gt; ~/gpg_backup/sub_keys/secret_subkeys.gpg
+gpg --armor --gen-revoke &lt;key-id&gt; &gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
 </pre></div>
 </div>
 </div>

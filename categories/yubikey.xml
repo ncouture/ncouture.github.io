@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture
-.github.io (yubikey)</title><link>https://ncouture.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://ncouture.github.io/categories/yubikey.xml"></atom:link><language>en</language><lastBuildDate>Fri, 23 Sep 2016 18:24:59 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
+.github.io (yubikey)</title><link>https://ncouture.github.io/</link><description></description><atom:link rel="self" href="https://ncouture.github.io/categories/yubikey.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 23 Sep 2016 18:30:11 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
@@ -367,12 +367,12 @@ quit
 &lt;p&gt;
 Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
 &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/gpg_backup/{primary_keys,sub_keys,laptop_keys}
 cp -r ~/.gnupg ~/gpg_backup/dot-gnupg-backup
 gpg --armor --export &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/public_key.gpg
 gpg --armor --export-secret-key &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/secret_key.gpg
-gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
 gpg -a --export-secret-subkeys &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/sub_keys/secret_subkeys.gpg
+gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

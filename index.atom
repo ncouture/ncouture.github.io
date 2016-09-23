@@ -4,7 +4,7 @@
   <title>ncouture
 .github.io</title>
   <id>https://ncouture.github.io/index.atom</id>
-  <updated>2016-09-23T18:24:59Z</updated>
+  <updated>2016-09-23T18:30:11Z</updated>
   <author>
     <name>Nicolas Couture</name>
   </author>
@@ -387,12 +387,12 @@ quit
 &lt;p&gt;
 Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
 &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir -p ~/gpg_backup/{primary_keys,sub_keys,laptop_keys}
 cp -r ~/.gnupg ~/gpg_backup/dot-gnupg-backup
 gpg --armor --export &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/public_key.gpg
 gpg --armor --export-secret-key &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/secret_key.gpg
-gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
 gpg -a --export-secret-subkeys &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/sub_keys/secret_subkeys.gpg
+gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_keys/recovation_cert.gpg
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
