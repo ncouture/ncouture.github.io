@@ -130,7 +130,7 @@ ssh user@somehost-allowing-somekey-logins
 ssh user@somehost-allowing-somekey-logins
 #+end_src
 * Create GPG keys
-Generate a certification key:
+Generate master key:
 #+begin_src text
 gpg --expert --gen-key
 
@@ -145,38 +145,8 @@ Please select what kind of key you want:
    (4) RSA (sign only)
    (7) DSA (set your own capabilities)
    (8) RSA (set your own capabilities)
-Your selection? 8
+Your selection? 4
 
-Possible actions for a RSA key: Sign Certify Encrypt Authenticate
-Current allowed actions: Sign Certify Encrypt
-
-   (S) Toggle the sign capability
-   (E) Toggle the encrypt capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection? E
-
-Possible actions for a RSA key: Sign Certify Encrypt Authenticate
-Current allowed actions: Sign Certify
-
-   (S) Toggle the sign capability
-   (E) Toggle the encrypt capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection? S
-
-Possible actions for a RSA key: Sign Certify Encrypt Authenticate
-Current allowed actions: Certify
-
-   (S) Toggle the sign capability
-   (E) Toggle the encrypt capability
-   (A) Toggle the authenticate capability
-   (A) Toggle the authenticate capability
-   (Q) Finished
-
-Your selection? Q
 
 [...]
 #+end_src
@@ -279,27 +249,11 @@ quit
 Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
 #+begin_src shell
 mkdir -p ~/gpg-backup/{primary_keys,sub_keys,laptop_keys}
-cp -r ~/.gnupg ~/gpg-backup/dot-gnupg-backup
+cp -r ~/.gnupg ~/gpg_backup/dot-gnupg-backup
 gpg --armor --export <key-id> > ~/gpg_backup/primary_keys/public_key.gpg
 gpg --armor --export-secret-key <key-id> > ~/gpg_backup/primary_keys/secret_key.gpg
 gpg --armor --gen-revoke <key-id> > ~/gpg_backup/primary_keys/recovation_cert.gpg
 gpg -a --export-secret-subkeys <key-id> > ~/gpg_backup/sub_keys/secret_subkeys.gpg
-#+end_src
-
-** Delete primary secret key
-Delete secret key:
-#+begin_src shell
-gpg --delete-secret-keys <key-id>
-#+end_src
-
-Import secret sub-keys:
-#+begin_src shell
-gpg --import secret_subkeys.gpg
-#+end_src
-*** Create "laptop keys"
-#+begin_src shell
-gpg -a --export <key-id> > laptop_keys_public.gpg
-gpg -a --export-secret-keys <key-id> > laptop_keys_secret.gpg
 #+end_src
 
 ** Upload your keys
@@ -316,6 +270,49 @@ gpg> key 2
 gpg> key 3
 gpg> keytocard
 gpg> save
+#+end_src
+
+** Delete primary secret key
+Confirm you're using your primary key:
+#+begin_src shell
+$ gpg -K
+/home/self/.gnupg/secring.gpg
+-----------------------------
+sec   2048R/2883A65F 2016-09-23
+uid                  Nicolas Couture <nicolas.couture@gmail.com>
+uid                  [jpeg image of size 27968]
+ssb   2048R/78D783BC 2016-09-23
+ssb   2048R/20D87F97 2016-09-23
+ssb   2048R/71F7D661 2016-09-23
+#+end_src
+*** Delete secret key:
+#+begin_src shell
+gpg --delete-secret-keys <key-id>
+$ gpg -K  # observe change
+#+end_src
+
+Import secret sub-keys:
+#+begin_src shell
+gpg --import ~/gpg_backup/sub_keys/secret_subkeys.gpg
+#+end_src
+
+In the output of =gpg -K=, a *#* after the letters *sec* means that the secret key is not usable.
+
+Using =gpg -K=, confirm you're no longer using your primary key:
+#+begin_src shell
+$ gpg -K
+/home/self/.gnupg/secring.gpg
+-----------------------------
+sec#  2048R/2883A65F 2016-09-23
+uid                  Nicolas Couture <nicolas.couture@gmail.com>
+ssb   2048R/78D783BC 2016-09-23
+ssb   2048R/20D87F97 2016-09-23
+ssb   2048R/71F7D661 2016-09-23
+#+end_src
+*** Create "laptop keys"
+#+begin_src shell
+gpg -a --export <key-id> > ~/gpg_backup/laptop_keys/public_key.gpg
+gpg -a --export-secret-keys <key-id> > ~/gpg_backup/laptop_keys/secret_key_laptop.gpg
 #+end_src
 * Send your public key to keyserver
 #+begin_src shell
@@ -345,5 +342,6 @@ gpg> trust
 pass init <key-id>
 #+end_src
 * References
+- https://developers.yubico.com/PGP/Importing_keys.html
 - https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf
 - https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/
