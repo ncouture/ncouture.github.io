@@ -15,7 +15,12 @@
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 num:nil toc:2
 
+* Headline
+Bonjour ca c'est mon post.
 
+- patates
+- oranges
+- banannes
 
 These are my personal notes, refer to the official documentation for complete details.
 
@@ -242,7 +247,7 @@ builtins:
 #+end_src
 
 #+begin_src shell
-remote_api_shell.py -s <project>.appspot.com
+remote_api_shell.py -s <project-id>.appspot.com
 #+end_src
 
 ref: https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
