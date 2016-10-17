@@ -1,125 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
-.github.io (gcloud)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/gcloud.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 23 Sep 2016 15:42:46 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+.github.io (gcloud)</title><link>https://ncouture.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://ncouture.github.io/categories/gcloud.xml"></atom:link><language>en</language><lastBuildDate>Mon, 17 Oct 2016 21:25:49 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1"&gt;Google Cloud Commands&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1"&gt;Headline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2"&gt;Google Cloud Commands&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2"&gt;Configuration&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3"&gt;Configuration&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-1"&gt;Install Google Cloud SDK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-2"&gt;Install App Engine Python Standard Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-3"&gt;List Available Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-4"&gt;Update Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-5"&gt;Install App Engine Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-6"&gt;GCloud Authentication&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-7"&gt;Configure Default Command Line Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-1"&gt;Install Google Cloud SDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-2"&gt;Install App Engine Python Standard Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-3"&gt;List Available Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-4"&gt;Update Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-5"&gt;Install App Engine Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-6"&gt;GCloud Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-7"&gt;Configure Default Command Line Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3"&gt;Cloud Storage&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4"&gt;Cloud Storage&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-1"&gt;Create a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-2"&gt;List files in a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-3"&gt;Synchronize buckets and directories files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-4"&gt;Cloud Storage ACL with gsutil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-1"&gt;Create a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-2"&gt;List files in a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-3"&gt;Synchronize buckets and directories files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-4"&gt;Cloud Storage ACL with gsutil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4"&gt;Compute Engine&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5"&gt;Compute Engine&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-1"&gt;Copy files to/from a Compute Engine instance&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-2"&gt;List Compute Engine Instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-3"&gt;Connect via SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-1"&gt;Copy files to/from a Compute Engine instance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-2"&gt;List Compute Engine Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-3"&gt;Connect via SSH&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5"&gt;App Engine&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6"&gt;App Engine&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-1"&gt;Deploy Application&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-2"&gt;Run Python App Engine application locally&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-3"&gt;List App Engine Instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-4"&gt;Read App Engine Logs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-5"&gt;Stop App&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-6"&gt;Spawn a remote Python shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-1"&gt;Deploy Application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-2"&gt;Run Python App Engine application locally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-3"&gt;List App Engine Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-4"&gt;Read App Engine Logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-5"&gt;Stop App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-6"&gt;Spawn a remote Python shell&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6"&gt;Cloud DNS&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7"&gt;Cloud DNS&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7"&gt;Google Cloud Commands&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8"&gt;Google Cloud Commands&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8"&gt;Configuration&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9"&gt;Configuration&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-1"&gt;Install Google Cloud SDK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-2"&gt;Install App Engine Python Standard Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-3"&gt;List Available Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-4"&gt;Update Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-5"&gt;Install App Engine Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-6"&gt;GCloud Authentication&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-7"&gt;Configure Default Command Line Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-1"&gt;Install Google Cloud SDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-2"&gt;Install App Engine Python Standard Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-3"&gt;List Available Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-4"&gt;Update Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-5"&gt;Install App Engine Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-6"&gt;GCloud Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-7"&gt;Configure Default Command Line Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9"&gt;Cloud Storage&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10"&gt;Cloud Storage&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-1"&gt;Create a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-2"&gt;List files in a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-3"&gt;Synchronize buckets and directories files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-4"&gt;Cloud Storage ACL with gsutil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-9-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-1"&gt;Create a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-2"&gt;List files in a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-3"&gt;Synchronize buckets and directories files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-4"&gt;Cloud Storage ACL with gsutil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10"&gt;Compute Engine&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11"&gt;Compute Engine&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-1"&gt;Copy files to/from a Compute Engine instance&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-2"&gt;List Compute Engine Instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-10-3"&gt;Connect via SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-1"&gt;Copy files to/from a Compute Engine instance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-2"&gt;List Compute Engine Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-3"&gt;Connect via SSH&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11"&gt;App Engine&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12"&gt;App Engine&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-1"&gt;Deploy Application&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-2"&gt;Update Python App Engine application&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-3"&gt;Run Python App Engine application locally&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-4"&gt;List App Engine Instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-5"&gt;Read App Engine Logs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-11-6"&gt;Stop App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-1"&gt;Deploy Application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-2"&gt;Update Python App Engine application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-3"&gt;Run Python App Engine application locally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-4"&gt;List App Engine Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-5"&gt;Read App Engine Logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-6"&gt;Stop App&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12"&gt;Cloud DNS&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-13"&gt;Cloud DNS&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-12-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-13-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-13-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-13-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-14"&gt;BigQuery&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-14-1"&gt;Default Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-14-2"&gt;Interactive Shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-14-3"&gt;List common flags&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Headline&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+Bonjour ca c'est mon post.
+&lt;/p&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;patates
+&lt;/li&gt;
+&lt;li&gt;oranges
+&lt;/li&gt;
+&lt;li&gt;banannes
+&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;p&gt;
 These are my personal notes, refer to the official documentation for complete details.
 &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Google Cloud Commands&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;Google Cloud Commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
 &lt;p&gt;
 All Google Cloud commands are &lt;span class="underline"&gt;self-documented&lt;/span&gt;, most ship with Bash and Zsh auto-completion profiles.
 &lt;/p&gt;
@@ -128,9 +155,9 @@ All Google Cloud commands are &lt;span class="underline"&gt;self-documented&lt;/
 Their official documentation is available online at &lt;a href="https://cloud.google.com/sdk/gcloud/reference/"&gt;https://cloud.google.com/sdk/gcloud/reference/&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
+&lt;h3 id="sec-2-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-1"&gt;
 &lt;p&gt;
 You can use gcloud to create and manage:
 &lt;/p&gt;
@@ -156,9 +183,9 @@ You can use gcloud to create and manage:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
-&lt;h3 id="sec-1-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
+&lt;h3 id="sec-2-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-2"&gt;
 &lt;p&gt;
 You can use gsutil to:
 &lt;/p&gt;
@@ -176,26 +203,26 @@ You can use gsutil to:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-1-3" class="outline-3"&gt;
-&lt;h3 id="sec-1-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
+&lt;h3 id="sec-2-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-3"&gt;
 &lt;p&gt;
 You can use bq to manage datasets, tables and other entities in BigQuery, as well as run
 queries on your data.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-1-4" class="outline-3"&gt;
-&lt;h3 id="sec-1-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-4"&gt;
+&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
+&lt;h3 id="sec-2-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-4"&gt;
 &lt;p&gt;
 Manage App Engine instances.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-1-5" class="outline-3"&gt;
-&lt;h3 id="sec-1-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-5"&gt;
+&lt;div id="outline-container-sec-2-5" class="outline-3"&gt;
+&lt;h3 id="sec-2-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2-5"&gt;
 &lt;p&gt;
 Local App Engine development server.
 &lt;/p&gt;
@@ -203,12 +230,12 @@ Local App Engine development server.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Configuration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
-&lt;h3 id="sec-2-1"&gt;Install Google Cloud SDK&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;Configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
+&lt;h3 id="sec-3-1"&gt;Install Google Cloud SDK&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl https://sdk.cloud.google.com | bash
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -247,17 +274,17 @@ hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
-&lt;h3 id="sec-2-2"&gt;Install App Engine Python Standard Environment&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
+&lt;h3 id="sec-3-2"&gt;Install App Engine Python Standard Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components install app-engine-python
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
-&lt;h3 id="sec-2-3"&gt;List Available Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
+&lt;h3 id="sec-3-3"&gt;List Available Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components list
 
 Your current Cloud SDK version is: 123.0.0
@@ -291,16 +318,16 @@ To update your SDK installation to the latest version [123.0.0], run:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
-&lt;h3 id="sec-2-4"&gt;Update Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-4"&gt;
+&lt;div id="outline-container-sec-3-4" class="outline-3"&gt;
+&lt;h3 id="sec-3-4"&gt;Update Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components update
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-5" class="outline-3"&gt;
-&lt;h3 id="sec-2-5"&gt;Install App Engine Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-5"&gt;
+&lt;div id="outline-container-sec-3-5" class="outline-3"&gt;
+&lt;h3 id="sec-3-5"&gt;Install App Engine Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components install app-engine-python gcd-emulator pubsub-emulator cloud-datastore-emulator
 
 
@@ -322,9 +349,9 @@ Installing components from version: 123.0.0
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-6" class="outline-3"&gt;
-&lt;h3 id="sec-2-6"&gt;GCloud Authentication&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-6"&gt;
+&lt;div id="outline-container-sec-3-6" class="outline-3"&gt;
+&lt;h3 id="sec-3-6"&gt;GCloud Authentication&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-6"&gt;
 &lt;p&gt;
 Project-level authentication:
 &lt;/p&gt;
@@ -332,42 +359,42 @@ Project-level authentication:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-7" class="outline-3"&gt;
-&lt;h3 id="sec-2-7"&gt;Configure Default Command Line Project&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-7"&gt;
+&lt;div id="outline-container-sec-3-7" class="outline-3"&gt;
+&lt;h3 id="sec-3-7"&gt;Configure Default Command Line Project&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3-7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud config set project &amp;lt;project ID&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;Cloud Storage&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
-&lt;h3 id="sec-3-1"&gt;Create a Cloud Storage bucket&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;div id="outline-container-sec-4" class="outline-2"&gt;
+&lt;h2 id="sec-4"&gt;Cloud Storage&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
+&lt;h3 id="sec-4-1"&gt;Create a Cloud Storage bucket&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil mb gs://&amp;lt;bucket name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
-&lt;h3 id="sec-3-2"&gt;List files in a Cloud Storage bucket&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-2"&gt;
+&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
+&lt;h3 id="sec-4-2"&gt;List files in a Cloud Storage bucket&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil ls gs://&amp;lt;bucket&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
-&lt;h3 id="sec-3-3"&gt;Synchronize buckets and directories files&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-3"&gt;
+&lt;div id="outline-container-sec-4-3" class="outline-3"&gt;
+&lt;h3 id="sec-4-3"&gt;Synchronize buckets and directories files&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil -m rsync --help
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-4" class="outline-3"&gt;
-&lt;h3 id="sec-3-4"&gt;Cloud Storage ACL with gsutil&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-4"&gt;
+&lt;div id="outline-container-sec-4-4" class="outline-3"&gt;
+&lt;h3 id="sec-4-4"&gt;Cloud Storage ACL with gsutil&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-4"&gt;
 &lt;p&gt;
 Make bucket files world-readable:
 &lt;/p&gt;
@@ -375,9 +402,9 @@ Make bucket files world-readable:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-5" class="outline-3"&gt;
-&lt;h3 id="sec-3-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-5"&gt;
+&lt;div id="outline-container-sec-4-5" class="outline-3"&gt;
+&lt;h3 id="sec-4-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4-5"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage"&gt;https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage&lt;/a&gt;
 &lt;/li&gt;
@@ -385,44 +412,44 @@ Make bucket files world-readable:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;Compute Engine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
-&lt;h3 id="sec-4-1"&gt;Copy files to/from a Compute Engine instance&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-1"&gt;
+&lt;div id="outline-container-sec-5" class="outline-2"&gt;
+&lt;h2 id="sec-5"&gt;Compute Engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-5-1" class="outline-3"&gt;
+&lt;h3 id="sec-5-1"&gt;Copy files to/from a Compute Engine instance&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute copy-files [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
-&lt;h3 id="sec-4-2"&gt;List Compute Engine Instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-2"&gt;
+&lt;div id="outline-container-sec-5-2" class="outline-3"&gt;
+&lt;h3 id="sec-5-2"&gt;List Compute Engine Instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute instances list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4-3" class="outline-3"&gt;
-&lt;h3 id="sec-4-3"&gt;Connect via SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-3"&gt;
+&lt;div id="outline-container-sec-5-3" class="outline-3"&gt;
+&lt;h3 id="sec-5-3"&gt;Connect via SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute ssh &amp;lt;instance name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;App Engine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-5"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-5-1" class="outline-3"&gt;
-&lt;h3 id="sec-5-1"&gt;Deploy Application&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-1"&gt;
+&lt;div id="outline-container-sec-6" class="outline-2"&gt;
+&lt;h2 id="sec-6"&gt;App Engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-6-1" class="outline-3"&gt;
+&lt;h3 id="sec-6-1"&gt;Deploy Application&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;appcfg.py update -A &amp;lt;project ID&amp;gt; -V &amp;lt;version&amp;gt; &amp;lt;src&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-2" class="outline-3"&gt;
-&lt;h3 id="sec-5-2"&gt;Run Python App Engine application locally&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-2"&gt;
+&lt;div id="outline-container-sec-6-2" class="outline-3"&gt;
+&lt;h3 id="sec-6-2"&gt;Run Python App Engine application locally&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dev_appserver.py &amp;lt;src&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -446,30 +473,30 @@ with both:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-3" class="outline-3"&gt;
-&lt;h3 id="sec-5-3"&gt;List App Engine Instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-3"&gt;
+&lt;div id="outline-container-sec-6-3" class="outline-3"&gt;
+&lt;h3 id="sec-6-3"&gt;List App Engine Instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app instances list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-4" class="outline-3"&gt;
-&lt;h3 id="sec-5-4"&gt;Read App Engine Logs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-4"&gt;
+&lt;div id="outline-container-sec-6-4" class="outline-3"&gt;
+&lt;h3 id="sec-6-4"&gt;Read App Engine Logs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app logs read
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-5" class="outline-3"&gt;
-&lt;h3 id="sec-5-5"&gt;Stop App&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-5"&gt;
+&lt;div id="outline-container-sec-6-5" class="outline-3"&gt;
+&lt;h3 id="sec-6-5"&gt;Stop App&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute instances stop &amp;lt;instance-name&amp;gt; &amp;lt;instance-name&amp;gt; ...
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-6" class="outline-3"&gt;
-&lt;h3 id="sec-5-6"&gt;Spawn a remote Python shell&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-6"&gt;
+&lt;div id="outline-container-sec-6-6" class="outline-3"&gt;
+&lt;h3 id="sec-6-6"&gt;Spawn a remote Python shell&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6-6"&gt;
 &lt;p&gt;
 In order to have access to the remote&lt;sub&gt;api&lt;/sub&gt;, it must first be deployed with the option enabled&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;:
 &lt;/p&gt;
@@ -477,7 +504,7 @@ In order to have access to the remote&lt;sub&gt;api&lt;/sub&gt;, it must first b
   - remote_api: on
 &lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;remote_api_shell.py -s &amp;lt;project&amp;gt;.appspot.com
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;remote_api_shell.py -s &amp;lt;project-id&amp;gt;.appspot.com
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -486,12 +513,12 @@ ref: &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;Cloud DNS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-6"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-6-1" class="outline-3"&gt;
-&lt;h3 id="sec-6-1"&gt;List Managed Zones&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-1"&gt;
+&lt;div id="outline-container-sec-7" class="outline-2"&gt;
+&lt;h2 id="sec-7"&gt;Cloud DNS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
+&lt;h3 id="sec-7-1"&gt;List Managed Zones&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -504,16 +531,16 @@ example-zone      example.com.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-6-2" class="outline-3"&gt;
-&lt;h3 id="sec-6-2"&gt;Describe Existing Zone&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-2"&gt;
+&lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
+&lt;h3 id="sec-7-2"&gt;Describe Existing Zone&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones describe &amp;lt;zone-name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-6-3" class="outline-3"&gt;
-&lt;h3 id="sec-6-3"&gt;Add DNS Record&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-3"&gt;
+&lt;div id="outline-container-sec-7-3" class="outline-3"&gt;
+&lt;h3 id="sec-7-3"&gt;Add DNS Record&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-3"&gt;
 &lt;p&gt;
 Here is an example of creating a CNAME record named &lt;span class="underline"&gt;my-cname.example.com&lt;/span&gt; that points to &lt;span class="underline"&gt;cname.value.example.org&lt;/span&gt;
 &lt;/p&gt;
@@ -563,9 +590,9 @@ gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;Google Cloud Commands&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;div id="outline-container-sec-8" class="outline-2"&gt;
+&lt;h2 id="sec-8"&gt;Google Cloud Commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-8"&gt;
 &lt;p&gt;
 All Google Cloud commands are &lt;span class="underline"&gt;self-documented&lt;/span&gt;, most ship with Bash and Zsh auto-completion profiles.
 &lt;/p&gt;
@@ -574,9 +601,9 @@ All Google Cloud commands are &lt;span class="underline"&gt;self-documented&lt;/
 Their official documentation is available online at &lt;a href="https://cloud.google.com/sdk/gcloud/reference/"&gt;https://cloud.google.com/sdk/gcloud/reference/&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
-&lt;h3 id="sec-7-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-1"&gt;
+&lt;div id="outline-container-sec-8-1" class="outline-3"&gt;
+&lt;h3 id="sec-8-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-1"&gt;
 &lt;p&gt;
 You can use gcloud to create and manage:
 &lt;/p&gt;
@@ -602,9 +629,9 @@ You can use gcloud to create and manage:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
-&lt;h3 id="sec-7-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-2"&gt;
+&lt;div id="outline-container-sec-8-2" class="outline-3"&gt;
+&lt;h3 id="sec-8-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-2"&gt;
 &lt;p&gt;
 You can use gsutil to:
 &lt;/p&gt;
@@ -622,26 +649,26 @@ You can use gsutil to:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-7-3" class="outline-3"&gt;
-&lt;h3 id="sec-7-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-3"&gt;
+&lt;div id="outline-container-sec-8-3" class="outline-3"&gt;
+&lt;h3 id="sec-8-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-3"&gt;
 &lt;p&gt;
 You can use bq to manage datasets, tables and other entities in BigQuery, as well as run
 queries on your data.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-4" class="outline-3"&gt;
-&lt;h3 id="sec-7-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-4"&gt;
+&lt;div id="outline-container-sec-8-4" class="outline-3"&gt;
+&lt;h3 id="sec-8-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-4"&gt;
 &lt;p&gt;
 Manage App Engine instances.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-5" class="outline-3"&gt;
-&lt;h3 id="sec-7-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-5"&gt;
+&lt;div id="outline-container-sec-8-5" class="outline-3"&gt;
+&lt;h3 id="sec-8-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-5"&gt;
 &lt;p&gt;
 Local App Engine development server.
 &lt;/p&gt;
@@ -649,12 +676,12 @@ Local App Engine development server.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-8" class="outline-2"&gt;
-&lt;h2 id="sec-8"&gt;Configuration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-8-1" class="outline-3"&gt;
-&lt;h3 id="sec-8-1"&gt;Install Google Cloud SDK&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-1"&gt;
+&lt;div id="outline-container-sec-9" class="outline-2"&gt;
+&lt;h2 id="sec-9"&gt;Configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-9"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-9-1" class="outline-3"&gt;
+&lt;h3 id="sec-9-1"&gt;Install Google Cloud SDK&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl https://sdk.cloud.google.com | bash
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -693,17 +720,17 @@ hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-8-2" class="outline-3"&gt;
-&lt;h3 id="sec-8-2"&gt;Install App Engine Python Standard Environment&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-2"&gt;
+&lt;div id="outline-container-sec-9-2" class="outline-3"&gt;
+&lt;h3 id="sec-9-2"&gt;Install App Engine Python Standard Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components install app-engine-python
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-8-3" class="outline-3"&gt;
-&lt;h3 id="sec-8-3"&gt;List Available Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-3"&gt;
+&lt;div id="outline-container-sec-9-3" class="outline-3"&gt;
+&lt;h3 id="sec-9-3"&gt;List Available Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components list
 
 Your current Cloud SDK version is: 123.0.0
@@ -737,16 +764,16 @@ To update your SDK installation to the latest version [123.0.0], run:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-4" class="outline-3"&gt;
-&lt;h3 id="sec-8-4"&gt;Update Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-4"&gt;
+&lt;div id="outline-container-sec-9-4" class="outline-3"&gt;
+&lt;h3 id="sec-9-4"&gt;Update Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components update
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-5" class="outline-3"&gt;
-&lt;h3 id="sec-8-5"&gt;Install App Engine Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-5"&gt;
+&lt;div id="outline-container-sec-9-5" class="outline-3"&gt;
+&lt;h3 id="sec-9-5"&gt;Install App Engine Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components install app-engine-python gcd-emulator pubsub-emulator cloud-datastore-emulator
 
 
@@ -768,9 +795,9 @@ Installing components from version: 123.0.0
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-6" class="outline-3"&gt;
-&lt;h3 id="sec-8-6"&gt;GCloud Authentication&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-6"&gt;
+&lt;div id="outline-container-sec-9-6" class="outline-3"&gt;
+&lt;h3 id="sec-9-6"&gt;GCloud Authentication&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-6"&gt;
 &lt;p&gt;
 Project-level authentication:
 &lt;/p&gt;
@@ -778,42 +805,42 @@ Project-level authentication:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-7" class="outline-3"&gt;
-&lt;h3 id="sec-8-7"&gt;Configure Default Command Line Project&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-7"&gt;
+&lt;div id="outline-container-sec-9-7" class="outline-3"&gt;
+&lt;h3 id="sec-9-7"&gt;Configure Default Command Line Project&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9-7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud config set project &amp;lt;project ID&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-9" class="outline-2"&gt;
-&lt;h2 id="sec-9"&gt;Cloud Storage&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-9"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-9-1" class="outline-3"&gt;
-&lt;h3 id="sec-9-1"&gt;Create a Cloud Storage bucket&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-1"&gt;
+&lt;div id="outline-container-sec-10" class="outline-2"&gt;
+&lt;h2 id="sec-10"&gt;Cloud Storage&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-10"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-10-1" class="outline-3"&gt;
+&lt;h3 id="sec-10-1"&gt;Create a Cloud Storage bucket&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil mb gs://&amp;lt;bucket name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-9-2" class="outline-3"&gt;
-&lt;h3 id="sec-9-2"&gt;List files in a Cloud Storage bucket&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-2"&gt;
+&lt;div id="outline-container-sec-10-2" class="outline-3"&gt;
+&lt;h3 id="sec-10-2"&gt;List files in a Cloud Storage bucket&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil ls gs://&amp;lt;bucket&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-9-3" class="outline-3"&gt;
-&lt;h3 id="sec-9-3"&gt;Synchronize buckets and directories files&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-3"&gt;
+&lt;div id="outline-container-sec-10-3" class="outline-3"&gt;
+&lt;h3 id="sec-10-3"&gt;Synchronize buckets and directories files&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil -m rsync --help
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-9-4" class="outline-3"&gt;
-&lt;h3 id="sec-9-4"&gt;Cloud Storage ACL with gsutil&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-4"&gt;
+&lt;div id="outline-container-sec-10-4" class="outline-3"&gt;
+&lt;h3 id="sec-10-4"&gt;Cloud Storage ACL with gsutil&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-4"&gt;
 &lt;p&gt;
 Make bucket files world-readable:
 &lt;/p&gt;
@@ -821,9 +848,9 @@ Make bucket files world-readable:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-9-5" class="outline-3"&gt;
-&lt;h3 id="sec-9-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9-5"&gt;
+&lt;div id="outline-container-sec-10-5" class="outline-3"&gt;
+&lt;h3 id="sec-10-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10-5"&gt;
 &lt;ul class="org-ul"&gt;
 &lt;li&gt;&lt;a href="https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage"&gt;https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage&lt;/a&gt;
 &lt;/li&gt;
@@ -831,40 +858,40 @@ Make bucket files world-readable:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-10" class="outline-2"&gt;
-&lt;h2 id="sec-10"&gt;Compute Engine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-10"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-10-1" class="outline-3"&gt;
-&lt;h3 id="sec-10-1"&gt;Copy files to/from a Compute Engine instance&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10-1"&gt;
+&lt;div id="outline-container-sec-11" class="outline-2"&gt;
+&lt;h2 id="sec-11"&gt;Compute Engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-11"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-11-1" class="outline-3"&gt;
+&lt;h3 id="sec-11-1"&gt;Copy files to/from a Compute Engine instance&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute copy-files [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-10-2" class="outline-3"&gt;
-&lt;h3 id="sec-10-2"&gt;List Compute Engine Instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10-2"&gt;
+&lt;div id="outline-container-sec-11-2" class="outline-3"&gt;
+&lt;h3 id="sec-11-2"&gt;List Compute Engine Instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute instances list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-10-3" class="outline-3"&gt;
-&lt;h3 id="sec-10-3"&gt;Connect via SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10-3"&gt;
+&lt;div id="outline-container-sec-11-3" class="outline-3"&gt;
+&lt;h3 id="sec-11-3"&gt;Connect via SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute ssh &amp;lt;instance name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11" class="outline-2"&gt;
-&lt;h2 id="sec-11"&gt;App Engine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-11"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-11-1" class="outline-3"&gt;
-&lt;h3 id="sec-11-1"&gt;Deploy Application&lt;/h3&gt;
+&lt;div id="outline-container-sec-12" class="outline-2"&gt;
+&lt;h2 id="sec-12"&gt;App Engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-12"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-12-1" class="outline-3"&gt;
+&lt;h3 id="sec-12-1"&gt;Deploy Application&lt;/h3&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11-2" class="outline-3"&gt;
-&lt;h3 id="sec-11-2"&gt;Update Python App Engine application&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-2"&gt;
+&lt;div id="outline-container-sec-12-2" class="outline-3"&gt;
+&lt;h3 id="sec-12-2"&gt;Update Python App Engine application&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12-2"&gt;
 &lt;p&gt;
 Push local application as &amp;lt;version&amp;gt;
 &lt;/p&gt;
@@ -872,9 +899,9 @@ Push local application as &amp;lt;version&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11-3" class="outline-3"&gt;
-&lt;h3 id="sec-11-3"&gt;Run Python App Engine application locally&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-3"&gt;
+&lt;div id="outline-container-sec-12-3" class="outline-3"&gt;
+&lt;h3 id="sec-12-3"&gt;Run Python App Engine application locally&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dev_appserver.py &amp;lt;src&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -898,34 +925,34 @@ with both:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11-4" class="outline-3"&gt;
-&lt;h3 id="sec-11-4"&gt;List App Engine Instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-4"&gt;
+&lt;div id="outline-container-sec-12-4" class="outline-3"&gt;
+&lt;h3 id="sec-12-4"&gt;List App Engine Instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12-4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app instances list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11-5" class="outline-3"&gt;
-&lt;h3 id="sec-11-5"&gt;Read App Engine Logs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-5"&gt;
+&lt;div id="outline-container-sec-12-5" class="outline-3"&gt;
+&lt;h3 id="sec-12-5"&gt;Read App Engine Logs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12-5"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app logs read
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11-6" class="outline-3"&gt;
-&lt;h3 id="sec-11-6"&gt;Stop App&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11-6"&gt;
+&lt;div id="outline-container-sec-12-6" class="outline-3"&gt;
+&lt;h3 id="sec-12-6"&gt;Stop App&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12-6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute instances stop &amp;lt;instance-name&amp;gt; &amp;lt;instance-name&amp;gt; ...
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-12" class="outline-2"&gt;
-&lt;h2 id="sec-12"&gt;Cloud DNS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-12"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-12-1" class="outline-3"&gt;
-&lt;h3 id="sec-12-1"&gt;List Managed Zones&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-12-1"&gt;
+&lt;div id="outline-container-sec-13" class="outline-2"&gt;
+&lt;h2 id="sec-13"&gt;Cloud DNS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-13"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-13-1" class="outline-3"&gt;
+&lt;h3 id="sec-13-1"&gt;List Managed Zones&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-13-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -938,16 +965,16 @@ example-zone      example.com.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-12-2" class="outline-3"&gt;
-&lt;h3 id="sec-12-2"&gt;Describe Existing Zone&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-12-2"&gt;
+&lt;div id="outline-container-sec-13-2" class="outline-3"&gt;
+&lt;h3 id="sec-13-2"&gt;Describe Existing Zone&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-13-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones describe &amp;lt;zone-name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-12-3" class="outline-3"&gt;
-&lt;h3 id="sec-12-3"&gt;Add DNS Record&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-12-3"&gt;
+&lt;div id="outline-container-sec-13-3" class="outline-3"&gt;
+&lt;h3 id="sec-13-3"&gt;Add DNS Record&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-13-3"&gt;
 &lt;p&gt;
 Here is an example of creating a CNAME record named &lt;span class="underline"&gt;my-cname.example.com&lt;/span&gt; that points to &lt;span class="underline"&gt;cname.value.example.org&lt;/span&gt;
 &lt;/p&gt;
@@ -993,6 +1020,38 @@ Plain commands list:
 gcloud dns record-sets transaction add -z &amp;lt;zone-name&amp;gt; --name my-cname.example.com --ttl 300 --type CNAME cname.value.example.org.
 gcloud dns record-sets transaction describe -z &amp;lt;zone-name&amp;gt;
 gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-14" class="outline-2"&gt;
+&lt;h2 id="sec-14"&gt;BigQuery&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-14"&gt;
+&lt;p&gt;
+&lt;code&gt;bq help&lt;/code&gt; includes a lot of great info, the official documentation is available at &lt;a href="https://cloud.google.com/bigquery/bq-command-line-tool"&gt;https://cloud.google.com/bigquery/bq-command-line-tool&lt;/a&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-14-1" class="outline-3"&gt;
+&lt;h3 id="sec-14-1"&gt;Default Configuration&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-14-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat &amp;gt; ~/.bigqueryrc &amp;lt;&amp;lt;EOF
+&amp;gt; project_id = &amp;lt;project-id&amp;gt;
+&amp;gt; dataset_id = &amp;lt;dataset-id&amp;gt;
+&amp;gt; EOF
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-14-2" class="outline-3"&gt;
+&lt;h3 id="sec-14-2"&gt;Interactive Shell&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-14-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bq shell
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-14-3" class="outline-3"&gt;
+&lt;h3 id="sec-14-3"&gt;List common flags&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-14-3"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bq --format=json ls -d
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
