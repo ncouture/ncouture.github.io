@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
-.github.io (gcloud)</title><link>https://ncouture.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://ncouture.github.io/categories/gcloud.xml"></atom:link><language>en</language><lastBuildDate>Mon, 17 Oct 2016 21:25:49 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
+.github.io (gcloud)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/gcloud.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 17 Oct 2016 21:27:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
@@ -508,7 +508,7 @@ In order to have access to the remote&lt;sub&gt;api&lt;/sub&gt;, it must first b
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-ref: &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1"&gt;https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1&lt;/a&gt;
+ref: &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1"&gt;&lt;/a&gt;&lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi"&gt;https://cloud.google.com/appengine/docs/python/tools/remoteapi&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;

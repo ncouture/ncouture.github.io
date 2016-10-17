@@ -250,7 +250,7 @@ builtins:
 remote_api_shell.py -s <project-id>.appspot.com
 #+end_src
 
-ref: https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
+ref: [[https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1][https://cloud.google.com/appengine/docs/python/tools/remoteapi]]
 * Cloud DNS
 ** List Managed Zones
 #+begin_src shell
