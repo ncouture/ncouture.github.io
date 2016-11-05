@@ -179,38 +179,46 @@ article: http://ogp.me/ns/article#
 </ul>
 </li>
 <li>
-<a href="#sec-11">Compute Engine</a>
+<a href="#sec-11">Networking</a>
 <ul>
-<li><a href="#sec-11-1">Copy files to/from a Compute Engine instance</a></li>
-<li><a href="#sec-11-2">List Compute Engine Instances</a></li>
-<li><a href="#sec-11-3">Connect via SSH</a></li>
+<li><a href="#sec-11-1">Create a network</a></li>
+<li><a href="#sec-11-2">Create a firewall rule</a></li>
 </ul>
 </li>
 <li>
-<a href="#sec-12">App Engine</a>
+<a href="#sec-12">Compute Engine</a>
 <ul>
-<li><a href="#sec-12-1">Deploy Application</a></li>
-<li><a href="#sec-12-2">Update Python App Engine application</a></li>
-<li><a href="#sec-12-3">Run Python App Engine application locally</a></li>
-<li><a href="#sec-12-4">List App Engine Instances</a></li>
-<li><a href="#sec-12-5">Read App Engine Logs</a></li>
-<li><a href="#sec-12-6">Stop App</a></li>
+<li><a href="#sec-12-1">Copy files to/from a Compute Engine instance</a></li>
+<li><a href="#sec-12-2">List Compute Engine Instances</a></li>
+<li><a href="#sec-12-3">Connect via SSH</a></li>
+<li><a href="#sec-12-4">Copy files using SCP</a></li>
 </ul>
 </li>
 <li>
-<a href="#sec-13">Cloud DNS</a>
+<a href="#sec-13">App Engine</a>
 <ul>
-<li><a href="#sec-13-1">List Managed Zones</a></li>
-<li><a href="#sec-13-2">Describe Existing Zone</a></li>
-<li><a href="#sec-13-3">Add DNS Record</a></li>
+<li><a href="#sec-13-1">Deploy Application</a></li>
+<li><a href="#sec-13-2">Update Python App Engine application</a></li>
+<li><a href="#sec-13-3">Run Python App Engine application locally</a></li>
+<li><a href="#sec-13-4">List App Engine Instances</a></li>
+<li><a href="#sec-13-5">Read App Engine Logs</a></li>
+<li><a href="#sec-13-6">Stop App</a></li>
 </ul>
 </li>
 <li>
-<a href="#sec-14">BigQuery</a>
+<a href="#sec-14">Cloud DNS</a>
 <ul>
-<li><a href="#sec-14-1">Default Configuration</a></li>
-<li><a href="#sec-14-2">Interactive Shell</a></li>
-<li><a href="#sec-14-3">List common flags</a></li>
+<li><a href="#sec-14-1">List Managed Zones</a></li>
+<li><a href="#sec-14-2">Describe Existing Zone</a></li>
+<li><a href="#sec-14-3">Add DNS Record</a></li>
+</ul>
+</li>
+<li>
+<a href="#sec-15">BigQuery</a>
+<ul>
+<li><a href="#sec-15-1">Default Configuration</a></li>
+<li><a href="#sec-15-2">Interactive Shell</a></li>
+<li><a href="#sec-15-3">List common flags</a></li>
 </ul>
 </li>
 </ul>
@@ -962,41 +970,69 @@ Make bucket files world-readable:
 </div>
 </div>
 <div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11">Compute Engine</h2>
+<h2 id="sec-11">Networking</h2>
 <div class="outline-text-2" id="text-11">
 </div>
 <div id="outline-container-sec-11-1" class="outline-3">
-<h3 id="sec-11-1">Copy files to/from a Compute Engine instance</h3>
+<h3 id="sec-11-1">Create a network</h3>
 <div class="outline-text-3" id="text-11-1">
+<div class="highlight"><pre><span></span>gcloud compute networks create "network-name" --project "project-id" --description "Example network"
+</pre></div>
+</div>
+</div>
+
+<div id="outline-container-sec-11-2" class="outline-3">
+<h3 id="sec-11-2">Create a firewall rule</h3>
+<div class="outline-text-3" id="text-11-2">
+<div class="highlight"><pre><span></span>gcloud compute firewall-rules create "rule-name-to-allow-ssh" --project "project-id" --allow tcp:&lt;port&gt;  --network "network-name" --description "Allow SSH access"
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">Compute Engine</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+<div id="outline-container-sec-12-1" class="outline-3">
+<h3 id="sec-12-1">Copy files to/from a Compute Engine instance</h3>
+<div class="outline-text-3" id="text-12-1">
 <div class="highlight"><pre><span></span>gcloud compute copy-files [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-11-2" class="outline-3">
-<h3 id="sec-11-2">List Compute Engine Instances</h3>
-<div class="outline-text-3" id="text-11-2">
+<div id="outline-container-sec-12-2" class="outline-3">
+<h3 id="sec-12-2">List Compute Engine Instances</h3>
+<div class="outline-text-3" id="text-12-2">
 <div class="highlight"><pre><span></span>gcloud compute instances list
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-11-3" class="outline-3">
-<h3 id="sec-11-3">Connect via SSH</h3>
-<div class="outline-text-3" id="text-11-3">
-<div class="highlight"><pre><span></span>gcloud compute ssh &lt;instance name&gt;
+<div id="outline-container-sec-12-3" class="outline-3">
+<h3 id="sec-12-3">Connect via SSH</h3>
+<div class="outline-text-3" id="text-12-3">
+<div class="highlight"><pre><span></span>gcloud compute ssh "instance-name"
+</pre></div>
+</div>
+</div>
+<div id="outline-container-sec-12-4" class="outline-3">
+<h3 id="sec-12-4">Copy files using SCP</h3>
+<div class="outline-text-3" id="text-12-4">
+<div class="highlight"><pre><span></span>gcloud beta compute scp --ssh-key-file ~/.ssh/&lt;ssh key&gt; &lt;hostname&gt;:&lt;path&gt; --zone &lt;zone name&gt; &lt;path&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-12" class="outline-2">
-<h2 id="sec-12">App Engine</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13">App Engine</h2>
+<div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-sec-12-1" class="outline-3">
-<h3 id="sec-12-1">Deploy Application</h3>
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1">Deploy Application</h3>
 </div>
-<div id="outline-container-sec-12-2" class="outline-3">
-<h3 id="sec-12-2">Update Python App Engine application</h3>
-<div class="outline-text-3" id="text-12-2">
+<div id="outline-container-sec-13-2" class="outline-3">
+<h3 id="sec-13-2">Update Python App Engine application</h3>
+<div class="outline-text-3" id="text-13-2">
 <p>
 Push local application as &lt;version&gt;
 </p>
@@ -1004,9 +1040,9 @@ Push local application as &lt;version&gt;
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-12-3" class="outline-3">
-<h3 id="sec-12-3">Run Python App Engine application locally</h3>
-<div class="outline-text-3" id="text-12-3">
+<div id="outline-container-sec-13-3" class="outline-3">
+<h3 id="sec-13-3">Run Python App Engine application locally</h3>
+<div class="outline-text-3" id="text-13-3">
 <div class="highlight"><pre><span></span>dev_appserver.py &lt;src&gt;
 </pre></div>
 
@@ -1030,35 +1066,35 @@ with both:
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-12-4" class="outline-3">
-<h3 id="sec-12-4">List App Engine Instances</h3>
-<div class="outline-text-3" id="text-12-4">
+<div id="outline-container-sec-13-4" class="outline-3">
+<h3 id="sec-13-4">List App Engine Instances</h3>
+<div class="outline-text-3" id="text-13-4">
 <div class="highlight"><pre><span></span>gcloud app instances list
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-12-5" class="outline-3">
-<h3 id="sec-12-5">Read App Engine Logs</h3>
-<div class="outline-text-3" id="text-12-5">
+<div id="outline-container-sec-13-5" class="outline-3">
+<h3 id="sec-13-5">Read App Engine Logs</h3>
+<div class="outline-text-3" id="text-13-5">
 <div class="highlight"><pre><span></span>gcloud app logs read
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-12-6" class="outline-3">
-<h3 id="sec-12-6">Stop App</h3>
-<div class="outline-text-3" id="text-12-6">
+<div id="outline-container-sec-13-6" class="outline-3">
+<h3 id="sec-13-6">Stop App</h3>
+<div class="outline-text-3" id="text-13-6">
 <div class="highlight"><pre><span></span>gcloud compute instances stop &lt;instance-name&gt; &lt;instance-name&gt; ...
 </pre></div>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-13" class="outline-2">
-<h2 id="sec-13">Cloud DNS</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14">Cloud DNS</h2>
+<div class="outline-text-2" id="text-14">
 </div>
-<div id="outline-container-sec-13-1" class="outline-3">
-<h3 id="sec-13-1">List Managed Zones</h3>
-<div class="outline-text-3" id="text-13-1">
+<div id="outline-container-sec-14-1" class="outline-3">
+<h3 id="sec-14-1">List Managed Zones</h3>
+<div class="outline-text-3" id="text-14-1">
 <div class="highlight"><pre><span></span>gcloud dns managed-zones list
 </pre></div>
 
@@ -1071,16 +1107,16 @@ example-zone      example.com.
 </div>
 </div>
 
-<div id="outline-container-sec-13-2" class="outline-3">
-<h3 id="sec-13-2">Describe Existing Zone</h3>
-<div class="outline-text-3" id="text-13-2">
+<div id="outline-container-sec-14-2" class="outline-3">
+<h3 id="sec-14-2">Describe Existing Zone</h3>
+<div class="outline-text-3" id="text-14-2">
 <div class="highlight"><pre><span></span>gcloud dns managed-zones describe &lt;zone-name&gt;
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-13-3" class="outline-3">
-<h3 id="sec-13-3">Add DNS Record</h3>
-<div class="outline-text-3" id="text-13-3">
+<div id="outline-container-sec-14-3" class="outline-3">
+<h3 id="sec-14-3">Add DNS Record</h3>
+<div class="outline-text-3" id="text-14-3">
 <p>
 Here is an example of creating a CNAME record named <span class="underline">my-cname.example.com</span> that points to <span class="underline">cname.value.example.org</span>
 </p>
@@ -1130,16 +1166,16 @@ gcloud dns record-sets transaction execute -z &lt;zone-name&gt;
 </div>
 </div>
 </div>
-<div id="outline-container-sec-14" class="outline-2">
-<h2 id="sec-14">BigQuery</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15">BigQuery</h2>
+<div class="outline-text-2" id="text-15">
 <p>
 <code>bq help</code> includes a lot of great info, the official documentation is available at <a href="https://cloud.google.com/bigquery/bq-command-line-tool">https://cloud.google.com/bigquery/bq-command-line-tool</a>.
 </p>
 </div>
-<div id="outline-container-sec-14-1" class="outline-3">
-<h3 id="sec-14-1">Default Configuration</h3>
-<div class="outline-text-3" id="text-14-1">
+<div id="outline-container-sec-15-1" class="outline-3">
+<h3 id="sec-15-1">Default Configuration</h3>
+<div class="outline-text-3" id="text-15-1">
 <div class="highlight"><pre><span></span>cat &gt; ~/.bigqueryrc &lt;&lt;EOF
 &gt; project_id = &lt;project-id&gt;
 &gt; dataset_id = &lt;dataset-id&gt;
@@ -1147,16 +1183,16 @@ gcloud dns record-sets transaction execute -z &lt;zone-name&gt;
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-14-2" class="outline-3">
-<h3 id="sec-14-2">Interactive Shell</h3>
-<div class="outline-text-3" id="text-14-2">
+<div id="outline-container-sec-15-2" class="outline-3">
+<h3 id="sec-15-2">Interactive Shell</h3>
+<div class="outline-text-3" id="text-15-2">
 <div class="highlight"><pre><span></span>bq shell
 </pre></div>
 </div>
 </div>
-<div id="outline-container-sec-14-3" class="outline-3">
-<h3 id="sec-14-3">List common flags</h3>
-<div class="outline-text-3" id="text-14-3">
+<div id="outline-container-sec-15-3" class="outline-3">
+<h3 id="sec-15-3">List common flags</h3>
+<div class="outline-text-3" id="text-15-3">
 <div class="highlight"><pre><span></span>bq --format=json ls -d
 </pre></div>
 </div>

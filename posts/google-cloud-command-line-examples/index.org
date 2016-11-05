@@ -312,9 +312,6 @@ gcloud dns record-sets transaction add -z <zone-name> --name my-cname.example.co
 gcloud dns record-sets transaction describe -z <zone-name>
 gcloud dns record-sets transaction execute -z <zone-name>
 #+end_src
-* Footnotes
-[fn:1] https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
-
 * Google Cloud Commands
 All Google Cloud commands are _self-documented_, most ship with Bash and Zsh auto-completion profiles.
 
@@ -480,6 +477,17 @@ gsutil acl ch -u AllUsers:R gs://<bucket>/<object>
 #+end_src
 ** HTTPS Load-balancing with Cloud CDN 
 - https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage
+* Networking
+** Create a network
+#+begin_src shell
+gcloud compute networks create "network-name" --project "project-id" --description "Example network"
+#+end_src
+
+** Create a firewall rule
+#+begin_src shell
+gcloud compute firewall-rules create "rule-name-to-allow-ssh" --project "project-id" --allow tcp:<port>  --network "network-name" --description "Allow SSH access"
+#+end_src
+
 * Compute Engine
 ** Copy files to/from a Compute Engine instance
 #+begin_src shell
@@ -491,7 +499,11 @@ gcloud compute instances list
 #+end_src
 ** Connect via SSH
 #+begin_src shell
-gcloud compute ssh <instance name>
+gcloud compute ssh "instance-name"
+#+end_src
+** Copy files using SCP
+#+begin_src shell
+gcloud beta compute scp --ssh-key-file ~/.ssh/<ssh key> <hostname>:<path> --zone <zone name> <path>
 #+end_src
 * App Engine
 ** Deploy Application
@@ -610,3 +622,5 @@ bq shell
 #+begin_src shell
 bq --format=json ls -d
 #+end_src
+* Footnotes
+[fn:1] https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
