@@ -15,8 +15,6 @@
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 num:nil toc:2
 
-These are my personal notes, refer to the official documentation for complete details.
-
 * Google Cloud Commands
 All Google Cloud commands are _self-documented_, most ship with Bash and Zsh auto-completion profiles.
 
