@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture
-.github.io (gpg)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/gpg.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Fri, 23 Sep 2016 18:46:09 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
+.github.io (gpg)</title><link>https://ncouture.github.io/</link><description></description><atom:link rel="self" href="https://ncouture.github.io/categories/gpg.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 05 Nov 2016 04:39:24 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
@@ -88,12 +88,12 @@ xset r rate 200 60              # Keyboard repeat rate
 # start the `notion' window manager
 exec dbus-launch --exit-with-session \
      eval "$(gpg-agent --daemon \
-		       --scdaemon-program /usr/lib/gnupg2/scdaemon \
-		       --max-cache-ttl 720 \
-		       --enable-ssh-support \
-		       --max-cache-ttl-ssh 720 \
-		       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
-	     notion)"
+                       --scdaemon-program /usr/lib/gnupg2/scdaemon \
+                       --max-cache-ttl 720 \
+                       --enable-ssh-support \
+                       --max-cache-ttl-ssh 720 \
+                       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
+             notion)"
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

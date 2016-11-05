@@ -4,7 +4,7 @@
   <title>ncouture
 .github.io</title>
   <id>https://ncouture.github.io/index.atom</id>
-  <updated>2016-11-05T04:36:14Z</updated>
+  <updated>2016-11-05T04:39:23Z</updated>
   <author>
     <name>Nicolas Couture</name>
   </author>
@@ -1202,12 +1202,12 @@ xset r rate 200 60              # Keyboard repeat rate
 # start the `notion' window manager
 exec dbus-launch --exit-with-session \
      eval "$(gpg-agent --daemon \
-		       --scdaemon-program /usr/lib/gnupg2/scdaemon \
-		       --max-cache-ttl 720 \
-		       --enable-ssh-support \
-		       --max-cache-ttl-ssh 720 \
-		       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
-	     notion)"
+                       --scdaemon-program /usr/lib/gnupg2/scdaemon \
+                       --max-cache-ttl 720 \
+                       --enable-ssh-support \
+                       --max-cache-ttl-ssh 720 \
+                       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
+             notion)"
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;

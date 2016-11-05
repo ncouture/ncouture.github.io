@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
-.github.io</title><link>https://ncouture.github.io/</link><description>Nicolas Couture's Github pages</description><atom:link rel="self" type="application/rss+xml" href="https://ncouture.github.io/rss.xml"></atom:link><language>en</language><lastBuildDate>Sat, 05 Nov 2016 04:36:15 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
+.github.io</title><link>https://ncouture.github.io/</link><description>Nicolas Couture's Github pages</description><atom:link rel="self" href="https://ncouture.github.io/rss.xml" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 05 Nov 2016 04:39:25 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
@@ -1165,12 +1165,12 @@ xset r rate 200 60              # Keyboard repeat rate
 # start the `notion' window manager
 exec dbus-launch --exit-with-session \
      eval "$(gpg-agent --daemon \
-		       --scdaemon-program /usr/lib/gnupg2/scdaemon \
-		       --max-cache-ttl 720 \
-		       --enable-ssh-support \
-		       --max-cache-ttl-ssh 720 \
-		       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
-	     notion)"
+                       --scdaemon-program /usr/lib/gnupg2/scdaemon \
+                       --max-cache-ttl 720 \
+                       --enable-ssh-support \
+                       --max-cache-ttl-ssh 720 \
+                       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
+             notion)"
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
