@@ -1,7 +1,7 @@
 #+BEGIN_COMMENT
 .. title: Google Cloud Command-line Examples
 .. slug: google-cloud-command-line-examples
-.. date: 2016-09-17 14:57:26 UTC
+.. date: 2016-11-05 04:32:39 UTC
 .. tags: gcloud, google cloud, gsutil, app engine, cloud storage, cloud dns
 .. category: cloud
 .. link:
@@ -14,13 +14,6 @@
 #+EMAIL: (concat "nicolas.couture" at-sign "gmail.com")
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 num:nil toc:2
-
-* Headline
-Bonjour ca c'est mon post.
-
-- patates
-- oranges
-- banannes
 
 These are my personal notes, refer to the official documentation for complete details.
 
@@ -485,7 +478,7 @@ gcloud compute networks create "network-name" --project "project-id" --descripti
 
 ** Create a firewall rule
 #+begin_src shell
-gcloud compute firewall-rules create "rule-name-to-allow-ssh" --project "project-id" --allow tcp:<port>  --network "network-name" --description "Allow SSH access"
+gcloud compute firewall-rules create "rule-name-to-allow-ssh" --project "project-id" --allow tcp:2  --network "network-name" --description "Allow SSH access"
 #+end_src
 
 * Compute Engine
