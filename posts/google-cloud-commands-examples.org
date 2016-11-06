@@ -321,4 +321,5 @@ bq shell
 bq --format=json ls -d
 #+end_src
 * Footnotes
+
 [fn:1] https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1
