@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture
-.github.io (gcloud)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/gcloud.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 06 Nov 2016 17:05:02 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
+.github.io (gcloud)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/gcloud.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 07 Nov 2016 22:23:45 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div id="text-table-of-contents"&gt;
 &lt;ul&gt;
@@ -50,18 +50,23 @@
 &lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-6"&gt;Spawn a remote Python shell&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6"&gt;Cloud DNS&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6"&gt;Stackdriver Logging&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-1"&gt;Errors within last 10 minutes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7"&gt;BigQuery&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7"&gt;Cloud DNS&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-1"&gt;Default Configuration&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-2"&gt;Interactive Shell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-3"&gt;List common flags&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8"&gt;BigQuery&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-1"&gt;Default Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-2"&gt;Interactive Shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-3"&gt;List common flags&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -136,6 +141,7 @@ queries on your data.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;div id="outline-container-sec-1-4" class="outline-3"&gt;
 &lt;h3 id="sec-1-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-4"&gt;
@@ -144,6 +150,7 @@ Manage App Engine instances.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;div id="outline-container-sec-1-5" class="outline-3"&gt;
 &lt;h3 id="sec-1-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-5"&gt;
@@ -438,11 +445,29 @@ ref: &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;Cloud DNS&lt;/h2&gt;
+&lt;h2 id="sec-6"&gt;Stackdriver Logging&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-6"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-6-1" class="outline-3"&gt;
-&lt;h3 id="sec-6-1"&gt;List Managed Zones&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href="http://www.stackdriver.com/"&gt;http://www.stackdriver.com/&lt;/a&gt;
+&lt;a href="https://cloud.google.com/stackdriver/"&gt;https://cloud.google.com/stackdriver/&lt;/a&gt;
+&lt;a href="https://cloud.google.com/logging/docs/api/gcloud-logging"&gt;https://cloud.google.com/logging/docs/api/gcloud-logging&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-6-1" class="outline-3"&gt;
+&lt;h3 id="sec-6-1"&gt;Errors within last 10 minutes&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-6-1"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud beta logging read --freshness="10m" "severity&amp;gt;=ERROR"
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-sec-7" class="outline-2"&gt;
+&lt;h2 id="sec-7"&gt;Cloud DNS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
+&lt;h3 id="sec-7-1"&gt;List Managed Zones&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -455,16 +480,16 @@ example-zone      example.com.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-sec-6-2" class="outline-3"&gt;
-&lt;h3 id="sec-6-2"&gt;Describe Existing Zone&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-2"&gt;
+&lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
+&lt;h3 id="sec-7-2"&gt;Describe Existing Zone&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones describe &amp;lt;zone-name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-6-3" class="outline-3"&gt;
-&lt;h3 id="sec-6-3"&gt;Add DNS Record&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-3"&gt;
+&lt;div id="outline-container-sec-7-3" class="outline-3"&gt;
+&lt;h3 id="sec-7-3"&gt;Add DNS Record&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7-3"&gt;
 &lt;p&gt;
 Here is an example of creating a CNAME record named &lt;span class="underline"&gt;my-cname.example.com&lt;/span&gt; that points to &lt;span class="underline"&gt;cname.value.example.org&lt;/span&gt;
 &lt;/p&gt;
@@ -514,16 +539,16 @@ gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;BigQuery&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;div id="outline-container-sec-8" class="outline-2"&gt;
+&lt;h2 id="sec-8"&gt;BigQuery&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-8"&gt;
 &lt;p&gt;
 &lt;code&gt;bq help&lt;/code&gt; includes a lot of great info, the official documentation is available at &lt;a href="https://cloud.google.com/bigquery/bq-command-line-tool"&gt;https://cloud.google.com/bigquery/bq-command-line-tool&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
-&lt;h3 id="sec-7-1"&gt;Default Configuration&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-1"&gt;
+&lt;div id="outline-container-sec-8-1" class="outline-3"&gt;
+&lt;h3 id="sec-8-1"&gt;Default Configuration&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-1"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat &amp;gt; ~/.bigqueryrc &amp;lt;&amp;lt;EOF
 &amp;gt; project_id = &amp;lt;project-id&amp;gt;
 &amp;gt; dataset_id = &amp;lt;dataset-id&amp;gt;
@@ -531,16 +556,16 @@ gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
-&lt;h3 id="sec-7-2"&gt;Interactive Shell&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-2"&gt;
+&lt;div id="outline-container-sec-8-2" class="outline-3"&gt;
+&lt;h3 id="sec-8-2"&gt;Interactive Shell&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bq shell
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-3" class="outline-3"&gt;
-&lt;h3 id="sec-7-3"&gt;List common flags&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-3"&gt;
+&lt;div id="outline-container-sec-8-3" class="outline-3"&gt;
+&lt;h3 id="sec-8-3"&gt;List common flags&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8-3"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bq --format=json ls -d
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
