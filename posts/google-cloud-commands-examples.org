@@ -42,8 +42,10 @@ You can use gsutil to:
 ** =bq=
 You can use bq to manage datasets, tables and other entities in BigQuery, as well as run
 queries on your data.
+
 ** =appcfg.py= 
 Manage App Engine instances.
+
 ** =dev_appserver.py=
 Local App Engine development server.
 
@@ -242,6 +244,15 @@ remote_api_shell.py -s <project-id>.appspot.com
 #+end_src
 
 ref: [[https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1][https://cloud.google.com/appengine/docs/python/tools/remoteapi]]
+* Stackdriver Logging
+http://www.stackdriver.com/
+https://cloud.google.com/stackdriver/
+https://cloud.google.com/logging/docs/api/gcloud-logging
+
+** Errors within last 10 minutes
+#+begin_src shell
+gcloud beta logging read --freshness="10m" "severity>=ERROR"
+#+end_src
 * Cloud DNS
 ** List Managed Zones
 #+begin_src shell
