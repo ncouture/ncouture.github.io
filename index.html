@@ -105,6 +105,7 @@ article: http://ogp.me/ns/article#
 <li><a href="posts/google-cloud-command-line-examples/#sec-4-1">Copy files to/from a Compute Engine instance</a></li>
 <li><a href="posts/google-cloud-command-line-examples/#sec-4-2">List Compute Engine Instances</a></li>
 <li><a href="posts/google-cloud-command-line-examples/#sec-4-3">Connect via SSH</a></li>
+<li><a href="posts/google-cloud-command-line-examples/#sec-4-4">Create an instance with a GPU</a></li>
 </ul>
 </li>
 <li>
@@ -116,6 +117,7 @@ article: http://ogp.me/ns/article#
 <li><a href="posts/google-cloud-command-line-examples/#sec-5-4">Read App Engine Logs</a></li>
 <li><a href="posts/google-cloud-command-line-examples/#sec-5-5">Stop App</a></li>
 <li><a href="posts/google-cloud-command-line-examples/#sec-5-6">Spawn a remote Python shell</a></li>
+<li><a href="posts/google-cloud-command-line-examples/#sec-5-7">Describe a service version</a></li>
 </ul>
 </li>
 <li>
@@ -442,6 +444,31 @@ Make bucket files world-readable:
 </pre></div>
 </div>
 </div>
+
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4">Create an instance with a GPU</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>
+<a href="https://cloud.google.com/gpu/">https://cloud.google.com/gpu/</a>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>gcloud beta compute instances create gpu-instance-1 \
+    --machine-type n1-standard-2 --zone us-east1-d \
+    --accelerator type=nvidia-tesla-k80,count=1 \
+    --image-family ubuntu-1604-lts --image-project ubuntu-os-cloud \
+    --maintenance-policy TERMINATE --restart-on-failure \
+    --metadata startup-script='#!/bin/bash
+    echo "Checking for CUDA and installing."
+    if ! dpkg-query -W cuda; then
+      curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+      dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+      apt-get update
+      apt-get install cuda -y
+    fi'
+</pre></div>
+</div>
+</div>
 </div>
 <div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5">App Engine</h2>
@@ -450,10 +477,13 @@ Make bucket files world-readable:
 <div id="outline-container-sec-5-1" class="outline-3">
 <h3 id="sec-5-1">Deploy Application</h3>
 <div class="outline-text-3" id="text-5-1">
-<div class="highlight"><pre><span></span>appcfg.py update -A &lt;project ID&gt; -V &lt;version&gt; &lt;src&gt;
+<div class="highlight"><pre><span></span>gcloud app 
+appcfg.py update -A &lt;project ID&gt; -V &lt;version&gt; &lt;src&gt;
 </pre></div>
 </div>
 </div>
+
+
 <div id="outline-container-sec-5-2" class="outline-3">
 <h3 id="sec-5-2">Run Python App Engine application locally</h3>
 <div class="outline-text-3" id="text-5-2">
@@ -519,15 +549,29 @@ ref: <a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?nco
 </p>
 </div>
 </div>
+<div id="outline-container-sec-5-7" class="outline-3">
+<h3 id="sec-5-7">Describe a service version</h3>
+<div class="outline-text-3" id="text-5-7">
+<div class="highlight"><pre><span></span>gcloud app versions describe -s default v1
+</pre></div>
 </div>
+</div>
+</div>
+
 <div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6">Stackdriver Logging</h2>
 <div class="outline-text-2" id="text-6">
-<p>
+<ul class="org-ul">
+<li>
 <a href="http://www.stackdriver.com/">http://www.stackdriver.com/</a>
+</li>
+<li>
 <a href="https://cloud.google.com/stackdriver/">https://cloud.google.com/stackdriver/</a>
+</li>
+<li>
 <a href="https://cloud.google.com/logging/docs/api/gcloud-logging">https://cloud.google.com/logging/docs/api/gcloud-logging</a>
-</p>
+</li>
+</ul>
 </div>
 
 <div id="outline-container-sec-6-1" class="outline-3">
@@ -1751,7 +1795,7 @@ After building the app:
  
               </div>
               <div class="modal-body">
-                    Contents © 2016         <a href="mailto:nicolas.couture@gmail.com">Nicolas Couture</a>
+                    Contents © 2017         <a href="mailto:nicolas.couture@gmail.com">Nicolas Couture</a>
                     
               </div>
               <div class="modal-footer">
