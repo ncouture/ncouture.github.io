@@ -195,11 +195,33 @@ gcloud compute instances list
 #+begin_src shell
 gcloud compute ssh <instance name>
 #+end_src
+
+** Create an instance with a GPU
+- https://cloud.google.com/gpu/
+
+#+begin_src bash
+gcloud beta compute instances create gpu-instance-1 \
+    --machine-type n1-standard-2 --zone us-east1-d \
+    --accelerator type=nvidia-tesla-k80,count=1 \
+    --image-family ubuntu-1604-lts --image-project ubuntu-os-cloud \
+    --maintenance-policy TERMINATE --restart-on-failure \
+    --metadata startup-script='#!/bin/bash
+    echo "Checking for CUDA and installing."
+    if ! dpkg-query -W cuda; then
+      curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+      dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+      apt-get update
+      apt-get install cuda -y
+    fi'
+#+end_src
 * App Engine
 ** Deploy Application
 #+begin_src shell
+gcloud app 
 appcfg.py update -A <project ID> -V <version> <src>
 #+end_src
+
+
 ** Run Python App Engine application locally 
 #+begin_src shell
 dev_appserver.py <src>
@@ -244,10 +266,15 @@ remote_api_shell.py -s <project-id>.appspot.com
 #+end_src
 
 ref: [[https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1][https://cloud.google.com/appengine/docs/python/tools/remoteapi]]
+** Describe a service version
+#+begin_src shell
+gcloud app versions describe -s default v1
+#+end_src
+
 * Stackdriver Logging
-http://www.stackdriver.com/
-https://cloud.google.com/stackdriver/
-https://cloud.google.com/logging/docs/api/gcloud-logging
+- http://www.stackdriver.com/
+- https://cloud.google.com/stackdriver/
+- https://cloud.google.com/logging/docs/api/gcloud-logging
 
 ** Errors within last 10 minutes
 #+begin_src shell
