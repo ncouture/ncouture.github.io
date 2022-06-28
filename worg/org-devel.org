@@ -1,0 +1,335 @@
+#+OPTIONS:    H:3 num:nil toc:t \n:nil ::t |:t ^:nil -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc ':t
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate
+#+SEQ_TODO:   TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:       Write(w) Update(u) Fix(f) Check(c) 
+#+TITLE:      Ongoing Development of Org Additions?
+#+AUTHOR:     Worg people
+#+LANGUAGE:   en
+#+PRIORITIES: A C B
+#+CATEGORY:   worg
+#+HTML_LINK_UP:    index.html
+#+HTML_LINK_HOME:  https://orgmode.org/worg/
+
+# This file is released by its authors and contributors under the GNU
+# Free Documentation license v1.3 or later, code examples are released
+# under the GNU General Public License v3 or later.
+
+
+# This file is the default header for new Org files in Worg.  Feel free
+# to tailor it to your needs.
+
+Some org-mode related project currently being developed in worg.
+
+* Org Collector
+
+#+index: Collector
+
+Located in the =contrib/lisp/= directory of org-mode.
+
+A utility for collecting properties from the headers in an org file,
+running the properties through arbitrary elisp functions, and
+presenting the results in a table.
+
+The functionality of this tool is similar to the functionality of
+[[info:org:Capturing column view][info:org:Capturing column view]], but this has support for processing
+prior to the generation of the table.
+
+Here is a simple example application of this utility.
+
+#+begin_comment ems better example
+it might be better to put an exercise example here if someone has one.
+#+end_comment
+
+#+BEGIN: propview :id "data" :cols (ITEM f d list (apply '* list) (+ f d))
+
+#+END:
+
+*** Example Data
+      :PROPERTIES:
+      :ID:       data
+      :END:
+
+****** run1
+      :PROPERTIES:
+      :d: 33
+      :f: 2
+      :list: '(9 2 3 4 5 6 7)
+      :END:
+
+
+****** run2
+      :PROPERTIES:
+      :d: 34
+      :f: 4
+      :END:
+
+
+****** run3
+      :PROPERTIES:
+      :d: 35
+      :f: 4
+      :END:
+
+
+****** run4
+      :PROPERTIES:
+      :d: 36
+      :f: 2
+      :END:
+
+
+* MEMO org-mail-htmlize: Create MIME messages based on Org
+
+** Representing a MIME internet message
+
+   A MIME internet message consists of one or more MIME entities. Each
+   MIME entity is of a distinct type and subtype, has a body and
+   optional MIME headers related to its content.
+
+   A MIME entity is represented as a list:
+
+   (TYPE SUBTYPE BODY CONT-HEAD)
+
+   - TYPE :: Symbol of MIME media type (e.g. text, video, audio).
+
+   - SUBTYPE :: Symbol of MIME media subtype (e.g. plain, html).
+
+   - BODY :: String with entity body -or- list of other MIME entities.
+
+   - CONT-HEAD :: List of cons with content related MIME header
+                  fields.  The name of the header field without the
+                  prefix "Content-" is car, the value cdr.
+
+   Example:
+
+   #+begin_src emacs-lisp
+   '(text html "<h1>Headline</h1>" ((disposition . inline)))
+   #+end_src
+
+   For messages of type multipart the body consists of a list of one
+   or more MIME entities.
+
+   #+begin_src emacs-lisp
+     '(multipart alternative
+                 '((text plain "* Headline")
+                   (text html "<h1>headline</h1>")))
+   #+end_src
+
+** MIME delimiters of SEMI and mml
+
+   The MIME delimiters are defined in an association list with a
+   symbol of the library's name as key and delimiter format strings as
+   values.  For each library there are three formatstrings.
+
+   (SYMBOL DELIM-SINGLE DELIM-SINGLE-CONT DELIM-MULTI)
+
+   - DELIM-SINGLE :: Denoting a single MIME entity.
+
+		     Strings are passed in this order:
+
+		     1. type
+
+		     2. subtype
+
+		     3. content header
+
+		     4. body
+
+   - DELIM-SINGLE-CONT :: Format of content header strings.
+
+	Strings are passed in this order:
+
+	1. header field name
+
+	2. header field value
+
+   - DELIM-MULTI :: Enclosing parts of a multipart entity.
+
+		    Strings are passed in this order:
+
+		    1. subtype
+
+		    2. body
+
+		    3. subtype
+
+   #+begin_src emacs-lisp
+     (setq org-mail-htmlize-mime-delimiter-alist
+           '((semi "\n--[[%s/%s%s]]\n%s" "\ncontent-%s: %s" "\n--<<%s>>-{\n%s\n--}-<<%s>>")
+             (mml "\n<#part type=\"%s/%s\"%s>\n%s" " %s=\"%s\"" "\n<#multipart type=\"%s\">\n%s\n<#/multipart>")))
+   #+end_src
+
+** Generic function
+
+   This generic function returns a string representation with MIME
+   delimiters depending on the variable =org-mail-htmlize-mime-lib=.
+
+   #+begin_src emacs-lisp
+     (setq org-mail-htmlize-mime-lib 'semi)
+   #+end_src
+
+   #+begin_src emacs-lisp
+     (defun org-mail-htmlize-mime-entity (type subtype body
+                                               &optional cont-head)
+       "Return string representation of MIME entity.
+     
+     TYPE is the type of entity body.
+     SUBTYPE is the subtype of body.
+     BODY is the body of the entity.  Either a string with the body
+     content or a list with one ore more MIME entities.
+     Optional argument CONT-HEAD is a list of cons with content
+     specific headers, name in car and value in cdr."
+       (let ((delimlst (assoc org-mail-htmlize-mime-lib
+                              org-mail-htmlize-mime-delimiter-alist)))
+         (if (eq type 'multipart)
+             (format (nth 3 delimlst) subtype
+                     (mapconcat (lambda (b)
+                                   (apply 'org-mail-htmlize-mime-entity
+                                          (car b) (cadr b) (cddr b)))
+                                body "")
+                     subtype)
+           (format (nth 1 delimlst)
+                   type subtype
+                   (mapconcat (lambda (h)
+                                 (format (nth 2 delimlst) (car h) (cdr h)))
+                              cont-head "")
+                   body))))
+   #+end_src
+
+** Open questions
+
+*** How to handle charset information?
+
+*** How to attach files?
+
+    The generic function expects BODY either be a string or a list.
+    Attaching binary file (image, etc.) requires to encode it so the
+    message will pass the message system.  So we /might/ use kind of a
+    encoder (e.g. base64) on our own.
+
+    Or, what seems a cleaner solution: Use attachment function of the
+    respective MIME mode.  To achive this: Introduce third possibility
+    for BODY: A cons with the filename in car and symbol of the
+    function in cdr.
+
+    (FILENAME . FUNCTION)
+
+    #+begin_src emacs-lisp
+      '(image jpeg ("/path/to/image" . org-mail-htmlize-add-attachment))
+    #+end_src
+
+    The function =org-mail-htmlize-add-attachment= is called with file
+    name as argument and calls the appropriate function depending on
+    =org-mail-htmlize-mime-lib= and returns a string
+
+       - with the encoded body
+
+	 -or-
+
+       - the complete MIME entity
+
+    Side effect: The user might be prompted for attachment settings
+    (e.g. encoding).  But, on the other hand: We delegate the job of
+    creating the attachment to the library that is responsible for
+    mime.
+
+** Quotes from the specs
+
+*** MIME multipart: Notion of structured, related body parts
+  :PROPERTIES:
+  :Created: [2010-03-25 Do]
+  :END:
+
+  - [[http://tools.ietf.org/html/rfc2046.html#section-5.1.1][RFC2046, 5.1.1]]
+
+    #+BEGIN_QUOTE
+       NOTE:  Conspicuously missing from the "multipart" type is a notion of
+       structured, related body parts. It is recommended that those wishing
+       to provide more structured or integrated multipart messaging
+       facilities should define subtypes of multipart that are syntactically
+       identical but define relationships between the various parts. For
+       example, subtypes of multipart could be defined that include a
+       distinguished part which in turn is used to specify the relationships
+       between the other parts, probably referring to them by their
+       Content-ID field.  Old implementations will not recognize the new
+       subtype if this approach is used, but will treat it as
+       multipart/mixed and will thus be able to show the user the parts that
+       are recognized.
+    #+END_QUOTE
+*** MIME multipart: order of entities inside a multipart
+  :PROPERTIES:
+  :Created: [2010-03-25 Do]
+  :END:
+
+  - [[http://tools.ietf.org/html/rfc2046.html#section-5.1.3][RFC2046, 5.1.3]]
+
+    #+BEGIN_QUOTE
+    5.1.3.  Mixed Subtype
+
+       The "mixed" subtype of "multipart" is intended for use when the body
+       parts are independent and need to be bundled in a particular order.
+       Any "multipart" subtypes that an implementation does not recognize
+       must be treated as being of subtype "mixed".
+
+    #+END_QUOTE
+
+  - [[http://tools.ietf.org/html/rfc2046.html#section-5.1.4][RFC2046, 5.1.4]]
+
+    #+BEGIN_QUOTE
+    5.1.4.  Alternative Subtype
+
+       The "multipart/alternative" type is syntactically identical to
+       "multipart/mixed", but the semantics are different.  In particular,
+       each of the body parts is an "alternative" version of the same
+       information.
+
+       Systems should recognize that the content of the various parts are
+       interchangeable.  Systems should choose the "best" type based on the
+       local environment and references, in some cases even through user
+       interaction.  As with "multipart/mixed", the order of body parts is
+       significant.  In this case, the alternatives appear in an order of
+       increasing faithfulness to the original content.  In general, the
+       best choice is the LAST part of a type supported by the recipient
+       system's local environment.
+    #+END_QUOTE
+
+    #+BEGIN_QUOTE
+       In general, user agents that compose "multipart/alternative" entities
+       must place the body parts in increasing order of preference, that is,
+       with the preferred format last.  For fancy text, the sending user
+       agent should put the plainest format first and the richest format
+       last.  Receiving user agents should pick and display the last format
+       they are capable of displaying.  In the case where one of the
+       alternatives is itself of type "multipart" and contains unrecognized
+       sub-parts, the user agent may choose either to show that alternative,
+       an earlier alternative, or both.
+    #+END_QUOTE
+* Org mode issue tracking library
+
+A collection of helper functions to maintain the [[file:org-issues.org][Issue file]] from within
+Wanderlust and (partly) Gnus.
+
+You can download a current version of this file [[file:code/elisp/org-issue.el][here]].
+
+Currently following commands are provided:
+
+  - 'org-issue-new' :: File a new issue for current message
+
+       Creates a new TODO in 'org-issue-issue-file' below the headline
+       "New Issues" with keyword NEW.  If customization variable
+       'org-issue-message-flag' is non-nil and flagging messages is
+       supported, the message of this issue is flagged.
+
+  - 'org-issue-close' :: Close issue of current message.
+
+  - 'org-issue-tag'  :: Tag issue of current message.
+
+  - 'org-issue-update-message-flag' :: Update message flag according
+       to issue file.
+
+       If the issue for current message is closed, the message flag is
+       removed.
+
+  - 'org-issue-link-gmane' :: An Org mode web link pointing to current
+       message on gmane is pushed to killring and clipboard.
+

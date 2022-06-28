@@ -1,0 +1,39 @@
+#+TITLE:      Worg setup on the orgmode.org server
+#+AUTHOR:     Worg people
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate
+#+SEQ_TODO:   TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:       Write(w) Update(u) Fix(f) Check(c)
+#+LANGUAGE:   en
+#+PRIORITIES: A C B
+#+CATEGORY:   worg
+#+OPTIONS:    H:3 num:nil toc:nil \n:nil ::t |:t ^:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+HTML_LINK_UP:    index.html
+#+HTML_LINK_HOME:  https://orgmode.org/worg/
+
+# This file is released by its authors and contributors under the GNU
+# Free Documentation license v1.3 or later, code examples are released
+# under the GNU General Public License v3 or later.
+
+* How does Worg publish itself as a website?
+
+The [[https://git.sr.ht/~bzg/worg][Worg git repository]] is hosted on SourceHut.
+
+The [[https://git.sr.ht/~bzg/worg/tree/master/item/.build.yml][build manifest]] takes care of running the [[https://git.sr.ht/~bzg/worg/tree/master/item/publish.sh][publish.sh script]] and
+uploading the generated HTML pages to the orgmode.org server.
+
+When you push a commit, it can take up to 10 minutes for the change to
+be visible online.  You can [[https://builds.sr.ht/~bzg/worg][check the build status here]].
+
+You can adapt this =publish.sh= script (especially the =org-mode= and
+=htmlize.el= load path) to test it locally.
+
+* Are there any writing conventions?
+
+Please don't use [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Specifying-File-Variables.html#Specifying-File-Variables][file variables]] in your org files.
+
+Also see the [[file:worg-editing.org][worg-editing]] page for more suggestions.
+
+* Can Worg execute code (via Babel)?
+
+No.  The default automated export does not allow code execution on the
+server for obvious security reasons.

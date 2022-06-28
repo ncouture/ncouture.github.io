@@ -1,0 +1,395 @@
+#+TITLE:      Contributing to Org
+#+AUTHOR:     Worg people
+#+OPTIONS:    H:3 num:nil toc:t \n:nil ::t |:t ^:nil -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate
+#+SEQ_TODO:   TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:       Write(w) Update(u) Fix(f) Check(c)
+#+LANGUAGE:   en
+#+PRIORITIES: A C B
+#+CATEGORY:   worg
+#+HTML_LINK_UP:    index.html
+#+HTML_LINK_HOME:  https://orgmode.org/worg/
+
+# This file is released by its authors and contributors under the GNU
+# Free Documentation license v1.3 or later, code examples are released
+# under the GNU General Public License v3 or later.
+
+# This file is the default header for new Org files in Worg.  Feel free
+# to tailor it to your needs.
+
+The Org codebase is large, and contributing can be daunting at first,
+but don't hesitate to call for directions on [[file:org-mailing-list.org][the mailing list]].  If you
+are willing to help, there is plenty of low-hanging fruit for you, and
+the community will welcome your contribution.
+
+: When contributing, always keep the maintenance burden in mind:
+: are you alleviating it, or are you adding to it?
+
+* Overview of Org repositories
+:PROPERTIES:
+:CUSTOM_ID: repos-overview
+:END:
+
+- [[https://git.savannah.gnu.org/cgit/emacs/org-mode.git][Org repository on Savannah]]: =git clone git://git.sv.gnu.org/emacs/org-mode.git=
+- [[https://sr.ht/~bzg/org][Org project on SourceHut]] with other repositories: [[https://git.sr.ht/~bzg/worg][worg]], [[https://git.sr.ht/~bzg/orgweb][orgweb]] and [[https://git.sr.ht/~bzg/org-contrib][org-contrib]].
+
+* Ways to contribute 🦄
+:PROPERTIES:
+:CUSTOM_ID: types-of-contributions
+:END:
+
+** Ways that do not involve programming
+
+- *Send bug reports*.  Before sending a bug report, make sure you read
+  the section of the manual on how to provide useful [[https://orgmode.org/org.html#Feedback][feedback]] or this
+  other great text: [[http://www.chiark.greenend.org.uk/~sgtatham/bugs.html][How to Send Bug Reports Effectively]].
+
+- *Try to reproduce bugs*: That's always very helpful.  Do subscribe to
+  [[https://lists.gnu.org/mailman/listinfo/emacs-orgmode][Org's mailing list]] and monitor new unreferenced bugs.  Try to
+  reproduce them.  If you can reproduce a bug, reply to the original
+  poster and add [[https://github.com/bzg/woof][=X-Woof-Bug: confirmed=]] to your mail headers, and the
+  bug will then be shown on [[https://updates.orgmode.org/#bugs][updates.orgmode.org]].
+
+- *Help other users by replying to their questions* [[file:org-mailing-list.org][on the mailing list]]
+  or on [[file:org-web-social.org][other web places]].
+
+- *Contribute to Worg*.  Worg is collaborative documentation made of Org
+  files.  It's very easy to contribute to it.  Learn more [[file:worg-about.org][about Worg]]
+  and [[file:worg-about.org::*How to use git for Worg][how to contribute]].
+
+- *Share ideas and feature requests*.  Org is already mature, but new
+  ideas keep popping up.  If you want to request a feature, first dig
+  into [[file:org-mailing-list.org][the mailing list]] to find similar proposals.  If you cannot find
+  any, subscribe to the list, read it for a while, then make your
+  proposal.  Formulate it with as much detail as possible, especially
+  with examples.
+
+** Ways that involve programming
+
+- *Check the [[https://updates.orgmode.org/#help][requests for help]]*: If you want to help with one of these
+  tasks, say so on the list.
+
+- *Check the [[https://updates.orgmode.org/#bugs][list of confirmed bugs]]*: Even if you just provide more
+  information or ideas on how to fix them, this helps.
+
+- *Submit patches* to the mailing list.  See how to format [[#first-patch][your first
+  patch]] and [[#patches][details on how to submit it]].
+
+- *Write add-ons*.  The best way is to submit your code to [[file:org-mailing-list.org][the mailing
+  list]] and discuss it with people.  Many add-ons are published through
+  [[https://elpa.gnu.org/][GNU ELPA]] (for authors who signed the FSF copyright assignment) and
+  [[https://elpa.nongnu.org/][NonGNU ELPA]] (for others).  You'll need to sign the FSF copyright
+  assignment FSF if you want to add your code in Org's core, because
+  it will end up in GNU Emacs.
+
+- *Maintain an Org file*: If a file in the git repository does not
+  have a maintainer [fn:: =grep -lv "^;; Maintainer:" `find ./lisp
+  -name "*.el"` | less=] and you want to help by maintaining it,
+  please read more on [[file:org-maintenance.org][how Org is maintained]] and let us know by sending
+  an email to [[file:org-mailing-list.org][the mailing list]].
+
+* What does NOT help
+
+- Submitting feature requests without proper justification.
+- Submitting [[https://www.chiark.greenend.org.uk/~sgtatham/bugs.html]["It does not work"]] bug reports.
+- Submitting ill-formatted patches.
+- Sending too many emails.
+- Arguing.
+
+We follow the [[https://www.gnu.org/philosophy/kind-communication.html][GNU Kind Communications Guidelines]] and ask you to follow
+them too.
+
+* As a contributor, what can I expect?
+:PROPERTIES:
+:CUSTOM_ID: what-can-I-expect
+:END:
+
+Contributions are discussed on the [[https://orgmode.org/worg/org-mailing-list.html][Org mailing list]].
+
+- When you contribute with a bug report :: Expect someone to try
+  reproducing the bug.  Please make it easier by providing a minimal
+  reproducible recipe.  Check the manual on how to provide [[https://orgmode.org/manual/Feedback.html][feedback]].
+  If no one replies, don't take it personally: it either means that
+  nobody was able to reproduce the bug or that the bug does not seem
+  that critical for someone else to confirm it.
+
+- When you contribute with a patch :: Your patch will be listed on
+  [[https://updates.orgmode.org][updates.orgmode.org]].  If this is your first patch, don't expect the
+  patch to be applied immediately.  You can expect someone to review
+  it and to suggest changes, either on the technical or formal aspects
+  of the patch.  If nobody seems to care enough to reply, don't take
+  it personally: it means that maintainers are busy and/or that the
+  patch does not seem critical enough.
+
+- When you contribute with an idea or a feature request ::  The best
+  way to convince maintainers that your idea is worth considering is
+  by detailing your use-case and by proposing a patch for it.  Expect
+  people to discuss the idea on the list, but please remember Org is
+  very old now, used by many people with various needs.  If nobody
+  replies, don't take it personally.
+
+In general, if you want to raise awareness on an email you sent,
+please wait at least for *one month* before bumping a thread.  See [[file:org-mailing-list.org::#i-didnt-receive-an-answer][What
+to do if you don't receive an answer]].
+
+The Org mailing list has volunteer *contributor stewards* who will try
+their best to make sure your contributions get all the attention they
+deserve.
+
+* Your first patch as an occasional contributor
+:PROPERTIES:
+:CUSTOM_ID: first-patch
+:END:
+
+You don't need write access to the repository to contribute with
+patches, just send them to [[file:org-mailing-list.org][the mailing list]].  Here is a checklist to
+go through before submitting a patch:
+  
+1. Make your patch against the latest =bugfix= or =main= branch
+2. Run =~$ make test= to catch broken tests
+3. Check compilation warnings with =~$ make compile=
+4. If relevant, include or update tests
+5. If your patch is adding a feature, please update =etc/ORG-NEWS=
+6. If relevant, don't forget to update =doc/org-manual.org=
+7. Take extra care of the commit message (see [[#commit-messages][Commit messages and ChangeLog entries]])
+8. If your change is small enough and you didn't sign the FSF
+   copyright assignment,[fn:: Your total contribution (all patches you
+   submit) should change /less than 15 lines/. See the [[http://git.savannah.gnu.org/cgit/emacs.git/tree/CONTRIBUTE][CONTRIBUTE file
+   in GNU Emacs]].  If you contribute more, you have to assign the
+   [[#copyright][copyright]] of your contribution to the Free Software Foundation.]
+   include =TINYCHANGE= at the bottom of the commit message.
+
+* Details on how to submit patches
+:PROPERTIES:
+:CUSTOM_ID: patches
+:END:
+
+** Coding conventions
+
+Org is part of Emacs, so any contribution should follow the [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Coding-Conventions.html][GNU Emacs
+Lisp coding conventions]] described in Emacs manual.
+
+** Sending patches with Git
+
+Please use Git to make patches and send them via email -- this is
+perfectly fine for both major and minor changes.
+
+When sending a patch (using =git diff=, =git format-patch= or =git
+send-email=, *always add a properly formatted Emacs ChangeLog entry* in
+the commit message.  See [[#commit-messages][this section]] for details on how to create
+such a ChangeLog.
+
+** Sending commits
+
+For every patch you send, we suggest to use =git format-patch= or =git
+send-email=.  Here is a suggested workflow:
+
+#+begin_quote
+:   ~$ git pull                 # make sure your repo is up to date
+:   ~$ git branch my-changes    # create a new branch from main
+:   ~$ git checkout my-changes  # switch to this new branch
+
+  ... make some changes (1) ...
+
+:   ~$ git commit -a -m "This is change (1)"  # Commit your change
+
+  ... make another change (2) ...
+
+:   ~$ git commit -a -m "This is change (2)"  # Commit your change
+:   ~$ git format-patch main                 # Creates two patches
+
+Then two patches for your two commits are ready to be sent to the list.
+#+end_quote
+
+To finally send the patches, you can either add them as attachments to
+your email or use [[https://git-scm.com/docs/git-send-email][git send-email]], if it's properly configured.
+
+Write useful commit messages: please provide (1) a reason for it in
+your email and (2) a ChangeLog entry in the commit message (again, see
+[[#commit-messages][this section]] on how to format a ChangeLog entry.)
+
+** Sending quick fixes for testing purpose
+
+If you want to send a quick fix that needs to be further tested by
+other people (before you submit a real patch), here is what you can
+do:
+
+#+begin_quote
+  This command will make a patch between the staging area (in your
+  computer), and the file you modified:
+
+  : git diff -p org-whatever.el > org-whatever.el.diff
+
+  If you already committed your changes to your index (staging area), then
+  you should compare against a particular branch (in this example,
+  =origin/main=):
+
+  : git diff -p origin/main org-whatever.el > org-whatever.el.diff
+
+  You email the output to the mailing list, adding =[PATCH]= to the
+  subject, and description of what you fixed or changed.
+#+end_quote
+
+Note that small patches sent like this still need to have a ChangeLog
+entry to be applied.  If your patch looks good to you, it's always
+better to send a patch through =git format-patch=.
+
+** Sharing changes from a public branch
+
+When discussing important changes, it is sometimes not so useful to
+send long and/or numerous patches.
+
+In this case, you can maintain your changes on a public branch of a
+public clone of Org and send a link to the diff between your changes
+and the latest Org commit that sits in your clone.
+
+If the discussion settles and your change is accepted, you can now
+send it as (a list of) patch(es) to the latest Org version.
+
+* Your first commit as an Org maintainer
+:PROPERTIES:
+:CUSTOM_ID: devs
+:END:
+
+Org regular contributors and maintainers have write access to the [[https://git.savannah.gnu.org/cgit/emacs/org-mode.git/][Git
+repository]].
+
+1. Fill in [[https://orgmode.org/request-assign-future.txt][this form]] and wait for the FSF feedback
+2. Create an account on [[https://savannah.gnu.org][savannah.gnu.org]]
+3. Request to join the [[https://savannah.gnu.org/projects/emacs/][Savannah Emacs group]]
+
+Once you are granted access to the Emacs group:
+
+1. If your change is backward-incompatible, discuss it first on the list
+2. Apply your changes against the code and the documentation
+3. Run =make test=
+4. Remember to add a "news" entry in the =etc/ORG-NEWS= file if needed
+5. If the tests pass, commit and push your changes
+
+If you are undertaking big changes, please create a dedicated branch
+locally and make sure you have a clean commit history before merging
+it into the =bugfix= or =main= branch.
+
+To check our Git workflow in more details, please read [[file:org-maintenance.org][Org maintenance]].
+
+* Commit messages and ChangeLog entries
+:PROPERTIES:
+:CUSTOM_ID: commit-messages
+:END:
+
+A commit message should be constructed in the following way:
+
+- Line 1 of the commit message should always be a short description of
+  the overall change.  Line 1 does /not/ get a dot at the end and does
+  not start with a star.  Generally, it starts with the filename that
+  has been changed, followed by a colon, like this:
+  : lisp/ol-man.el: Restore file
+
+- Line 2 is an empty line.
+
+- Line 3 starts the ChangeLog entry.  It looks like [[https://git.savannah.gnu.org/cgit/emacs/org-mode.git/commit/?id=d49957ef021e256f19092c907d127390d39ec1ed][this]]:
+
+  : * org-timer.el (org-timer-cancel-timer, org-timer-stop): Enhance
+  : message.
+  : (org-timer-set-timer): Use the number of minutes in the Effort
+  : property as the default timer value. Three prefix arguments will
+  : ignore the Effort value property.
+
+- After the ChangeLog entry, another empty line should come before any
+  additional information that the committer wishes to provide in order
+  to explain the patch.
+
+- If the change is a minor change made by a committer without
+  copyright assignment to the FSF, the commit message should also
+  contain the cookie =TINYCHANGE= after the ChangeLog entry.
+
+- Variables and functions names are quoted like =`this'= (a backquote
+  and a single quote).
+
+- Sentences should be separated by two spaces.
+
+- Sentences should start with an uppercase letter.
+
+- Avoid the passive form: i.e., use "change" instead of "changed".
+
+Here is an example for such a message:
+
+#+begin_example
+  org-capture.el: Fix the case of using a template file
+
+  ,* lisp/org-capture.el (org-capture-set-plist): Make sure txt is a
+  string before calling `string-match'.
+  (org-capture-templates): Fix customization type.
+
+  ,* doc/org.texi (Capture): Document using a file for a template.
+
+  The problem here was that a wrong keyword was given in the
+  customization type.  This let to a string-match against a list value.
+
+  Modified from a patch proposal by Johan Friis.
+
+  TINYCHANGE
+#+end_example
+
+If you are using [[https://magit.vc/][magit]] in Emacs, the ChangeLog for such entries can be
+produced by pressing =C= (for ~magit-commit-add-log~) on the diff chunks
+of a staged file.  (If you prefer storing your ChangeLog entries in a
+file, you can also use =C-x 4 a=
+(~magit-add-change-log-entry-other-window~) from within magit display of
+diff chunks.)
+
+Another option to produce the entries is to use =C-x 4 a= in the changed
+function or the diff listing.  This creates entries in the ChangeLog
+file and you can then cut and paste these to the commit message and
+remove the indentation.
+
+Further reference:
+
+- [[https://www.gnu.org/prep/standards/html_node/Style-of-Change-Logs.html#Style-of-Change-Logs][Standard Emacs change log entry format]]
+- [[http://git.savannah.gnu.org/cgit/emacs.git/plain/CONTRIBUTE][Contribution guide from Emacs repo]]
+
+* Dealing with copyright when contributing to Org mode
+:PROPERTIES:
+:CUSTOM_ID: copyright
+:END:
+
+All Elisp Org files are also distributed as part of GNU Emacs, they
+are all copyrighted by the [[http://www.fsf.org][Free Software Foundation, Inc]].
+
+If you consider contributing to these files, your need to grant the
+right to include your works in GNU Emacs to the FSF.  For this, you
+need to complete [[https://orgmode.org/request-assign-future.txt][this form]], and to send it to [[mailto:assign@gnu.org][assign@gnu.org]].
+
+The FSF will send you the assignment contract that both you and the
+FSF will sign.  Please let the Org mode maintainer know when this
+process is complete.
+
+If you want to learn more about /why/ copyright assignments are
+collected, read this: [[http://www.gnu.org/licenses/why-assign.html][Why the FSF gets copyright assignments from
+contributors?]]
+
+By submitting patches to =emacs-orgmode@gnu.org= or by pushing changes
+to Org's core files, you are placing these changes under the same
+licensing terms as those under which GNU Emacs is published.
+
+#+begin_example
+;; GNU Emacs is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+#+end_example
+
+If at the time you submit or push these changes you do have active
+copyright assignment papers with the FSF, for future changes to either
+Org mode or to Emacs, this means that copyright to these changes is
+automatically transferred to the FSF.
+
+The Org mode repository is seen as upstream repository for Emacs,
+anything contained in it can potentially end up in Emacs.  
+
+* Current contributors
+:PROPERTIES:
+:CUSTOM_ID: contributors
+:END:
+
+You can check current contributors on [[file:contributors.org][this page]].
