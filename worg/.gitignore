@@ -1,0 +1,6 @@
+*~
+*.bak
+*.orgx
+patches/
+/.project
+*patch

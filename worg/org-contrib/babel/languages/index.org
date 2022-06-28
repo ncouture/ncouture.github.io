@@ -1,0 +1,289 @@
+#+TITLE:      Babel: Languages
+#+OPTIONS:    H:3 num:nil toc:3 \n:nil ::t |:t ^:{} -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc broken-links:nil
+#+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate hideblocks
+#+SEQ_TODO:   TODO(t) INPROGRESS(i) WAITING(w@) | DONE(d) CANCELED(c@)
+#+TAGS:       Write(w) Update(u) Fix(f) Check(c) noexport(n)
+#+AUTHOR:     Eric Schulte, Dan Davison, Tom Dye
+#+EMAIL:      schulte.eric at gmail dot com, davison at stats dot ox dot ac dot uk, tsd at tsdye dot online
+#+LANGUAGE:   en
+#+HTML_HEAD_EXTRA:      <style type="text/css">#outline-container-langs{ clear:both; }</style>
+#+HTML_HEAD_EXTRA:      <style type="text/css">#outline-container-syntax{ clear:both; }</style>
+#+HTML_HEAD_EXTRA:      <style type="text/css">#table-of-contents{ max-width:100%; }</style>
+#+HTML_LINK_HOME:  https://orgmode.org/worg/
+#+HTML_LINK_UP:  ../index.html
+
+* Improving This Document                                          :noexport:
+** DONE Broken links [7/7]
+CLOSED: [2021-11-07 Sun 06:35]
+ - [X] C
+ - [X] C++
+ - [X] D
+ - [X] Dot logo
+ - [X] Lua language link
+ - [X] Perl logo
+ - [X] PicoLisp logo
+** DONE Add a bit on how to volunteer to maintain a language
+CLOSED: [2021-11-06 Sat 16:10]
+I'm not clear about the best way to handle this.
+** TODO Write documentation for some core languages [3/17]
+Note: Many languages in Table [[babel-languages]] require documentation.
+A template is provided [[https://git.sr.ht/~bzg/worg/tree/master/item/org-contrib/babel/languages/ob-doc-template.org][in the worg git repository]] for the addition of
+language documentation.
+
+ - [ ] Groovy
+ - [ ] Calc
+ - [X] Shell
+ - [ ] comint
+ - [X] Emacs lisp!
+ - [ ] Fortran
+ - [ ] Forth
+ - [ ] sed
+ - [ ] Haskell
+ - [ ] Julia?
+ - [X] Lua
+ - [ ] OCaml
+ - [ ] Org mode!
+ - [ ] PlantUML
+ - [ ] Ruby
+ - [ ] Sass
+ - [ ] Scheme
+
+** INPROGRESS List of core Babel language maintainers
+#+begin_src shell :results output
+cd /path/to/org-mode-master
+git grep -i maintainer lisp/ob-*.el
+#+end_src
+
+#+RESULTS:
+
+** DONE Divide Table 1 in two
+CLOSED: [2021-10-03 Sun 12:10] SCHEDULED: <2021-10-03 Sun>
+*** Core table
+Language, Identifier, Documentation, Maintainer
+*** Contrib table
+Language, Identifier, Documentation
+** DONE Remove Babel package languages
+CLOSED: [2021-10-03 Sun 12:11] SCHEDULED: <2021-10-03 Sun>
+About [[https://git.sr.ht/~bzg/org-contrib][org-contrib]]:  This repository contains add-ons to Org.
+
+You can use them by installing the org-contrib NonGNU ELPA package from https://elpa.nongnu.org/nongnu/.
+** DONE Normalize headings
+CLOSED: [2021-10-02 Sat 15:05]
+Change to title case, edit to reduce redundancy.
+
+* Language Support
+  :PROPERTIES:
+  :CUSTOM_ID: langs
+  :END:
+Babel supports a growing number of programming languages; more than
+ten dozen languages currently have some Babel support.  Babel support
+for more than three dozen widely used languages is distributed with
+Emacs, and the various [[https://www.emacswiki.org/emacs/ELPA][Emacs Lisp Package Archives]] include support for
+more than four dozen languages.  In addition, for various historical
+reasons, Babel support for more than two dozen languages is
+distributed in the [[https://git.sr.ht/~bzg/org-contrib][Org-contrib package]].
+
+This page provides pointers to sources of Babel language support,
+instructions to activate a supported language, and a brief guide to
+developing support for a language in case you'd like to use a new
+language with Babel or contribute to existing Babel language support.
+
+** Language Support Distributed with Emacs
+Table [[babel-languages]] lists the Babel language support distributed
+with Emacs. The table provides a link to a web page with information
+about the language, indicates how the language is identified in Babel,
+provides a link to existing documentation, and indicates the
+generosity of your colleagues who have volunteered to maintain a bit
+of Babel language support.
+
+If you would like to maintain a Babel language support file, then
+please review [[https://orgmode.org/worg/org-maintenance.html][how Org is maintained]] and send an email to the [[https://orgmode.org/worg/org-mailing-list.html][mailing
+list]].
+
+Note that there are some [[file:lang-compat.org][inconsistencies among supported languages]].
+
+#+caption: Core languages supported by Babel
+#+name: babel-languages
+| Language      | Identifier            | Documentation        | Maintainer        |
+|---------------+-----------------------+----------------------+-------------------|
+| [[https://groovy-lang.org/][Apache Groovy]] | =groovy=              |                      | Palak Mathur      |
+| [[https://en.wikipedia.org/wiki/AWK#Versions_and_implementations][AWK]]           | =awk=                 | [[file:ob-doc-awk.org][ob-doc-awk]]           | Tyler Smith       |
+| [[https://en.wikipedia.org/wiki/List_of_compilers#C_compilers][C]]             | =C=                   | [[file:ob-doc-C.org][ob-doc-c]]             | Thierry Banel     |
+| [[https://en.wikipedia.org/wiki/List_of_compilers#C++_compilers][C++]]           | =cpp=                 | [[file:ob-doc-C.org][ob-doc-c]]             | Thierry Banel     |
+| [[https://www.gnu.org/software/emacs/manual/html_mono/calc.html][Calc]]          | =calc=                |                      | Tom Gillespie     |
+| [[https://en.wikipedia.org/wiki/List_of_command-line_interpreters][CLI]]           | =shell=               | [[file:ob-doc-shell.org][ob-doc-shell]]         |                   |
+| [[http://clojure.org/][Clojure]]       | =clojure=             | [[file:ob-doc-clojure.org][ob-doc-clojure]]       | Bastien Guerry    |
+| [[https://masteringemacs.org/article/comint-writing-command-interpreter][Comint mode]]   | =comint=              |                      |                   |
+| [[https://developer.mozilla.org/en-US/docs/Web/CSS][CSS]]           | =css=                 | [[file:ob-doc-css.org][ob-doc-css]]           |                   |
+| [[http://dlang.org][D]]             | =D=                   | [[file:ob-doc-C.org][ob-doc-c]]             | Thierry Banel     |
+| [[http://ditaa.sourceforge.net][ditaa]]         | =ditaa=               | [[file:ob-doc-ditaa.org][ob-doc-ditaa]]         |                   |
+| [[https://www.gnu.org/software/emacs/manual/html_node/elisp/index.html][Emacs Lisp]]    | =emacs-lisp=, =elisp= | [[file:ob-doc-elisp.org][ob-doc-elisp]]         |                   |
+| [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][Eshell]]        | =eshell=              | [[file:ob-doc-eshell.org][ob-doc-eshell]]        | stardiviner       |
+| [[https://en.wikipedia.org/wiki/List_of_compilers#Fortran_compilers][Fortran]]       | =F90=                 |                      |                   |
+| [[https://www.gnu.org/software/gforth/][Gforth]]        | =forth=               |                      |                   |
+| [[http://www.gnuplot.info/][Gnuplot]]       | =gnuplot=             | [[file:ob-doc-gnuplot.org][ob-doc-gnuplot]]       | Ihor Radchenko    |
+| [[https://www.gnu.org/software/screen/][GNU Screen]]    | =screen=              | [[file:ob-doc-screen.org][ob-doc-screen]]        | Ken Mankoff       |
+| [[https://www.gnu.org/software/sed/][GNU sed]]       | =sed=                 |                      |                   |
+| [[http://www.graphviz.org/][Graphviz]]      | =dot=                 | [[file:ob-doc-dot.org][ob-doc-dot]]           | Justin Abrahms    |
+| [[http://www.haskell.org/][Haskell]]       | =haskell=             |                      | Lawrence Bottorff |
+| [[https://openjdk.java.net/][Java]]          | =java=                | [[file:ob-doc-java.org][ob-doc-java]]          | Ian Martins       |
+| [[https://julialang.org/][Julia]]         | =julia=               | [[file:ob-doc-julia.org][ob-doc-julia]]         | Pedro Bruel       |
+| [[http://www.latex-project.org/][LaTeX]]         | =latex=               | [[file:ob-doc-LaTeX.org][ob-doc-LaTeX]]         |                   |
+| [[http://lilypond.org/][LilyPond]]      | =ly=                  | [[file:ob-doc-lilypond.org][ob-doc-lilypond]]      |                   |
+| [[https://en.wikipedia.org/wiki/List_of_compilers#Common_Lisp_compilers][Lisp]]          | =lisp=                | [[file:ob-doc-lisp.org][ob-doc-lisp]]          |                   |
+| [[http://www.lua.org/][Lua]]           | =lua=                 | [[file:ob-doc-lua.org][ob-doc-lua]]           |                   |
+| [[https://en.wikipedia.org/wiki/Make_(software)#Derivatives][Make]]          | =makefile=            | [[file:ob-doc-makefile.org][ob-doc-makefile]]      |                   |
+| [[https://www.mathworks.com/products/matlab.html][MATLAB®]]       | =matlab=              | [[file:ob-doc-octave-matlab.org][ob-doc-octave-matlab]] |                   |
+| [[http://maxima.sourceforge.net/][Maxima]]        | =max=                 | [[file:ob-doc-maxima.org][ob-doc-maxima]]        |                   |
+| [[http://nodejs.org/][Node.js]]       | =js=                  | [[file:ob-doc-js.org][ob-doc-js]]            |                   |
+| [[http://caml.inria.fr/][OCaml]]         | =ocaml=               |                      |                   |
+| [[https://www.gnu.org/software/octave/][Octave]]        | =octave=              | [[file:ob-doc-octave.org][ob-doc-octave]]        |                   |
+| [[https://orgmode.org/][Org mode]]      | =org=                 | [[file:ob-doc-org.org][ob-doc-org]]           |                   |
+| [[http://www.perl.org/][Perl]]          | =perl=                | [[file:ob-doc-perl.org][ob-doc-perl]]          | Corwin Brust      |
+| [[https://plantuml.com][PlantUML]]      | =plantuml=            | [[file:ob-doc-plantuml.org][ob-doc-plantuml]]      |                   |
+| [[https://processing.org/][Processing]]    | =processing=          |                      |                   |
+| [[http://www.python.org/][Python]]        | =python=              | [[file:ob-doc-python.org][ob-doc-python]]        | Jack Kamm         |
+| [[http://www.r-project.org/][R]]             | =R=                   | [[file:ob-doc-R.org][ob-doc-R]]             | Jeremie Juste     |
+| [[http://www.ruby-lang.org/][Ruby]]          | =ruby=                |                      |                   |
+| [[http://sass-lang.com/][Sass]]          | =sass=                |                      |                   |
+| [[https://en.wikipedia.org/wiki/List_of_compilers#Scheme_compilers_and_interpreters][Scheme]]        | =scheme=              | [[file:ob-doc-scheme.org][ob-doc-scheme]]        |                   |
+| [[https://en.wikipedia.org/wiki/SQL][SQL]]           | =sql=                 | [[file:ob-doc-sql.org][ob-doc-sql]]           |                   |
+| [[http://www.sqlite.org/index.html][SQLite]]        | =sqlite=              | [[file:ob-doc-sqlite.org][ob-doc-sqlite]]        | Nick Savage       |
+
+** Language Support Distributed with Org-contrib
+Once upon a time, Babel language support that was not released under
+the [[https://www.gnu.org/licenses/gpl-3.0.en.html][GPL]] was kept in [[https://git.sr.ht/~bzg/org-contrib][Org-contrib]].  Later, with the goal of easing the
+burden of Org-mode maintenance, lesser-known languages distributed
+with Emacs were also moved to [[https://git.sr.ht/~bzg/org-contrib][Org-contrib]].  Table
+[[contributed-languages]] includes pointers to these languages and some
+documentation of their Babel integration.
+
+#+caption: Contributed languages supported by Babel
+#+name: contributed-languages
+| Language      | Identifier    | Documentation     |
+|---------------+---------------+-------------------|
+| [[https://abcnotation.com/][abc]]           | =abc=         | [[file:ob-doc-abc.org][ob-doc-abc]]        |
+| [[https://www.arduino.cc/][Arduino]]       | =arduino=     |                   |
+| [[http://asymptote.sourceforge.net/][Asymptote]]     | =asymptote=   | [[file:ob-doc-asymptote.org][ob-doc-asymptote]]  |
+| [[https://coq.inria.fr/][Coq]]           | =coq=         |                   |
+| [[https://www.emacswiki.org/emacs/EbnfToPsPackage][ebnf2ps]]       | =ebnf=        |                   |
+| [[http://fomus.sourceforge.net/][FOMUS]]         | =fomus=       |                   |
+| [[https://hledger.org/][hledger]]       | =hledger=     |                   |
+| [[https://iolanguage.org/index.html][io]]            | =io=          |                   |
+| [[http://www.jsoftware.com/][J]]             | =J=           | [[file:ob-doc-J.org][ob-doc-J]]          |
+| [[http://wiki.github.com/jwiegley/ledger/][ledger]]        | =ledger=      | [[file:ob-doc-ledger.org][ob-doc-ledger]]     |
+| [[https://www.wolfram.com/mathematica/][Mathematica]]   | =mathematica= |                   |
+| [[https://github.com/mfillpot/mathomatic][Mathomatic™]]   | =mathomatic=  | [[file:ob-doc-mathomatic.org][ob-doc-mathomatic]] |
+| [[https://www.mono-project.com/][Mono]]          | =csharp=      |                   |
+| [[https://github.com/mono/mono][Mono]]          | =vbnet=       |                   |
+| [[http://www.mozart2.org/][Mozart]]        | =oz=          | [[file:ob-doc-oz.org][ob-doc-oz]]         |
+| [[http://www.mcternan.me.uk/mscgen/][Mscgen]]        | =mscgen=      | [[file:ob-doc-mscgen.org][ob-doc-mscgen]]     |
+| [[https://www.php.net/][PHP]]           | =php=         |                   |
+| [[http://picolisp.com/5000/!wiki?home][PicoLisp]]      | =picolisp=    | [[file:ob-doc-picolisp.org][ob-doc-picolisp]]   |
+| [[https://redis.io/][Redis]]         | =redis=       |                   |
+| [[http://www.shenlanguage.org/][Shen]]          | =shen=        |                   |
+| [[https://archive.epa.gov/med/med_archive_03/web/html/smiles.html][SMILES]]        | =smiles=      |                   |
+| [[http://bwrcs.eecs.berkeley.edu/Classes/IcBook/SPICE/][SPICE]]         | =spice=       |                   |
+| [[http://mc-stan.org/][Stan]]          | =stan=        | [[file:ob-doc-stan.org][ob-doc-stan]]       |
+| [[http://stata.com/][Stata]]         | =stata=       | [[file:ob-doc-stata.org][ob-doc-stata]]      |
+| [[https://supercollider.github.io/][SuperCollider]] | =sclang=      |                   |
+| [[http://www.tcl.tk/][Tcl]]           | =tcl=         | [[file:ob-doc-tcl.org][ob-doc-tcl]]        |
+| [[https://wiki.gnome.org/Projects/Vala][Vala]]          | =vala=        | [[file:ob-doc-vala.org][ob-doc-vala]]       |
+| [[http://eukleides.org/][ΕΥΚΛΕΙΔΗΣ]]     | =eukleides=   | [[file:ob-doc-eukleides.org][ob-doc-eukleides]]  |
+
+** Language Support Distributed via an Emacs Lisp Package Archive
+
+Most language support is distributed through an [[https://www.emacswiki.org/emacs/ELPA][Emacs Lisp Package
+Archive]]. You can find the Babel language support available on your
+setup with =M-x list-packages=.  In theory, it ought to be possible to
+identify all the Babel language support packages with a keyword search
+using =M-x package-menu-filter=, but this method is unreliable because
+package developers do not subscribe to a keyword authority list.  In
+practice, you can search for package names that start with =ob-= and
+go from there.
+
+* Activate a Language
+  :PROPERTIES:
+  :CUSTOM_ID: configure
+  :END:
+
+To add support for a particular language to your Babel installation
+first make sure that the requirements of the language are met, then
+customize the =org-babel-load-languages= variable with the appropriate language identifier, <lang>, from Table [[babel-languages]] or Table [[contributed-languages]], as follows:
+
+: (<lang> . t)
+
+To /remove/ support for a language, customize the =org-babel-load-languages= variable, as follows:
+
+: (<lang> . nil)
+
+Here is an example manual configuration of this variable, which
+enables support for =R=, and disables support for =emacs-lisp=.
+
+#+begin_src emacs-lisp :exports code
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (emacs-lisp . nil)))
+#+end_src
+
+* Develop Support for a Language
+  :PROPERTIES:
+  :CUSTOM_ID: develop
+  :END:
+
+The core Babel functions (viewing, export, tangling, etc.) are
+language agnostic and will work even for languages that are not
+explicitly supported.  Explicit language-specific support is required
+only for evaluation of code blocks in a language.
+
+Babel is designed to be easily extended to support new languages.
+Language support is added by defining language-specific functions
+using a simple naming convention.  The full suite of possible language
+specific functions need not be implemented all at once, but rather it
+is possible (and encouraged) to develop language-specific
+functionality in an incremental fashion---Babel will make use of
+those functions which are available, and will fail gracefully when
+functionality has not yet been implemented.
+
+There is a short Emacs Lisp template ([[https://git.sr.ht/~bzg/worg/tree/master/item/org-contrib/babel/ob-template.el][ob-template.el]]) which can be
+used as a starting point for implementing support for new languages.
+To fetch a copy of this file, please clone Worg:
+
+#+begin_example
+ ~$ git clone https://git.sr.ht/~bzg/worg
+#+end_example
+
+You should find =org-contrib/babel/ob-template.el=.
+
+Developers are encouraged to read the [[file:../../org-contribute.org][Org-mode contribution
+instructions]] in the hope that the language support can be added to the
+Org-mode core.
+
+** Some additional comments/development tips
+
+Although most of the instructions in =ob-template.el= should be
+useful, and explain clearly how to use the code, some explanations for
+more advanced functionalities could be a little outdated
+(contributions are very welcome. The thread [[https://lists.gnu.org/archive/html/emacs-orgmode/2015-09/msg00487.html][here]] may contain some
+extra useful information, although most of the suggestions provided by
+Eric should have been implemented). If some of the instructions seem
+clear, then here are some suggestions to gain clarity:
+
+- start with instrumenting [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Using-Edebug.html][see edebug]] the =org-babel-execute:template=
+  function, and subsequently evaluate some test-code block. In this way you
+  can easily figure out how Babel processes header arguments. Then in
+  the end, the result printed by a code block simply consists of the output
+  of that function.
+- The trick is to process the =vars=, =result-params=, and the =full-body=
+  variable (~let~ form within =org-babel-execute:template= function) and
+  send the appropriate lines to some inferior process (or as an argument to
+  some shell command). The inferior process can be created in the function
+  =org-babel-template-initiate-session=. The result returned by the inferior
+  process (or by the shell command), should be returned by
+  =org-babel-execute:template= (of course you might further process it
+  before you return it).
+- Don't forget to read the comments in the ob-template file, e.g. for
+  sending/receiving output to/from an inferior process. The functions in
+  =org-babel-comint= might also be useful.
