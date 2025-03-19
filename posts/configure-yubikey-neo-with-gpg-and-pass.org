@@ -11,17 +11,16 @@
 
 #+TITLE: Configure Yubikey NEO with GPG and Pass
 #+AUTHOR: Nicolas Couture
-#+EMAIL: (concat "nicolas.couture" at-sign "gmail.com")
+#+EMAIL: (concat "nicolas" at-sign "stormvault.com")
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 num:nil toc:2
 
 * Environment configuration
+Debian stable (bookworm).
 ** Software dependencies
 Install requirements and configure gpg2 to be the default gpg:
 #+begin_src shell
-sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico python-yubico-tools yhsm-yubikey-ksm yubikey-personalization yubikey-personalization-gui gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
-alias gpg=gpg2
-echo !! >> ~/.bashrc
+sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico-tools yubikey-personalization gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
 #+end_src
 
 Uninstall gnome-keyring:
@@ -35,50 +34,52 @@ This is a matter of preferences, I do no use a display manager and if you do you
 *Warning:* this configuration allows a single state for your gpg-agent and ssh-agent (which is gpg-agent) throughout your window manager. This means that all applications may be able to access resources available using some keys after you have provided sufficient information for gpg-agent to use these keys. If you're not sure of what you're doing *do not* use my Xorg configuration.
 =.xinitrc=
 #+begin_src text
-pkill -u "$USER" -x gpg-agent
-pkill -u "$USER" -x ssh-agent
-pkill -u "$USER" -x xss-lock
-pkill -u "$USER" -x xscreensaver
+pkill -9 -u "$USER" -x gpg-agent
+pkill -9 -u "$USER" -x ssh-agent
+pkill -9 -u "$USER" -x xss-lock
+pkill -9 -u "$USER" -x xscreensaver
 
 xscreensaver -nosplash &> /dev/null &
 xss-lock -- xscreensaver-command -lock  &> /dev/null &
 setxkbmap us                    # kbd layout preset
 xmodmap ~/.Xmodmap              # kbd styling
 xrdb -merge ~/.Xresources       # X styling
-xhost +SI:localuser:$USER       # Disable access control
+#xhost +SI:localuser:$USER       # Disable access control
 xsetroot -cursor_name left_ptr  # Fallback cursor
 xset r rate 200 60              # Keyboard repeat rate
 
 # start the `notion' window manager
+gpgconf --kill gpg-agent
+
 exec dbus-launch --exit-with-session \
-     eval "$(gpg-agent --daemon \
-                       --scdaemon-program /usr/lib/gnupg2/scdaemon \
+     eval "$(gpg-agent \
+                       --daemon \
                        --max-cache-ttl 720 \
                        --enable-ssh-support \
-                       --max-cache-ttl-ssh 720 \
-                       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
-             notion)"
+                       --max-cache-ttl-ssh 720 notion)"
 #+end_src
 
 =.bashrc=
 #+begin_src shell
-export GNUPGHOME="$HOME"/.gnupg
+  export GNUPGHOME="$HOME"/.gnupg
 
-if [ -f "${HOME}/.gnupg/gpg-agent.env" ]; then
-    source "${HOME}/.gnupg/gpg-agent.env"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-fi
+  if [ -f "${HOME}/.gnupg/gpg-agent.env" ]; then
+      source "${HOME}/.gnupg/gpg-agent.env"
+      export GPG_AGENT_INFO
+      export SSH_AUTH_SOCK
+  fi
 
-GPG_TTY=$(tty)
-export GPG_TTY
+  GPG_TTY=$(tty)
+  export GPG_TTY
+  export GNUPGHOME="$HOME/.gnupg"
 #+end_src
+
 Make yourself the owner of the Yubikey
 #+begin_src ascii
 eval $(lsusb -v | grep Yubi -A1  | egrep 'idVend|idProd' | awk '{ print $1"="$2 }')
 echo SUBSYSTEM=="usb", ATTR{idVendor}=="$idVendor", ATTR{idProduct}=="$idProduct", OWNER="$USER" > /tmp/tmptmp
-sudo cp -v /tmp/tmptmp /etc/udev/rules.d/99-yubikey.rules
-sudo chown root.root /etc/udev/rules.d/99-yubikey.rules
+sudo cp -v /tmp/tmptmp /etc/udev/rules.d/50-yubikey.rules
+sudo chown root.root /etc/udev/rules.d/50-yubikey.rules
 rm /tmp/tmptmp
 #+end_src
 
@@ -98,21 +99,16 @@ gpgconf --check-programs
 
 *** Validate configuration
 **** Smart card access
-Verify you have sufficient privs to access the yubikey through gpg2:
+Verify you have sufficient privs to access the yubikey through gpg:
 #+begin_src shell
 gpg --card-status
-#+end_src
-
-If you get an error, see if you can access the key from the superuser and troubleshoot ACL.
-#+begin_src shell
-sudo gpg2 --card-status
 #+end_src
 
 **** Gnupg agent wrapping
 With this configuration your gpg-agent wraps your entire window manager.
 
-This means that if you do add an ssh key to the agent from =/dev/pts/1=, you will be able to access
-it from =/dev/pts/1= if this respects the way you've configured your agent.
+This means that if you do add an ssh key to the agent from ="$GPG_TTY"=, you will be able to access
+it from ="$GPG_TTY"= if this respects the way you've configured your agent.
 
 To test this behavior:
 
