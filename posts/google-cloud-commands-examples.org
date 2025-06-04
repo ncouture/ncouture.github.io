@@ -2,7 +2,7 @@
 .. title: Google Cloud Command-line Examples
 .. slug: google-cloud-command-line-examples
 .. date: 2016-11-06 16:59:39 UTC
-.. tags: gcloud, google cloud, gsutil, app engine, cloud storage, cloud dns
+.. tags: app engine, cloud dns, cloud storage, gcloud, google cloud, gsutil, mib, components, installed
 .. category: cloud
 .. link:
 .. description: Google Cloud command-line examples outlined by service for Cloud Storage, Compute Engine, App Engine, Cloud DNS

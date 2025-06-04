@@ -2,7 +2,7 @@
 .. title: PlantUML Org-Mode Tests
 .. slug: plantuml-org-mode-tests
 .. date: 2016-09-17 15:43:08 UTC
-.. tags: 
+.. tags: bob, alice, png, plantuml, startuml
 .. category: 
 .. link: 
 .. description: 
@@ -13,7 +13,9 @@
 http://plantuml.com/PlantUML_Language_Reference_Guide.pdf
 
 * Sequence diagram
-#+begin_src plantuml :file seqdiag1.png
+#+NAME: seqdiag1
+#+HEADER: :exports seqdiag1
+#+BEGIN_SRC ditaa :file images/seqdiag1.png
 @startuml
 '
 ' everything that starts with a single quote is a comment

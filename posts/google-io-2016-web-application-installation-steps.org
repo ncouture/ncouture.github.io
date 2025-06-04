@@ -2,7 +2,7 @@
 .. title: Google I/O 2016 Web Application Installation Steps
 .. slug: google-io-2016-web-application-installation-steps
 .. date: 2016-09-17 15:09:12 UTC
-.. tags: progressive web application, io2016
+.. tags: io2016, progressive web application, go, dist, appengine, deploy, app
 .. category: web
 .. link: 
 .. description: Step-by-step installation instructions for the I/O 2016 progressive web application.
