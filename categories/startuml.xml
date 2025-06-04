@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture.github.io (Posts about startuml)</title><link>https://ncouture.github.io/</link><description></description><atom:link href="https://ncouture.github.io/categories/startuml.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:nicolas@stormvault.net"&gt;@UnixNick&lt;/a&gt; </copyright><lastBuildDate>Wed, 04 Jun 2025 20:09:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PlantUML Org-Mode Tests</title><link>https://ncouture.github.io/posts/plantuml-org-mode-tests/</link><dc:creator>@UnixNick</dc:creator><description>&lt;p&gt;
+&lt;a href="http://plantuml.com/PlantUML_Language_Reference_Guide.pdf"&gt;http://plantuml.com/PlantUML_Language_Reference_Guide.pdf&lt;/a&gt;
+&lt;/p&gt;
+&lt;div id="outline-container-org0408dc0" class="outline-2"&gt;
+&lt;h2 id="org0408dc0"&gt;Sequence diagram&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0408dc0"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+'
+' everything that starts with a single quote is a comment
+'
+Alice -&amp;gt; Bob: Authentication Request
+Bob --&amp;gt; Alice: Authentication Response
+
+Alice -&amp;gt; Bob: Another authentication Request
+Alice &amp;lt;-- Bob: Another authentication Response
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div id="org5fb82c0" class="figure"&gt;
+&lt;p&gt;&lt;img src="https://ncouture.github.io/seqdiag1.png" alt="nil"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org944bced" class="outline-2"&gt;
+&lt;h2 id="org944bced"&gt;Participants&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org944bced"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+actor Foo1
+boundary Foo2
+control Foo3
+entity Foo4
+database Foo5
+Foo1 -&amp;gt; Foo2 : To boundary
+Foo1 -&amp;gt; Foo3 : To control
+Foo1 -&amp;gt; Foo4 : To entity
+Foo1 -&amp;gt; Foo5 : To database
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgc9df6c4" class="outline-2"&gt;
+&lt;h2 id="orgc9df6c4"&gt;Colors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc9df6c4"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+actor Bob #red
+' The only difference between actor
+'and participant is the drawing
+participant Alice
+participant "I have a really\nlong name" as L #99FF99
+/' You can also declare:
+participant L as "I have a really\nlong name" #99FF99
+'/
+Alice-&amp;gt;Bob: Authentication Request
+Bob-&amp;gt;Alice: Authentication Response
+Bob-&amp;gt;L: Log transaction
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org7fc5a10" class="outline-2"&gt;
+&lt;h2 id="org7fc5a10"&gt;Special characters in participant names&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7fc5a10"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Alice -&amp;gt; "Bob()" : Hello
+"Bob()" -&amp;gt; "This is very\nlong" as Long
+' You can also declare:
+' "Bob()" -&amp;gt; Long as "This is very\nlong"
+Long --&amp;gt; "Bob()" : ok
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org6931cdb" class="outline-2"&gt;
+&lt;h2 id="org6931cdb"&gt;Self-Addressed Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6931cdb"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Alice-&amp;gt;Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb51dc25" class="outline-2"&gt;
+&lt;h2 id="orgb51dc25"&gt;Arrow styles&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb51dc25"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Bob -&amp;gt;x Alice
+Bob -&amp;gt; Alice
+Bob -&amp;gt;&amp;gt; Alice
+Bob -\ Alice
+Bob \\- Alice
+Bob //-- Alice
+Bob -&amp;gt;o Alice
+Bob o\\-- Alice
+Bob &amp;lt;-&amp;gt; Alice
+Bob &amp;lt;-&amp;gt;o Alice
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org0a94da6" class="outline-2"&gt;
+&lt;h2 id="org0a94da6"&gt;Arrow colors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0a94da6"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Bob -[#red]&amp;gt; Alice : hello
+Alice -[#0000FF]-&amp;gt;Bob : ok
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org1ba165c" class="outline-2"&gt;
+&lt;h2 id="org1ba165c"&gt;Message sequence numbering&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1ba165c"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+autonumber
+Bob -&amp;gt; Alice : Authentication Request
+Bob &amp;lt;- Alice : Authentication Response
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org2e77287" class="outline-3"&gt;
+&lt;h3 id="org2e77287"&gt;autonumber arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2e77287"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+autonumber
+Bob -&amp;gt; Alice : Authentication Request
+Bob &amp;lt;- Alice : Authentication Response
+autonumber 15
+Bob -&amp;gt; Alice : Another authentication Request
+Bob &amp;lt;- Alice : Another authentication Response
+autonumber 40 10
+Bob -&amp;gt; Alice : Yet another authentication Request
+Bob &amp;lt;- Alice : Yet another authentication Response
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org00e934d" class="outline-3"&gt;
+&lt;h3 id="org00e934d"&gt;autonumber HTML properties&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org00e934d"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+autonumber "&amp;lt;b&amp;gt;[000]"
+Bob -&amp;gt; Alice : Authentication Request
+Bob &amp;lt;- Alice : Authentication Response
+autonumber 15 "&amp;lt;b&amp;gt;(&amp;lt;u&amp;gt;##&amp;lt;/u&amp;gt;)"
+Bob -&amp;gt; Alice : Another authentication Request
+Bob &amp;lt;- Alice : Another authentication Response
+autonumber 40 10 "&amp;lt;font color=red&amp;gt;&amp;lt;b&amp;gt;Message 0 "
+Bob -&amp;gt; Alice : Yet another authentication Request
+Bob &amp;lt;- Alice : Yet another authentication Response
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org3340831" class="outline-2"&gt;
+&lt;h2 id="org3340831"&gt;Title&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3340831"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+title Simple communication example
+Alice -&amp;gt; Bob: Authentication Request
+Bob --&amp;gt; Alice: Authentication Response
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org034bc3a" class="outline-2"&gt;
+&lt;h2 id="org034bc3a"&gt;Caption&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org034bc3a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+caption fig. 1
+Alice &amp;lt;-&amp;gt; Bob: Swap position
+Bob --&amp;gt; Alice: Who is who?
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org275d1e2" class="outline-2"&gt;
+&lt;h2 id="org275d1e2"&gt;Legend&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org275d1e2"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Alice -&amp;gt; Bob : Hello
+legend right
+Short
+legend
+endlegend
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd4a4b5a" class="outline-2"&gt;
+&lt;h2 id="orgd4a4b5a"&gt;Splitting diagram&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd4a4b5a"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Alice -&amp;gt; Bob : message 1
+Alice -&amp;gt; Bob : message 2
+newpage
+Alice -&amp;gt; Bob : message 3
+Alice -&amp;gt; Bob : message 4
+newpage A title for the\nlast page
+Alice -&amp;gt; Bob : message 5
+Alice -&amp;gt; Bob : message 6
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org523ce94" class="outline-2"&gt;
+&lt;h2 id="org523ce94"&gt;Grouping sequences&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org523ce94"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Alice -&amp;gt; Bob: Authentication Request
+alt successful case
+Bob -&amp;gt; Alice: Authentication Accepted
+else some kind of failure
+Bob -&amp;gt; Alice: Authentication Failure
+group My own label
+Alice -&amp;gt; Log : Log attack start
+loop 1000 times
+Alice -&amp;gt; Bob: DNS Attack
+end
+Alice -&amp;gt; Log : Log attack end
+end
+else Another type of failure
+Bob -&amp;gt; Alice: Please repeat
+end
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgd5018c7" class="outline-2"&gt;
+&lt;h2 id="orgd5018c7"&gt;Notes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd5018c7"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
+Alice-&amp;gt;Bob : hello
+note left: this is a first note
+Bob-&amp;gt;Alice : ok
+note right: this is another note
+Bob-&amp;gt;Bob : I am thinking
+note left
+a note
+can also be defined
+on several lines
+end note
+@enduml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>alice</category><category>bob</category><category>plantuml</category><category>png</category><category>startuml</category><guid>https://ncouture.github.io/posts/plantuml-org-mode-tests/</guid><pubDate>Sat, 17 Sep 2016 15:43:08 GMT</pubDate></item></channel></rss>

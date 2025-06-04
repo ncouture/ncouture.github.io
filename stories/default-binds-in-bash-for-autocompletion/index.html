@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bash Key Bindings Related to Auto-Completion | ncouture.github.io</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://ncouture.github.io/stories/default-binds-in-bash-for-autocompletion/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="@UnixNick">
+<meta property="og:site_name" content="ncouture.github.io">
+<meta property="og:title" content="Bash Key Bindings Related to Auto-Completion">
+<meta property="og:url" content="https://ncouture.github.io/stories/default-binds-in-bash-for-autocompletion/">
+<meta property="og:description" content="Bash Emacs Mode Completion Key Bindings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Key Binding
+Command
+Description
+Default Binding?
+
+
+
+
+TAB
+complete
+Attempt to perform completion on the text before point. Bash tries variable, us">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-09-17T15:27:31Z">
+<meta property="article:tag" content="facial recognition">
+<meta property="article:tag" content="google photos">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../../">
+
+            <span id="blog-title">ncouture.github.io</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="index.org" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Bash Key Bindings Related to Auto-Completion</a></h1>
+
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div id="outline-container-org16fbcca" class="outline-2">
+<h2 id="org16fbcca">Bash Emacs Mode Completion Key Bindings</h2>
+<div class="outline-text-2" id="text-org16fbcca">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col class="org-left">
+<col class="org-left">
+<col class="org-left">
+<col class="org-left">
+</colgroup>
+<thead><tr>
+<th scope="col" class="org-left">Key Binding</th>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">Default Binding?</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="org-left">TAB</td>
+<td class="org-left">complete</td>
+<td class="org-left">Attempt to perform completion on the text before point. Bash tries variable, username, hostname,</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-left"> </td>
+<td class="org-left">or command completion, then filename completion if none match.</td>
+<td class="org-left"> </td>
+</tr>
+<tr>
+<td class="org-left">M-?</td>
+<td class="org-left">possible-completions</td>
+<td class="org-left">List the possible completions of the text before point.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">M-*</td>
+<td class="org-left">insert-completions</td>
+<td class="org-left">Insert all completions of the text before point that would have been generated by</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-left"> </td>
+<td class="org-left">possible-completions.</td>
+<td class="org-left"> </td>
+</tr>
+<tr>
+<td class="org-left">menu-complete</td>
+<td class="org-left">menu-complete</td>
+<td class="org-left">Like complete, but cycles through possible completions, inserting each match in turn.</td>
+<td class="org-left">No</td>
+</tr>
+<tr>
+<td class="org-left">menu-complete-backward</td>
+<td class="org-left">menu-complete-backward</td>
+<td class="org-left">Like menu-complete, but cycles backward through the list of possible completions.</td>
+<td class="org-left">No</td>
+</tr>
+<tr>
+<td class="org-left">delete-char-or-list</td>
+<td class="org-left">delete-char-or-list</td>
+<td class="org-left">Deletes char under cursor, or if at end of line, behaves like possible-completions.</td>
+<td class="org-left">No</td>
+</tr>
+<tr>
+<td class="org-left">M-/</td>
+<td class="org-left">complete-filename</td>
+<td class="org-left">Attempt filename completion on the text before point.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">C-x /</td>
+<td class="org-left">possible-filename-completions</td>
+<td class="org-left">List the possible completions of the text before point, treating it as a filename.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">M-~</td>
+<td class="org-left">complete-username</td>
+<td class="org-left">Attempt completion on the text before point, treating it as a username.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">C-x ~</td>
+<td class="org-left">possible-username-completions</td>
+<td class="org-left">List the possible completions of the text before point, treating it as a username.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">M-$</td>
+<td class="org-left">complete-variable</td>
+<td class="org-left">Attempt completion on the text before point, treating it as a shell variable.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">C-x $</td>
+<td class="org-left">possible-variable-completions</td>
+<td class="org-left">List the possible completions of the text before point, treating it as a shell variable.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">M-@</td>
+<td class="org-left">complete-hostname</td>
+<td class="org-left">Attempt completion on the text before point, treating it as a hostname.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">C-x @</td>
+<td class="org-left">possible-hostname-completions</td>
+<td class="org-left">List the possible completions of the text before point, treating it as a hostname.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">M-!</td>
+<td class="org-left">complete-command</td>
+<td class="org-left">Attempt completion on the text before point, treating it as a command name.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">C-x !</td>
+<td class="org-left">possible-command-completions</td>
+<td class="org-left">List the possible completions of the text before point, treating it as a command name.</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left">M-TAB</td>
+<td class="org-left">dynamic-complete-history</td>
+<td class="org-left">Attempt completion on the text before point, comparing the text against lines from the history</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-left"> </td>
+<td class="org-left">list for possible completion matches.</td>
+<td class="org-left"> </td>
+</tr>
+<tr>
+<td class="org-left">dabbrev-expand</td>
+<td class="org-left">dabbrev-expand</td>
+<td class="org-left">Attempt menu completion on the text before point, comparing the text against lines from the</td>
+<td class="org-left">No</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-left"> </td>
+<td class="org-left">history list for possible completion matches.</td>
+<td class="org-left"> </td>
+</tr>
+<tr>
+<td class="org-left">M-{</td>
+<td class="org-left">complete-into-braces</td>
+<td class="org-left">Perform filename completion and insert the list of possible completions enclosed within braces</td>
+<td class="org-left">Yes</td>
+</tr>
+<tr>
+<td class="org-left"> </td>
+<td class="org-left"> </td>
+<td class="org-left">so the list is available to the shell.</td>
+<td class="org-left"> </td>
+</tr>
+</tbody>
+</table>
+<p>
+<b><b>Legend</b></b>
+</p>
+<ul class="org-ul">
+<li>`M-` = Meta (usually Alt or Esc)</li>
+<li>`C-` = Control</li>
+<li>"No" in "Default Binding?" means the command is unbound by default and must be bound manually in `.inputrc` if desired.</li>
+</ul>
+<p>
+<b>Notes</b>
+</p>
+<ul class="org-ul">
+<li>Some commands (like `menu-complete`, `menu-complete-backward`, `delete-char-or-list`, and `dabbrev-expand`) are <b><b>unbound by default</b></b>.</li>
+<li>You can bind unbound commands in your `~/.inputrc` for even more powerful completion workflows.</li>
+</ul>
+</div>
+</div>
+    </div>
+    
+
+</article><!--End of body content--><footer id="footer">
+            Contents © 2025         <a href="mailto:nicolas@stormvault.net">@UnixNick</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 .. title: Google Cloud Command-line Examples
 .. slug: google-cloud-command-line-examples
 .. date: 2016-11-06 16:59:39 UTC
-.. tags: gcloud, google cloud, gsutil, app engine, cloud storage, cloud dns
+.. tags: app engine, cloud dns, cloud storage, gcloud, google cloud, gsutil, mib, components, installed
 .. category: cloud
 .. link:
 .. description: Google Cloud command-line examples outlined by service for Cloud Storage, Compute Engine, App Engine, Cloud DNS
@@ -214,22 +214,6 @@ gcloud beta compute instances create gpu-instance-1 \
       apt-get install cuda -y
     fi'
 #+end_src
-
-* Container-Optimized OS (Chromium)
-** List cos-cloud images
-#+begin_src shell
-gcloud compute images list --project cos-cloud --no-standard-images
-#+end_src
-** Create a VM instance using COS
-#+begin_src shell
-gcloud compute instances create container-optimized-os --image-family cos-stable --image-project cos-cloud --zone us-east1-c --machine-type n1-standard-1
-#+end_src
-
-Connecting to the instance:
-#+begin_src shell
-gcloud compute ssh --zone "us-east1-c" "container-optimized-os"
-#+end_src
-
 * App Engine
 ** Deploy Application
 #+begin_src shell

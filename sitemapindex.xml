@@ -6,143 +6,183 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://ncouture.github.io/categories/app-engine.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/alice.xml</loc>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/and.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/app-engine.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/cat_cloud.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/app.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/appengine.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/bob.xml</loc>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/cat_cloud.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://ncouture.github.io/categories/cat_password-management-yubikey.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/cat_password-management-yubikey.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/cat_web.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/cat_personal-post.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/cat_web.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/cloud-dns.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/channels.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/cloud-dns.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://ncouture.github.io/categories/cloud-storage.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/cloud-storage.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/freenode.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/components.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/cv.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/deploy.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/dist.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/forum.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/freenode.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://ncouture.github.io/categories/gcloud.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/gcloud.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/google-cloud.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/go.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/google-cloud.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/gpg.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/googleglass.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/gpg.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://ncouture.github.io/categories/gsutil.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/gsutil.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/io2016.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/infrastructure.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/installed.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/io2016.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://ncouture.github.io/categories/irc.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/irc.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/pass.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/key-id.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/keys.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/linux.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/management.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/mib.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/pass.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/progressive-web-application.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/plantuml.xml</loc>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/png.xml</loc>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/progressive-web-application.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://ncouture.github.io/categories/yubikey.atom</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
+  <loc>https://ncouture.github.io/categories/scd.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/security.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/startuml.xml</loc>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://ncouture.github.io/categories/story.xml</loc>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/categories/yubikey.xml</loc>
-  <lastmod>2016-11-05T04:39:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://ncouture.github.io/index.atom</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T19:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/rss.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://ncouture.github.io/sitemap.xml</loc>
-  <lastmod>2017-02-27T04:16:00Z</lastmod>
+  <lastmod>2025-06-04T20:09:00Z</lastmod>
  </sitemap>
 </sitemapindex>

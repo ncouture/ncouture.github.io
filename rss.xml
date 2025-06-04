@@ -1,83 +1,458 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>ncouture
-.github.io</title><link>https://ncouture.github.io/</link><description>Nicolas Couture's Github pages</description><atom:link type="application/rss+xml" href="https://ncouture.github.io/rss.xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 04:16:16 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
-&lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1"&gt;Google Cloud Commands&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-1-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2"&gt;Configuration&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-1"&gt;Install Google Cloud SDK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-2"&gt;Install App Engine Python Standard Environment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-3"&gt;List Available Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-4"&gt;Update Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-5"&gt;Install App Engine Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-6"&gt;GCloud Authentication&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-2-7"&gt;Configure Default Command Line Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3"&gt;Cloud Storage&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-1"&gt;Create a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-2"&gt;List files in a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-3"&gt;Synchronize buckets and directories files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-4"&gt;Cloud Storage ACL with gsutil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-3-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4"&gt;Compute Engine&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-1"&gt;Copy files to/from a Compute Engine instance&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-2"&gt;List Compute Engine Instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-3"&gt;Connect via SSH&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-4-4"&gt;Create an instance with a GPU&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5"&gt;App Engine&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-1"&gt;Deploy Application&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-2"&gt;Run Python App Engine application locally&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-3"&gt;List App Engine Instances&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-4"&gt;Read App Engine Logs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-5"&gt;Stop App&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-6"&gt;Spawn a remote Python shell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-5-7"&gt;Describe a service version&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6"&gt;Stackdriver Logging&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-6-1"&gt;Errors within last 10 minutes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7"&gt;Cloud DNS&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-1"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-2"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-7-3"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8"&gt;BigQuery&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-1"&gt;Default Configuration&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-2"&gt;Interactive Shell&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#sec-8-3"&gt;List common flags&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ncouture.github.io</title><link>https://ncouture.github.io/</link><description>This is my personal github pages.</description><atom:link href="https://ncouture.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:nicolas@stormvault.net"&gt;@UnixNick&lt;/a&gt; </copyright><lastBuildDate>Wed, 04 Jun 2025 20:09:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nicolas Couture - Linux, BASH, Python, JS, TS, Cloud, DevOps, SRE, Network, Security IAM/PAM</title><link>https://ncouture.github.io/posts/p-nicolas-couture-cv-2025/</link><dc:creator>@UnixNick</dc:creator><description>&lt;p&gt;
+Nicolas Couture - Linux, BASH, Python, JS, TS, Cloud, DevOps, SRE, Network, Security IAM/PAM
+&lt;/p&gt;
+&lt;div id="outline-container-org955ea07" class="outline-2"&gt;
+&lt;h2 id="org955ea07"&gt;Skills &amp;amp; Expertise&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org955ea07"&gt;
+&lt;p&gt;
+&lt;i&gt;Highly self-driven, highly organized expert with 20 years of professional experience working primarily on systems and infrastructures powered by Linux since 2001 and infratructures, experienced with Window in the context of Identity, Access, and Privileged Access management (AD, Azure AD, LDAP, SAML), worked with on-premises up to hybrid cloud environments, contributed to developing and streamlining DevOps and SRE practices in the enterprise. Specialized in UNIX-like OSes, system administration, infrastructure automation, configuration management, and security. Proven ability to design, implement, and automate cloud solutions for improved efficiency, security, and scalability. Eager to leverage expertise in Azure, Google Cloud, OCI, and AWS to contribute to innovative cloud initiatives. Have been on the fron-line of innovation surronding Linux occupying roles directly involved in developing and working with the new tools of the trade as they became stremline, all the way to container orchestration I understand every step necessary to execute a single step in a CI/CD pipeline, all the way down to the Kernel functionalities and Linux software and tools required to execute them.&lt;/i&gt;
+&lt;/p&gt;
 
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Google Cloud Commands&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+&lt;b&gt;Preferred method of contact is &amp;lt;a href="tel:+1-514-688-7124"&amp;gt;by phone&amp;lt;/a&amp;gt;.&lt;/b&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org3b5d79f" class="outline-3"&gt;
+&lt;h3 id="org3b5d79f"&gt;Cloud Service Providers&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3b5d79f"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Google Cloud Platform&lt;/li&gt;
+&lt;li&gt;Azure&lt;/li&gt;
+&lt;li&gt;AWS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga74e691" class="outline-3"&gt;
+&lt;h3 id="orga74e691"&gt;DevOps &amp;amp; SRE&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga74e691"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;CI/CD pipelines&lt;/li&gt;
+&lt;li&gt;Infrastructure automation&lt;/li&gt;
+&lt;li&gt;BASH, Python, HCL&lt;/li&gt;
+&lt;li&gt;Docker, Podman, Containers&lt;/li&gt;
+&lt;li&gt;Terraform, Infrastructure as Code (IaC)&lt;/li&gt;
+&lt;li&gt;ARM, Bicep, Vault, Packer&lt;/li&gt;
+&lt;li&gt;PowerShell, YAML, ELisp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org6528977" class="outline-3"&gt;
+&lt;h3 id="org6528977"&gt;Security&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6528977"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Identity and Access Management (IAM)&lt;/li&gt;
+&lt;li&gt;Privileged Access Management (PAM)&lt;/li&gt;
+&lt;li&gt;Secret Management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgf7a224a" class="outline-3"&gt;
+&lt;h3 id="orgf7a224a"&gt;Linux Administration&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf7a224a"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Linux Kernel&lt;/li&gt;
+&lt;li&gt;Packaging (DEBs, RPMs)&lt;/li&gt;
+&lt;li&gt;Managing Standard Internet Services&lt;/li&gt;
+&lt;li&gt;Networking&lt;/li&gt;
+&lt;li&gt;Database Administration&lt;/li&gt;
+&lt;li&gt;Debian, RHEL&lt;/li&gt;
+&lt;li&gt;Security / Hardening&lt;/li&gt;
+&lt;li&gt;Configuration Automation&lt;/li&gt;
+&lt;li&gt;Deployment Automation&lt;/li&gt;
+&lt;li&gt;Containerization
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Docker, Podman&lt;/li&gt;
+&lt;li&gt;Compose, Swarm, Kubernetes&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Orchestration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgc35430f" class="outline-3"&gt;
+&lt;h3 id="orgc35430f"&gt;Monitoring &amp;amp; Troubleshooting&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc35430f"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Proactive approach to system health and performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org401a73b" class="outline-2"&gt;
+&lt;h2 id="org401a73b"&gt;Professional Experience&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org401a73b"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4731cc5" class="outline-3"&gt;
+&lt;h3 id="org4731cc5"&gt;Founding CTO - Stormvault Networks&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4731cc5"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Offering expert services in building resilient teams&lt;/li&gt;
+&lt;li&gt;Implementing automation tools for small and medium businesses&lt;/li&gt;
+&lt;li&gt;Develop workshops on my latest deliveries&lt;/li&gt;
+&lt;li&gt;Increase team expertise by developing and presenting workshops&lt;/li&gt;
+&lt;li&gt;Serious about performance and strong team player&lt;/li&gt;
+&lt;li&gt;Building, optimizing, and troubleshooting:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Software development, Terraform IaaC, BASH, Github Actions CI/CD pipelines, Google Cloud, Architecting Asynchrounous Event-Driven Workflows, IAM, PAM, WIF, ABAC, RBAC, Secret Management, OAuth2 Client and Provider, OpenID Connect, MFA, Certificate Management, Single Sign-On (SSO), Identity Federation, and Privileged Access Management
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org8b171ad" class="outline-3"&gt;
+&lt;h3 id="org8b171ad"&gt;Senior Hybrid-Cloud Infrastructure Engineer, Ubisoft Canada | 2023-2024&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8b171ad"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Designed and implemented robust hybrid cloud solutions for Ubisoft's game development environment, leveraging Azure expertise&lt;/li&gt;
+&lt;li&gt;Automated provisioning, configuration management, and application deployments using Azure DevOps pipelines across a hybrid multi-cloud Dotnet microservices infrastructure&lt;/li&gt;
+&lt;li&gt;Managed infrastructure as code (IaC) with Bicep and Terraform, ensuring consistent, scalable deployments across on-premises, Azure, Google Cloud, and AWS environments&lt;/li&gt;
+&lt;li&gt;Collaborated with senior development managers to integrate Azure, GCP, AWS, and Alibaba Cloud services, enhancing security and performance of game deployments&lt;/li&gt;
+&lt;li&gt;Configured MultiClusterIngress for GKE Services with Anthos Service Mesh, deploying both external and internal Google Load Balancers (GCLB/ILB) for efficient traffic management&lt;/li&gt;
+&lt;li&gt;Deployed Locust for comprehensive load testing across regions, simulating millions of user sessions to ensure game readiness, facilitated by ASM ingress gateways&lt;/li&gt;
+&lt;li&gt;Improved load-testing deployment processes, cutting deployment time by &amp;gt;50% and reducing errors through optimized CI/CD pipelines, utilizing CI/CD container automation in Gitlab, Hashicorp Vault, Artifact registries, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Linux, DevOps, Google Cloud, Google Kubernetes Engine, Python, Locust, E2E/End-to-End Load Tests, Advanced GitLab CI/CD pipelines, HashiCorp Vault, Writing Dockerfiles, Automating builds, Advanced CI/CD pipelines, GitLab, Secret Management, Alibaba Cloud, IAM, PAM, Azure DevOps, ARM Templates, Bicep, Anthos Service Mesh, Terraform, AWS, Hybrid Cloud Solutions, MCI, Google Load Balancers (GCLB/ILB)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org8c7cf52" class="outline-3"&gt;
+&lt;h3 id="org8c7cf52"&gt;Senior Developer Productivity Engineer, Invue Security Products | 2021-2023 (remote)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8c7cf52"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Joined Invue at a strategic time when the Software Engineering department was focused on converting a Node.js monolith into microservices&lt;/li&gt;
+&lt;li&gt;Migrated the monolith's legacy infrastructure from AWS to Google Cloud, transitioning from inefficient, costly Compute Engine instances to Kubernetes&lt;/li&gt;
+&lt;li&gt;Facilitated the migration of the microservice architecture running on Kubernetes to Microsoft Azure Cloud&lt;/li&gt;
+&lt;li&gt;Architected a streamlined microservice infrastructure by automating the build and containerization of existing microservices&lt;/li&gt;
+&lt;li&gt;Developed an MVP of the cluster's infrastructure using Docker Compose, which allowed developers to run the entire setup locally in a consistent and reproducible manner, thereby eliminating the need for shared, costly cloud-based development environments&lt;/li&gt;
+&lt;li&gt;Enhanced developer proficiency in DevOps practices as measured by a 100% increase in contributions to CI/CD pipelines skill use by developers after conducting workshops and training sessions&lt;/li&gt;
+&lt;li&gt;Implemented CI/CD pipeline processes to improve code quality, security, and automated tests&lt;/li&gt;
+&lt;li&gt;Modernized their DevOps practices by adopting sound CI/CD pipelines effectively replacing Ansible with Terraform and brought Terraform Cloud into the enterprise, as well as Hashicorp Vault, leading to significant reductions in manual interventions and enhanced consistency in provisioning&lt;/li&gt;
+&lt;li&gt;Elevated security as measured by improved secret management protocols and cloud IAM processes, enhancing the overall security posture&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: JavaScript, TypeScript, Advanced Build Processes, Security, Secret Management, Identity and Access Management, Docker, Github, Github Actions, Kubernetes, Google Kubernetes Service, Azure Kubernetes Service, Amazon Kubernetes Services, Spinnaker, Automation, BASH, Terraform, Terraform Cloud, Hashicorp Vault, Linux, DevOps
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org1ac74e2" class="outline-3"&gt;
+&lt;h3 id="org1ac74e2"&gt;GCP / Workspace Cloud Identity and Access Management Consultant / Google Cloud Integrator, Big Data &amp;amp; Artificial Intelligence, Innovation &amp;amp; AI Team, Desjardins | 2020-2021 (remote)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1ac74e2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Collaborated within a multidisciplinary team to enhance security for Desjardins' Big Data solutions in Google Cloud Platform, Google Workspace, and Google Marketing solutions (Analytics, AdWords, Search Console, Maps)&lt;/li&gt;
+&lt;li&gt;Led a large-scale account and access management migration project, synchronizing Desjardins' user identities for Single Sign-On (SSO) and transitioning access from user-owned to corporate accounts, ensuring uninterrupted service for thousands of users&lt;/li&gt;
+&lt;li&gt;Developed a governance strategy for unmanaged accounts, eliminating consumer-type accounts with access to corporate resources and ensuring all corporate identities were securely managed&lt;/li&gt;
+&lt;li&gt;Automated data mining tasks for user data migration using advanced LDAP queries with Active Directory, enhancing efficiency and accuracy&lt;/li&gt;
+&lt;li&gt;Identified and disabled consumer-type accounts, securing Google Cloud resources owned by the firm&lt;/li&gt;
+&lt;li&gt;Created proof of concepts to evaluate Big Data solutions for marketing and analytics teams using Google Cloud technologies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Google Cloud Identity, Active Directory, LDAP, SAML, Terraform, Vault, Linux, GitLab, BigQuery, BASH, Python, Cloud Operations, Apache Beam, Apache Airflow
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org39dd8cc" class="outline-3"&gt;
+&lt;h3 id="org39dd8cc"&gt;E-commerce Information System Environment Manager, Decathlon | 2019-2020&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org39dd8cc"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Ensured e-commerce infrastructure availability around the clock&lt;/li&gt;
+&lt;li&gt;Maintained infrastructure-as-code and performed manual system administration on legacy infrastructures&lt;/li&gt;
+&lt;li&gt;Designed a multi-cloud solution used to facilitate the migration of the platform to a different cloud vendor&lt;/li&gt;
+&lt;li&gt;Centralized application logging and implemented log-based metrics used to create dashboards and visualize data&lt;/li&gt;
+&lt;li&gt;Implemented system monitoring and service health checks&lt;/li&gt;
+&lt;li&gt;Increased e-commerce average page load speed by &amp;gt;30%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Terraform, Linux, Gitlab, Docker, Docker Compose, Kubernetes, AWS, GCP, Apache, NGINX, Python, PHP, BASH, Django, Redis, Github Actions, Slack API
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgc3f43c5" class="outline-3"&gt;
+&lt;h3 id="orgc3f43c5"&gt;Senior DevOps Engineer, Square-Enix | 2018-2019&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc3f43c5"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Deployed and configured multi-regional Kubernetes clusters with Istio service mesh using Google Kubernetes Engine, and Helm&lt;/li&gt;
+&lt;li&gt;Implemented multi-regional, Spinnaker k8s clusters for continuous delivery and canary deployments with automated pipelines triggered by container image tags&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Google Kubernetes Engine (GKE), Istio Service Mesh, Helm, Spinnaker, NGINX Load Balancer, Istio RouteRules, Private Container Registry, Kubernetes, Continuous Delivery, Canary Deployments, Blue/Green Deployments, Automated Pipelines
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org556c5be" class="outline-3"&gt;
+&lt;h3 id="org556c5be"&gt;Founder, Kisscalls | 2016-2018&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org556c5be"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Founded a next-generation business assistant as a service business—&lt;a href="https://www.kisscalls.xn--combridging-0g3f"&gt;https://www.kisscalls.com—bridging&lt;/a&gt; the gap between online to offline conversions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Python, Django, REST framework, OAuth2, Dialogflow, Google Assistant, App Engine, Polymer, Material Design, WebRTC, Firebase Hosting, Firebase Database, Cloud Functions, Express.js, Twilio, GCP, Github, Google Data Studio, Sendgrid
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org273d2be" class="outline-3"&gt;
+&lt;h3 id="org273d2be"&gt;IT and Medical Imaging Consultant, Dossier santé Québec M.S.S.S. | 2015&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org273d2be"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Acceptance testing of provincial-wide, multi-vendor, RIS, PACS, DIR solution&lt;/li&gt;
+&lt;li&gt;Installation and migration of large scale on-prem Oracle databases servers with replication across 3 central locations in the province of Quebec via private WAN&lt;/li&gt;
+&lt;li&gt;Automated asynchronous load and conformance tests&lt;/li&gt;
+&lt;li&gt;Developed a domain-specific language to automate end-to-end tests by writing YAML instead of a programming language&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Linux, DICOM, HL7, RIS, PACS, XDS, Python, BASH, Agfa IMPAX, dcm4chee
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org2da907d" class="outline-3"&gt;
+&lt;h3 id="org2da907d"&gt;Enterprise Infrastructure Associate, Morgan Stanley | 2014-2016&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2da907d"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Supported 5 enterprise web portals (50k daily users)&lt;/li&gt;
+&lt;li&gt;Performed manual production rollouts on the products I owned&lt;/li&gt;
+&lt;li&gt;Automated a subset of these production upgrades and progressive rollouts&lt;/li&gt;
+&lt;li&gt;Developed our groups' IAM strategy during the first firm-wide rollout of MS's proprietary Identity and Access Management system&lt;/li&gt;
+&lt;li&gt;Created a firm-wide wiki that lives on to this day and has had hundreads of daily users during my stay&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Linux, Organizaional skills, Self-driven, Read and wrote documentation, Tomcat, Java, PostgreSQL, Adobe Experience Manager, Oracle Database Server on-prem administration, Python, BASH, Identity and Access Management
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgfa2be8c" class="outline-3"&gt;
+&lt;h3 id="orgfa2be8c"&gt;IAM &amp;amp; PAM Solutions Architect, Hitachi ID Systems | 2012-2014&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfa2be8c"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Tailored identity and access management solution for fortune 500 companies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Windows Server, Active Directory, Database Management, Oracle Database &amp;lt;12, Lotus Notes, Solaris, Linux, AS/400, LDAP, Python, Twisted, Identity and Access Management, HTML, LaTeX, m4, BASH
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge326fe9" class="outline-3"&gt;
+&lt;h3 id="orge326fe9"&gt;Integration Specialist, Technidata Medical Software | 2009-2012&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge326fe9"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Deployed laboratory information systems&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Windows 2008 R2, RedHat Enterprise Linux, Solaris, AIX
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orge96e2a9" class="outline-3"&gt;
+&lt;h3 id="orge96e2a9"&gt;Deployment Specialist and PACS Analyst, Intelerad | 2005-2008&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge96e2a9"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Deployed and upgraded large scale digital radiology software (100+ servers, 300+ RPMs)&lt;/li&gt;
+&lt;li&gt;Investigated and documented system issues working closely with developers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Linux, RHEL, BASH, Perl, Python, DICOM, HL7
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org9f98727" class="outline-3"&gt;
+&lt;h3 id="org9f98727"&gt;Linux System Administrator Internship, Commission Scolaire de Montreal + other employments | 2002-2004&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9f98727"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Installation, configuration, and administration of Linux servers, Linux Terminal Server (thinclients), shell scripting automation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;b&gt;&lt;b&gt;Technologies&lt;/b&gt;&lt;/b&gt;: Debian, RedHat, Cyrus, LTSP, Sendmail, Popa3d, Courier-IMAP, Bind (DNS), Yellow Pages (NIS), Firewall (IPTables), Nagios, Postfix, PostgreSQL
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org57d654d" class="outline-2"&gt;
+&lt;h2 id="org57d654d"&gt;Top Skills&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org57d654d"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Linux&lt;/li&gt;
+&lt;li&gt;BASH&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;Security&lt;/li&gt;
+&lt;li&gt;Automation&lt;/li&gt;
+&lt;li&gt;Collaboration&lt;/li&gt;
+&lt;li&gt;Organization&lt;/li&gt;
+&lt;li&gt;DevOps Practices&lt;/li&gt;
+&lt;li&gt;SRE Practices&lt;/li&gt;
+&lt;li&gt;Containerization&lt;/li&gt;
+&lt;li&gt;Cloud Native Technologies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgcb2da0e" class="outline-2"&gt;
+&lt;h2 id="orgcb2da0e"&gt;Regulatory Frameworks Experience&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgcb2da0e"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;GDPR&lt;/li&gt;
+&lt;li&gt;ISO 27001&lt;/li&gt;
+&lt;li&gt;HIPAA&lt;/li&gt;
+&lt;li&gt;PCI DSS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgf698997" class="outline-2"&gt;
+&lt;h2 id="orgf698997"&gt;Certifications&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf698997"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Linux Professional (Canonical)&lt;/li&gt;
+&lt;li&gt;Microsoft Security Professional &lt;a href="https://www.linkedin.com/learning/certificates/ee3a4639802b3dc095cb238c027ee834d835bdc7805a53a60d018d2e00e9a7ba"&gt;Microsoft&lt;/a&gt; - January 2025&lt;/li&gt;
+&lt;li&gt;Microsoft Security: Concepts, Solutions, and AI-Powered Protection &lt;a href="https://www.linkedin.com/learning/certificates/dc3038c0ad5e24a3655ef339a84ae0dff9675d9dfea26fc86aca1b5616c61041"&gt;Microsoft&lt;/a&gt; - January 2025&lt;/li&gt;
+&lt;li&gt;GitHub Professional Certificate &lt;a href="https://www.linkedin.com/learning/certificates/3cec3708ecd52cd57a95ee0992a3280ae39829a47fd3ba671d2cc4a5533b26fe"&gt;GitHub&lt;/a&gt; - December 2024&lt;/li&gt;
+&lt;li&gt;Docker Professional Certificate &lt;a href="https://www.linkedin.com/learning/certificates/e47cf4f9073b8edd949ece7fa926291895bdaffb07e9aabef0f1b195f4c5f938"&gt;Docker&lt;/a&gt; - October 2024&lt;/li&gt;
+&lt;li&gt;Digital Marketing Fundamentals (Google) - Credential ID: &lt;a href="https://learndigital.withgoogle.com/digitalgarage/validate-certificate-code"&gt;MMZ UPE 2V8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Startup School (Y Combinator) - Credential ID: &lt;a href="https://www.credential.net/hviasngk#acc.zbGLx98q"&gt;10738466&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mobile Site Certification (Google) - Issued May 2017&lt;/li&gt;
+&lt;li&gt;Linux Security (Savoir-faire Linux) - Issued 2001&lt;/li&gt;
+&lt;li&gt;Linux Administration (Savoir-faire Linux) - Issued 2001&lt;/li&gt;
+&lt;li&gt;Linux Basics (Savoir-faire Linux) - Issued 2001&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb4d44fa" class="outline-3"&gt;
+&lt;h3 id="orgb4d44fa"&gt;Google Cloud&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb4d44fa"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8"&gt;Google Developer Profile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Developing a Google SRE Culture &lt;a href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~KZ9U9HKHX7LJ/CERTIFICATE_LANDING_PAGE~KZ9U9HKHX7LJ.jpeg"&gt;Coursera&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Reliable Google Cloud Infrastructure: Design and Process (&lt;a href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6GNGQA7DK4QN/CERTIFICATE_LANDING_PAGE~6GNGQA7DK4QN.jpeg"&gt;Coursera&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Google Cloud Fundamentals: Core Infrastructure (&lt;a href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~6GNGQA7DK4QN/CERTIFICATE_LANDING_PAGE~6GNGQA7DK4QN.jpeg"&gt;Coursera&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Preparing for your Professional Cloud Architect Journey (&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/9576010"&gt;Google&lt;/a&gt;) - Jun. 2024&lt;/li&gt;
+&lt;li&gt;Generative AI with the Vertex AI Gemini API (&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/9566471"&gt;Google&lt;/a&gt;) - Jun. 2024&lt;/li&gt;
+&lt;li&gt;Developing a Google SRE Culture (&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/8105696"&gt;Google&lt;/a&gt;) - Feb. 2024&lt;/li&gt;
+&lt;li&gt;Managing Cloud Infrastructure with Terraform (&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/6950095"&gt;Google&lt;/a&gt;) - Jan. 2024&lt;/li&gt;
+&lt;li&gt;Google Cloud Fundamentals: Core Infrastructure (&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/8105696"&gt;Google&lt;/a&gt;) - Feb. 2024&lt;/li&gt;
+&lt;li&gt;Kubernetes in Google Cloud ((&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/205644"&gt;Google&lt;/a&gt;)) - Feb. 2020&lt;/li&gt;
+&lt;li&gt;Baseline: Data, ML, AI (&lt;a href="https://www.cloudskillsboost.google/public_profiles/4683c2e3-1391-42e9-9bc4-3960af2ef1d8/badges/205617"&gt;Google&lt;/a&gt;) - Feb. 2020&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org0612e59" class="outline-2"&gt;
+&lt;h2 id="org0612e59"&gt;Education - Continuous Learning Journey&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0612e59"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Education: IT Management and Computer Science foundations with focus on UNIX-like operaring systems&lt;/li&gt;
+&lt;li&gt;Professional Development: 20+ industry certifications spanning cloud architecture, security, and engineering excellence&lt;/li&gt;
+&lt;li&gt;Self-Directed Learning: Consistent investment in emerging technologies through hands-on exploration&lt;/li&gt;
+&lt;li&gt;Knowledge Exchange: Regular contributor to technical communities and open-source initiatives&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org314712d" class="outline-2"&gt;
+&lt;h2 id="org314712d"&gt;Volunteer Experience&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org314712d"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;PyCon US (Python Software Foundation) - 2015 &amp;amp; 2016&lt;/li&gt;
+&lt;li&gt;Linux-Québec / Facil - 2003-2004&lt;/li&gt;
+&lt;li&gt;M.LU.G. - 1999-2004&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org3f72298" class="outline-2"&gt;
+&lt;h2 id="org3f72298"&gt;Contact Information&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3f72298"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Phone: +1-514-688-7124&lt;/li&gt;
+&lt;li&gt;Email: work@stormvault.net&lt;/li&gt;
+&lt;li&gt;[LinkedIn](&lt;a href="https://www.linkedin.com/in/nicolascouture"&gt;https://www.linkedin.com/in/nicolascouture&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;[Github](&lt;a href="https://github.com/ncouture"&gt;https://github.com/ncouture&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;
+Calendar: [Book me online](&lt;a href="https://calendar.app.google/WjxXaKGdbnXUkaf8A"&gt;https://calendar.app.google/WjxXaKGdbnXUkaf8A&lt;/a&gt;)
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>and</category><category>cv</category><category>infrastructure</category><category>linux</category><category>management</category><category>security</category><category>story</category><guid>https://ncouture.github.io/posts/p-nicolas-couture-cv-2025/</guid><pubDate>Sun, 01 Jun 2025 00:00:01 GMT</pubDate></item><item><title>Google Cloud Command-line Examples</title><link>https://ncouture.github.io/posts/google-cloud-command-line-examples/</link><dc:creator>@UnixNick</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org7df4107"&gt;Google Cloud Commands&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orge85c36d"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org6f9f857"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgb99897e"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org8683367"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgbbd1d66"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org887b264"&gt;Configuration&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgb273322"&gt;Install Google Cloud SDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orga991977"&gt;Install App Engine Python Standard Environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgf1f45aa"&gt;List Available Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgab88f6c"&gt;Update Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org6eb23cf"&gt;Install App Engine Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orge27f01c"&gt;GCloud Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org9b645c7"&gt;Configure Default Command Line Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org9a8a847"&gt;Cloud Storage&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org727e3ef"&gt;Create a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgbaad7ff"&gt;List files in a Cloud Storage bucket&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org7f3fb57"&gt;Synchronize buckets and directories files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgae9767b"&gt;Cloud Storage ACL with gsutil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org1ab2a99"&gt;HTTPS Load-balancing with Cloud CDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgee9d655"&gt;Compute Engine&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orga8eacb0"&gt;Copy files to/from a Compute Engine instance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgfac34d8"&gt;List Compute Engine Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org592ece8"&gt;Connect via SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgb00181f"&gt;Create an instance with a GPU&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgc899d49"&gt;App Engine&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgdc4180a"&gt;Deploy Application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org446125c"&gt;Run Python App Engine application locally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgd191a84"&gt;List App Engine Instances&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org3be6406"&gt;Read App Engine Logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orga59d9e0"&gt;Stop App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org89dc1d6"&gt;Spawn a remote Python shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orgc0dba7e"&gt;Describe a service version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org123e67e"&gt;Stackdriver Logging&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orga13a6f2"&gt;Errors within last 10 minutes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org56304a7"&gt;Cloud DNS&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org4a24afe"&gt;List Managed Zones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org96a855b"&gt;Describe Existing Zone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org21666bc"&gt;Add DNS Record&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org9d009d6"&gt;BigQuery&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#orge9f0892"&gt;Default Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org97d4802"&gt;Interactive Shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#org9b538ce"&gt;List common flags&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org7df4107" class="outline-2"&gt;
+&lt;h2 id="org7df4107"&gt;Google Cloud Commands&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7df4107"&gt;
 &lt;p&gt;
 All Google Cloud commands are &lt;span class="underline"&gt;self-documented&lt;/span&gt;, most ship with Bash and Zsh auto-completion profiles.
 &lt;/p&gt;
@@ -86,138 +461,120 @@ All Google Cloud commands are &lt;span class="underline"&gt;self-documented&lt;/
 Their official documentation is available online at &lt;a href="https://cloud.google.com/sdk/gcloud/reference/"&gt;https://cloud.google.com/sdk/gcloud/reference/&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;div id="outline-container-orge85c36d" class="outline-3"&gt;
+&lt;h3 id="orge85c36d"&gt;&lt;code&gt;gcloud&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge85c36d"&gt;
 &lt;p&gt;
 You can use gcloud to create and manage:
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;Google Compute Engine virtual machine instances and other resources
-&lt;/li&gt;
-&lt;li&gt;Google Cloud SQL instances
-&lt;/li&gt;
-&lt;li&gt;Google Container Engine clusters
-&lt;/li&gt;
-&lt;li&gt;Google Cloud Dataproc clusters and jobs
-&lt;/li&gt;
-&lt;li&gt;Google Cloud DNS managed zones and record sets
-&lt;/li&gt;
-&lt;li&gt;Google Cloud Deployment manager deployments
-&lt;/li&gt;
-&lt;li&gt;Deploy App Engine applications
-&lt;/li&gt;
-&lt;li&gt;Perform other tasks against Alpha and Beta Cloud Platform services
-&lt;/li&gt;
+&lt;li&gt;Google Compute Engine virtual machine instances and other resources&lt;/li&gt;
+&lt;li&gt;Google Cloud SQL instances&lt;/li&gt;
+&lt;li&gt;Google Container Engine clusters&lt;/li&gt;
+&lt;li&gt;Google Cloud Dataproc clusters and jobs&lt;/li&gt;
+&lt;li&gt;Google Cloud DNS managed zones and record sets&lt;/li&gt;
+&lt;li&gt;Google Cloud Deployment manager deployments&lt;/li&gt;
+&lt;li&gt;Deploy App Engine applications&lt;/li&gt;
+&lt;li&gt;Perform other tasks against Alpha and Beta Cloud Platform services&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
-&lt;h3 id="sec-1-2"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;div id="outline-container-org6f9f857" class="outline-3"&gt;
+&lt;h3 id="org6f9f857"&gt;&lt;code&gt;gsutil&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6f9f857"&gt;
 &lt;p&gt;
 You can use gsutil to:
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;Create and manage Cloud Storage buckets
-&lt;/li&gt;
-&lt;li&gt;Upload objects to buckets, and download and delete them
-&lt;/li&gt;
-&lt;li&gt;Move, copy and rename objects
-&lt;/li&gt;
-&lt;li&gt;Manage access to stored data
-&lt;/li&gt;
+&lt;li&gt;Create and manage Cloud Storage buckets&lt;/li&gt;
+&lt;li&gt;Upload objects to buckets, and download and delete them&lt;/li&gt;
+&lt;li&gt;Move, copy and rename objects&lt;/li&gt;
+&lt;li&gt;Manage access to stored data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-3" class="outline-3"&gt;
-&lt;h3 id="sec-1-3"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;div id="outline-container-orgb99897e" class="outline-3"&gt;
+&lt;h3 id="orgb99897e"&gt;&lt;code&gt;bq&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb99897e"&gt;
 &lt;p&gt;
 You can use bq to manage datasets, tables and other entities in BigQuery, as well as run
 queries on your data.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-4" class="outline-3"&gt;
-&lt;h3 id="sec-1-4"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-4"&gt;
+&lt;div id="outline-container-org8683367" class="outline-3"&gt;
+&lt;h3 id="org8683367"&gt;&lt;code&gt;appcfg.py&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8683367"&gt;
 &lt;p&gt;
 Manage App Engine instances.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-5" class="outline-3"&gt;
-&lt;h3 id="sec-1-5"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-5"&gt;
+&lt;div id="outline-container-orgbbd1d66" class="outline-3"&gt;
+&lt;h3 id="orgbbd1d66"&gt;&lt;code&gt;dev_appserver.py&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbbd1d66"&gt;
 &lt;p&gt;
 Local App Engine development server.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Configuration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
-&lt;h3 id="sec-2-1"&gt;Install Google Cloud SDK&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl https://sdk.cloud.google.com | bash
+&lt;div id="outline-container-org887b264" class="outline-2"&gt;
+&lt;h2 id="org887b264"&gt;Configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org887b264"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb273322" class="outline-3"&gt;
+&lt;h3 id="orgb273322"&gt;Install Google Cloud SDK&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb273322"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   curl https://sdk.cloud.google.com | bash
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
 &lt;b&gt;Warning&lt;/b&gt;: You can verify the SSL certificate using &lt;i&gt;curl –cacert &amp;lt;certificate&amp;gt;&lt;/i&gt; and this root CA:
 &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Operating CA: Symantec (GeoTrust)
-# Issuer: CN=GeoTrust Global CA O=GeoTrust Inc.
-# Subject: CN=GeoTrust Global CA O=GeoTrust Inc.
-# Label: "GeoTrust Global CA"
-# Serial: 144470
-# MD5 Fingerprint: f7:75:ab:29:fb:51:4e:b7:77:5e:ff:05:3c:99:8e:f5
-# SHA1 Fingerprint: de:28:f4:a4:ff:e5:b9:2f:a3:c5:03:d1:a3:49:a7:f9:96:2a:82:12
-# SHA256 Fingerprint: ff:85:6a:2d:25:1d:cd:88:d3:66:56:f4:50:12:67:98:cf:ab:aa:de:40:79:9c:72:2d:e4:d2:b5:db:36:a7:3a
------BEGIN CERTIFICATE-----
-MIIDVDCCAjygAwIBAgIDAjRWMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAlVT
-MRYwFAYDVQQKEw1HZW9UcnVzdCBJbmMuMRswGQYDVQQDExJHZW9UcnVzdCBHbG9i
-YWwgQ0EwHhcNMDIwNTIxMDQwMDAwWhcNMjIwNTIxMDQwMDAwWjBCMQswCQYDVQQG
-EwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEbMBkGA1UEAxMSR2VvVHJ1c3Qg
-R2xvYmFsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2swYYzD9
-9BcjGlZ+W988bDjkcbd4kdS8odhM+KhDtgPpTSEHCIjaWC9mOSm9BXiLnTjoBbdq
-fnGk5sRgprDvgOSJKA+eJdbtg/OtppHHmMlCGDUUna2YRpIuT8rxh0PBFpVXLVDv
-iS2Aelet8u5fa9IAjbkU+BQVNdnARqN7csiRv8lVK83Qlz6cJmTM386DGXHKTubU
-1XupGc1V3sjs0l44U+VcT4wt/lAjNvxm5suOpDkZALeVAjmRCw7+OC7RHQWa9k0+
-bw8HHa8sHo9gOeL6NlMTOdReJivbPagUvTLrGAMoUgRx5aszPeE4uwc2hGKceeoW
-MPRfwCvocWvk+QIDAQABo1MwUTAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTA
-ephojYn7qwVkDBF9qn1luMrMTjAfBgNVHSMEGDAWgBTAephojYn7qwVkDBF9qn1l
-uMrMTjANBgkqhkiG9w0BAQUFAAOCAQEANeMpauUvXVSOKVCUn5kaFOSPeCpilKIn
-Z57QzxpeR+nBsqTP3UEaBU6bS+5Kb1VSsyShNwrrZHYqLizz/Tt1kL/6cdjHPTfS
-tQWVYrmm3ok9Nns4d0iXrKYgjy6myQzCsplFAMfOEVEiIuCl6rYVSAlk6l5PdPcF
-PseKUgzbFbS9bZvlxrFUaKnjaZC2mqUPuLk/IH2uSrW4nOQdtqvmlKXBx4Ot2/Un
-hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
-5fEWCRE11azbJHFwLJhWC9kXtNHjUStedejV0NxPNO3CBWaAocvmMw==
------END CERTIFICATE-----
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   # Operating CA: Symantec (GeoTrust)
+   # Issuer: CN=GeoTrust Global CA O=GeoTrust Inc.
+   # Subject: CN=GeoTrust Global CA O=GeoTrust Inc.
+   # Label: "GeoTrust Global CA"
+   # Serial: 144470
+   # MD5 Fingerprint: f7:75:ab:29:fb:51:4e:b7:77:5e:ff:05:3c:99:8e:f5
+   # SHA1 Fingerprint: de:28:f4:a4:ff:e5:b9:2f:a3:c5:03:d1:a3:49:a7:f9:96:2a:82:12
+   # SHA256 Fingerprint: ff:85:6a:2d:25:1d:cd:88:d3:66:56:f4:50:12:67:98:cf:ab:aa:de:40:79:9c:72:2d:e4:d2:b5:db:36:a7:3a
+   -----BEGIN CERTIFICATE-----
+   MIIDVDCCAjygAwIBAgIDAjRWMA0GCSqGSIb3DQEBBQUAMEIxCzAJBgNVBAYTAlVT
+   MRYwFAYDVQQKEw1HZW9UcnVzdCBJbmMuMRswGQYDVQQDExJHZW9UcnVzdCBHbG9i
+   YWwgQ0EwHhcNMDIwNTIxMDQwMDAwWhcNMjIwNTIxMDQwMDAwWjBCMQswCQYDVQQG
+   EwJVUzEWMBQGA1UEChMNR2VvVHJ1c3QgSW5jLjEbMBkGA1UEAxMSR2VvVHJ1c3Qg
+   R2xvYmFsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2swYYzD9
+   9BcjGlZ+W988bDjkcbd4kdS8odhM+KhDtgPpTSEHCIjaWC9mOSm9BXiLnTjoBbdq
+   fnGk5sRgprDvgOSJKA+eJdbtg/OtppHHmMlCGDUUna2YRpIuT8rxh0PBFpVXLVDv
+   iS2Aelet8u5fa9IAjbkU+BQVNdnARqN7csiRv8lVK83Qlz6cJmTM386DGXHKTubU
+   1XupGc1V3sjs0l44U+VcT4wt/lAjNvxm5suOpDkZALeVAjmRCw7+OC7RHQWa9k0+
+   bw8HHa8sHo9gOeL6NlMTOdReJivbPagUvTLrGAMoUgRx5aszPeE4uwc2hGKceeoW
+   MPRfwCvocWvk+QIDAQABo1MwUTAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTA
+   ephojYn7qwVkDBF9qn1luMrMTjAfBgNVHSMEGDAWgBTAephojYn7qwVkDBF9qn1l
+   uMrMTjANBgkqhkiG9w0BAQUFAAOCAQEANeMpauUvXVSOKVCUn5kaFOSPeCpilKIn
+   Z57QzxpeR+nBsqTP3UEaBU6bS+5Kb1VSsyShNwrrZHYqLizz/Tt1kL/6cdjHPTfS
+   tQWVYrmm3ok9Nns4d0iXrKYgjy6myQzCsplFAMfOEVEiIuCl6rYVSAlk6l5PdPcF
+   PseKUgzbFbS9bZvlxrFUaKnjaZC2mqUPuLk/IH2uSrW4nOQdtqvmlKXBx4Ot2/Un
+   hw4EbNX/3aBd7YdStysVAq45pmp06drE57xNNB6pXE0zX5IJL4hmXXeXxx12E6nV
+   5fEWCRE11azbJHFwLJhWC9kXtNHjUStedejV0NxPNO3CBWaAocvmMw==
+   -----END CERTIFICATE-----
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
-&lt;h3 id="sec-2-2"&gt;Install App Engine Python Standard Environment&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;div id="outline-container-orga991977" class="outline-3"&gt;
+&lt;h3 id="orga991977"&gt;Install App Engine Python Standard Environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga991977"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components install app-engine-python
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
-&lt;h3 id="sec-2-3"&gt;List Available Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;div id="outline-container-orgf1f45aa" class="outline-3"&gt;
+&lt;h3 id="orgf1f45aa"&gt;List Available Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf1f45aa"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components list
 
 Your current Cloud SDK version is: 123.0.0
@@ -251,16 +608,16 @@ To update your SDK installation to the latest version [123.0.0], run:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
-&lt;h3 id="sec-2-4"&gt;Update Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-4"&gt;
+&lt;div id="outline-container-orgab88f6c" class="outline-3"&gt;
+&lt;h3 id="orgab88f6c"&gt;Update Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgab88f6c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components update
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-5" class="outline-3"&gt;
-&lt;h3 id="sec-2-5"&gt;Install App Engine Components&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-5"&gt;
+&lt;div id="outline-container-org6eb23cf" class="outline-3"&gt;
+&lt;h3 id="org6eb23cf"&gt;Install App Engine Components&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org6eb23cf"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud components install app-engine-python gcd-emulator pubsub-emulator cloud-datastore-emulator
 
 
@@ -282,9 +639,9 @@ Installing components from version: 123.0.0
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-6" class="outline-3"&gt;
-&lt;h3 id="sec-2-6"&gt;GCloud Authentication&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-6"&gt;
+&lt;div id="outline-container-orge27f01c" class="outline-3"&gt;
+&lt;h3 id="orge27f01c"&gt;GCloud Authentication&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge27f01c"&gt;
 &lt;p&gt;
 Project-level authentication:
 &lt;/p&gt;
@@ -292,42 +649,42 @@ Project-level authentication:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-7" class="outline-3"&gt;
-&lt;h3 id="sec-2-7"&gt;Configure Default Command Line Project&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-7"&gt;
+&lt;div id="outline-container-org9b645c7" class="outline-3"&gt;
+&lt;h3 id="org9b645c7"&gt;Configure Default Command Line Project&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9b645c7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud config set project &amp;lt;project ID&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;Cloud Storage&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
-&lt;h3 id="sec-3-1"&gt;Create a Cloud Storage bucket&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;div id="outline-container-org9a8a847" class="outline-2"&gt;
+&lt;h2 id="org9a8a847"&gt;Cloud Storage&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9a8a847"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org727e3ef" class="outline-3"&gt;
+&lt;h3 id="org727e3ef"&gt;Create a Cloud Storage bucket&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org727e3ef"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil mb gs://&amp;lt;bucket name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
-&lt;h3 id="sec-3-2"&gt;List files in a Cloud Storage bucket&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-2"&gt;
+&lt;div id="outline-container-orgbaad7ff" class="outline-3"&gt;
+&lt;h3 id="orgbaad7ff"&gt;List files in a Cloud Storage bucket&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbaad7ff"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil ls gs://&amp;lt;bucket&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
-&lt;h3 id="sec-3-3"&gt;Synchronize buckets and directories files&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-3"&gt;
+&lt;div id="outline-container-org7f3fb57" class="outline-3"&gt;
+&lt;h3 id="org7f3fb57"&gt;Synchronize buckets and directories files&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org7f3fb57"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gsutil -m rsync --help
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-4" class="outline-3"&gt;
-&lt;h3 id="sec-3-4"&gt;Cloud Storage ACL with gsutil&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-4"&gt;
+&lt;div id="outline-container-orgae9767b" class="outline-3"&gt;
+&lt;h3 id="orgae9767b"&gt;Cloud Storage ACL with gsutil&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgae9767b"&gt;
 &lt;p&gt;
 Make bucket files world-readable:
 &lt;/p&gt;
@@ -335,47 +692,45 @@ Make bucket files world-readable:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-5" class="outline-3"&gt;
-&lt;h3 id="sec-3-5"&gt;HTTPS Load-balancing with Cloud CDN&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-5"&gt;
+&lt;div id="outline-container-org1ab2a99" class="outline-3"&gt;
+&lt;h3 id="org1ab2a99"&gt;HTTPS Load-balancing with Cloud CDN&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1ab2a99"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage"&gt;https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage"&gt;https://cloud.google.com/compute/docs/load-balancing/http/using-http-lb-with-cloud-storage&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;Compute Engine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
-&lt;h3 id="sec-4-1"&gt;Copy files to/from a Compute Engine instance&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-1"&gt;
+&lt;div id="outline-container-orgee9d655" class="outline-2"&gt;
+&lt;h2 id="orgee9d655"&gt;Compute Engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgee9d655"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orga8eacb0" class="outline-3"&gt;
+&lt;h3 id="orga8eacb0"&gt;Copy files to/from a Compute Engine instance&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga8eacb0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute copy-files [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
-&lt;h3 id="sec-4-2"&gt;List Compute Engine Instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-2"&gt;
+&lt;div id="outline-container-orgfac34d8" class="outline-3"&gt;
+&lt;h3 id="orgfac34d8"&gt;List Compute Engine Instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgfac34d8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute instances list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4-3" class="outline-3"&gt;
-&lt;h3 id="sec-4-3"&gt;Connect via SSH&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-3"&gt;
+&lt;div id="outline-container-org592ece8" class="outline-3"&gt;
+&lt;h3 id="org592ece8"&gt;Connect via SSH&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org592ece8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute ssh &amp;lt;instance name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-4-4" class="outline-3"&gt;
-&lt;h3 id="sec-4-4"&gt;Create an instance with a GPU&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-4"&gt;
+&lt;div id="outline-container-orgb00181f" class="outline-3"&gt;
+&lt;h3 id="orgb00181f"&gt;Create an instance with a GPU&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb00181f"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://cloud.google.com/gpu/"&gt;https://cloud.google.com/gpu/&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cloud.google.com/gpu/"&gt;https://cloud.google.com/gpu/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud beta compute instances create gpu-instance-1 \
@@ -395,22 +750,21 @@ Make bucket files world-readable:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;App Engine&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-5"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-5-1" class="outline-3"&gt;
-&lt;h3 id="sec-5-1"&gt;Deploy Application&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-1"&gt;
+&lt;div id="outline-container-orgc899d49" class="outline-2"&gt;
+&lt;h2 id="orgc899d49"&gt;App Engine&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc899d49"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgdc4180a" class="outline-3"&gt;
+&lt;h3 id="orgdc4180a"&gt;Deploy Application&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgdc4180a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app 
 appcfg.py update -A &amp;lt;project ID&amp;gt; -V &amp;lt;version&amp;gt; &amp;lt;src&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-
-&lt;div id="outline-container-sec-5-2" class="outline-3"&gt;
-&lt;h3 id="sec-5-2"&gt;Run Python App Engine application locally&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-2"&gt;
+&lt;div id="outline-container-org446125c" class="outline-3"&gt;
+&lt;h3 id="org446125c"&gt;Run Python App Engine application locally&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org446125c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dev_appserver.py &amp;lt;src&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -434,32 +788,32 @@ with both:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-3" class="outline-3"&gt;
-&lt;h3 id="sec-5-3"&gt;List App Engine Instances&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-3"&gt;
+&lt;div id="outline-container-orgd191a84" class="outline-3"&gt;
+&lt;h3 id="orgd191a84"&gt;List App Engine Instances&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgd191a84"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app instances list
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-4" class="outline-3"&gt;
-&lt;h3 id="sec-5-4"&gt;Read App Engine Logs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-4"&gt;
+&lt;div id="outline-container-org3be6406" class="outline-3"&gt;
+&lt;h3 id="org3be6406"&gt;Read App Engine Logs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3be6406"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app logs read
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-5" class="outline-3"&gt;
-&lt;h3 id="sec-5-5"&gt;Stop App&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-5"&gt;
+&lt;div id="outline-container-orga59d9e0" class="outline-3"&gt;
+&lt;h3 id="orga59d9e0"&gt;Stop App&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga59d9e0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud compute instances stop &amp;lt;instance-name&amp;gt; &amp;lt;instance-name&amp;gt; ...
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-6" class="outline-3"&gt;
-&lt;h3 id="sec-5-6"&gt;Spawn a remote Python shell&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-6"&gt;
+&lt;div id="outline-container-org89dc1d6" class="outline-3"&gt;
+&lt;h3 id="org89dc1d6"&gt;Spawn a remote Python shell&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org89dc1d6"&gt;
 &lt;p&gt;
-In order to have access to the remote&lt;sub&gt;api&lt;/sub&gt;, it must first be deployed with the option enabled&lt;sup&gt;&lt;a id="fnr.1" name="fnr.1" class="footref" href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;:
+In order to have access to the remote&lt;sub&gt;api&lt;/sub&gt;, it must first be deployed with the option enabled&lt;sup&gt;&lt;a id="fnr.1" class="footref" href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#fn.1" role="doc-backlink"&gt;1&lt;/a&gt;&lt;/sup&gt;:
 &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;builtins:
   - remote_api: on
@@ -469,46 +823,42 @@ In order to have access to the remote&lt;sub&gt;api&lt;/sub&gt;, it must first b
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
-ref: &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1"&gt;&lt;/a&gt;&lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi"&gt;https://cloud.google.com/appengine/docs/python/tools/remoteapi&lt;/a&gt;
+ref: &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1"&gt;https://cloud.google.com/appengine/docs/python/tools/remoteapi&lt;/a&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5-7" class="outline-3"&gt;
-&lt;h3 id="sec-5-7"&gt;Describe a service version&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5-7"&gt;
+&lt;div id="outline-container-orgc0dba7e" class="outline-3"&gt;
+&lt;h3 id="orgc0dba7e"&gt;Describe a service version&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc0dba7e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud app versions describe -s default v1
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;Stackdriver Logging&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;div id="outline-container-org123e67e" class="outline-2"&gt;
+&lt;h2 id="org123e67e"&gt;Stackdriver Logging&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org123e67e"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="http://www.stackdriver.com/"&gt;http://www.stackdriver.com/&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://cloud.google.com/stackdriver/"&gt;https://cloud.google.com/stackdriver/&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://cloud.google.com/logging/docs/api/gcloud-logging"&gt;https://cloud.google.com/logging/docs/api/gcloud-logging&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.stackdriver.com/"&gt;http://www.stackdriver.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cloud.google.com/stackdriver/"&gt;https://cloud.google.com/stackdriver/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cloud.google.com/logging/docs/api/gcloud-logging"&gt;https://cloud.google.com/logging/docs/api/gcloud-logging&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-6-1" class="outline-3"&gt;
-&lt;h3 id="sec-6-1"&gt;Errors within last 10 minutes&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6-1"&gt;
+&lt;div id="outline-container-orga13a6f2" class="outline-3"&gt;
+&lt;h3 id="orga13a6f2"&gt;Errors within last 10 minutes&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga13a6f2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud beta logging read --freshness="10m" "severity&amp;gt;=ERROR"
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;Cloud DNS&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-7-1" class="outline-3"&gt;
-&lt;h3 id="sec-7-1"&gt;List Managed Zones&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-1"&gt;
+&lt;div id="outline-container-org56304a7" class="outline-2"&gt;
+&lt;h2 id="org56304a7"&gt;Cloud DNS&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org56304a7"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4a24afe" class="outline-3"&gt;
+&lt;h3 id="org4a24afe"&gt;List Managed Zones&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4a24afe"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -520,17 +870,16 @@ example-zone      example.com.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-7-2" class="outline-3"&gt;
-&lt;h3 id="sec-7-2"&gt;Describe Existing Zone&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-2"&gt;
+&lt;div id="outline-container-org96a855b" class="outline-3"&gt;
+&lt;h3 id="org96a855b"&gt;Describe Existing Zone&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org96a855b"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcloud dns managed-zones describe &amp;lt;zone-name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7-3" class="outline-3"&gt;
-&lt;h3 id="sec-7-3"&gt;Add DNS Record&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7-3"&gt;
+&lt;div id="outline-container-org21666bc" class="outline-3"&gt;
+&lt;h3 id="org21666bc"&gt;Add DNS Record&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org21666bc"&gt;
 &lt;p&gt;
 Here is an example of creating a CNAME record named &lt;span class="underline"&gt;my-cname.example.com&lt;/span&gt; that points to &lt;span class="underline"&gt;cname.value.example.org&lt;/span&gt;
 &lt;/p&gt;
@@ -580,16 +929,16 @@ gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8" class="outline-2"&gt;
-&lt;h2 id="sec-8"&gt;BigQuery&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;div id="outline-container-org9d009d6" class="outline-2"&gt;
+&lt;h2 id="org9d009d6"&gt;BigQuery&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org9d009d6"&gt;
 &lt;p&gt;
 &lt;code&gt;bq help&lt;/code&gt; includes a lot of great info, the official documentation is available at &lt;a href="https://cloud.google.com/bigquery/bq-command-line-tool"&gt;https://cloud.google.com/bigquery/bq-command-line-tool&lt;/a&gt;.
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-1" class="outline-3"&gt;
-&lt;h3 id="sec-8-1"&gt;Default Configuration&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-1"&gt;
+&lt;div id="outline-container-orge9f0892" class="outline-3"&gt;
+&lt;h3 id="orge9f0892"&gt;Default Configuration&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge9f0892"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat &amp;gt; ~/.bigqueryrc &amp;lt;&amp;lt;EOF
 &amp;gt; project_id = &amp;lt;project-id&amp;gt;
 &amp;gt; dataset_id = &amp;lt;dataset-id&amp;gt;
@@ -597,16 +946,16 @@ gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-2" class="outline-3"&gt;
-&lt;h3 id="sec-8-2"&gt;Interactive Shell&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-2"&gt;
+&lt;div id="outline-container-org97d4802" class="outline-3"&gt;
+&lt;h3 id="org97d4802"&gt;Interactive Shell&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org97d4802"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bq shell
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8-3" class="outline-3"&gt;
-&lt;h3 id="sec-8-3"&gt;List common flags&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-3"&gt;
+&lt;div id="outline-container-org9b538ce" class="outline-3"&gt;
+&lt;h3 id="org9b538ce"&gt;List common flags&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9b538ce"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bq --format=json ls -d
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -616,62 +965,63 @@ gcloud dns record-sets transaction execute -z &amp;lt;zone-name&amp;gt;
 &lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
 &lt;div id="text-footnotes"&gt;
 
-&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" name="fn.1" class="footnum" href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;p class="footpara"&gt;
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="https://ncouture.github.io/posts/google-cloud-command-line-examples/#fnr.1" role="doc-backlink"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara" role="doc-footnote"&gt;&lt;p class="footpara"&gt;
 &lt;a href="https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1"&gt;https://cloud.google.com/appengine/docs/python/tools/remoteapi?ncouture=1&lt;/a&gt;
-&lt;/p&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</description><category>app engine</category><category>cloud dns</category><category>cloud storage</category><category>gcloud</category><category>google cloud</category><category>gsutil</category><guid>https://ncouture.github.io/posts/google-cloud-command-line-examples/</guid><pubDate>Sun, 06 Nov 2016 16:59:39 GMT</pubDate></item><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+&lt;/div&gt;</description><category>app engine</category><category>cloud dns</category><category>cloud storage</category><category>components</category><category>gcloud</category><category>google cloud</category><category>gsutil</category><category>installed</category><category>mib</category><guid>https://ncouture.github.io/posts/google-cloud-command-line-examples/</guid><pubDate>Sun, 06 Nov 2016 16:59:39 GMT</pubDate></item><item><title>Configure Yubikey NEO with GPG and Pass</title><link>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</link><dc:creator>@UnixNick</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1"&gt;Environment configuration&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orgfffe0c7"&gt;Environment configuration&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1-1"&gt;Software dependencies&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-1-2"&gt;Xorg environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org876e304"&gt;Software dependencies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orge32836f"&gt;Xorg environment&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-2"&gt;Create GPG keys&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org03ef1db"&gt;Create GPG keys&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-2-1"&gt;Optionally add your picture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org62a11d4"&gt;Optionally add your picture&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3"&gt;Configure your Yubikey&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orgc2063e2"&gt;Configure your Yubikey&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-1"&gt;Resetting defaults&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-2"&gt;Test&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-3"&gt;Configuration&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-4"&gt;Default PINs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-3-5"&gt;Identification details&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org4f51e56"&gt;Resetting defaults&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org1b31007"&gt;Test&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org26620f5"&gt;Configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orgef80087"&gt;Default PINs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orga1d6963"&gt;Identification details&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4"&gt;Upload keys to GPG card&lt;/a&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org080c06a"&gt;Upload keys to GPG card&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4-1"&gt;Backup keys&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-4-2"&gt;Upload your keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org2a3cfbe"&gt;Backup keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org9da84b0"&gt;Upload your keys&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-5"&gt;Send your public key to keyserver&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-6"&gt;Remove new keys from keyring&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-7"&gt;Configure `pass'&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#sec-8"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org2e3b5d6"&gt;Send your public key to keyserver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#org032451c"&gt;Remove new keys from keyring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orgc032ff8"&gt;Configure `pass'&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/#orgef9a4d4"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Environment configuration&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;Software dependencies&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;div id="outline-container-orgfffe0c7" class="outline-2"&gt;
+&lt;h2 id="orgfffe0c7"&gt;Environment configuration&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgfffe0c7"&gt;
+&lt;p&gt;
+Debian stable (bookworm).
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org876e304" class="outline-3"&gt;
+&lt;h3 id="org876e304"&gt;Software dependencies&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org876e304"&gt;
 &lt;p&gt;
 Install requirements and configure gpg2 to be the default gpg:
 &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico python-yubico-tools yhsm-yubikey-ksm yubikey-personalization yubikey-personalization-gui gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
-alias gpg=gpg2
-echo !! &amp;gt;&amp;gt; ~/.bashrc
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install libpam-yubico libyubikey-dev libyubikey0 python-yubico-tools yubikey-personalization gnupg gnupg-agent gnupg2 gpgv openssh-client gpgsm pcscd libccid pass
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -681,10 +1031,9 @@ Uninstall gnome-keyring:
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
-&lt;h3 id="sec-1-2"&gt;Xorg environment&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;div id="outline-container-orge32836f" class="outline-3"&gt;
+&lt;h3 id="orge32836f"&gt;Xorg environment&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge32836f"&gt;
 &lt;p&gt;
 This is a matter of preferences, I do no use a display manager and if you do you may want to tweak this to be used in your &lt;code&gt;.xsession&lt;/code&gt; file instead.
 &lt;/p&gt;
@@ -693,29 +1042,29 @@ This is a matter of preferences, I do no use a display manager and if you do you
 &lt;b&gt;Warning:&lt;/b&gt; this configuration allows a single state for your gpg-agent and ssh-agent (which is gpg-agent) throughout your window manager. This means that all applications may be able to access resources available using some keys after you have provided sufficient information for gpg-agent to use these keys. If you're not sure of what you're doing &lt;b&gt;do not&lt;/b&gt; use my Xorg configuration.
 &lt;code&gt;.xinitrc&lt;/code&gt;
 &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pkill -u "$USER" -x gpg-agent
-pkill -u "$USER" -x ssh-agent
-pkill -u "$USER" -x xss-lock
-pkill -u "$USER" -x xscreensaver
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pkill -9 -u "$USER" -x gpg-agent
+pkill -9 -u "$USER" -x ssh-agent
+pkill -9 -u "$USER" -x xss-lock
+pkill -9 -u "$USER" -x xscreensaver
 
 xscreensaver -nosplash &amp;amp;&amp;gt; /dev/null &amp;amp;
 xss-lock -- xscreensaver-command -lock  &amp;amp;&amp;gt; /dev/null &amp;amp;
 setxkbmap us                    # kbd layout preset
 xmodmap ~/.Xmodmap              # kbd styling
 xrdb -merge ~/.Xresources       # X styling
-xhost +SI:localuser:$USER       # Disable access control
+#xhost +SI:localuser:$USER       # Disable access control
 xsetroot -cursor_name left_ptr  # Fallback cursor
 xset r rate 200 60              # Keyboard repeat rate
 
 # start the `notion' window manager
+gpgconf --kill gpg-agent
+
 exec dbus-launch --exit-with-session \
-     eval "$(gpg-agent --daemon \
-                       --scdaemon-program /usr/lib/gnupg2/scdaemon \
+     eval "$(gpg-agent \
+                       --daemon \
                        --max-cache-ttl 720 \
                        --enable-ssh-support \
-                       --max-cache-ttl-ssh 720 \
-                       --write-env-file "$HOME/.gnupg/gpg-agent.env" \
-             notion)"
+                       --max-cache-ttl-ssh 720 notion)"
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -731,14 +1080,16 @@ fi
 
 GPG_TTY=$(tty)
 export GPG_TTY
+export GNUPGHOME="$HOME/.gnupg"
 &lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;
 Make yourself the owner of the Yubikey
 &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;eval $(lsusb -v | grep Yubi -A1  | egrep 'idVend|idProd' | awk '{ print $1"="$2 }')
 echo SUBSYSTEM=="usb", ATTR{idVendor}=="$idVendor", ATTR{idProduct}=="$idProduct", OWNER="$USER" &amp;gt; /tmp/tmptmp
-sudo cp -v /tmp/tmptmp /etc/udev/rules.d/99-yubikey.rules
-sudo chown root.root /etc/udev/rules.d/99-yubikey.rules
+sudo cp -v /tmp/tmptmp /etc/udev/rules.d/50-yubikey.rules
+sudo chown root.root /etc/udev/rules.d/50-yubikey.rules
 rm /tmp/tmptmp
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -758,37 +1109,30 @@ Review gpg programs:
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpgconf --check-programs
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-2-1" class="outline-4"&gt;
-&lt;h4 id="sec-1-2-1"&gt;Validate configuration&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-1-2-1"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-1-2-1-1" class="outline-5"&gt;
-&lt;h5 id="sec-1-2-1-1"&gt;Smart card access&lt;/h5&gt;
-&lt;div class="outline-text-5" id="text-1-2-1-1"&gt;
+&lt;div id="outline-container-orga2f076f" class="outline-4"&gt;
+&lt;h4 id="orga2f076f"&gt;Validate configuration&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orga2f076f"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org0499222" class="outline-5"&gt;
+&lt;h5 id="org0499222"&gt;Smart card access&lt;/h5&gt;
+&lt;div class="outline-text-5" id="text-org0499222"&gt;
 &lt;p&gt;
-Verify you have sufficient privs to access the yubikey through gpg2:
+Verify you have sufficient privs to access the yubikey through gpg:
 &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --card-status
 &lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-If you get an error, see if you can access the key from the superuser and troubleshoot ACL.
-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gpg2 --card-status
-&lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-2-1-2" class="outline-5"&gt;
-&lt;h5 id="sec-1-2-1-2"&gt;Gnupg agent wrapping&lt;/h5&gt;
-&lt;div class="outline-text-5" id="text-1-2-1-2"&gt;
+&lt;div id="outline-container-org76803aa" class="outline-5"&gt;
+&lt;h5 id="org76803aa"&gt;Gnupg agent wrapping&lt;/h5&gt;
+&lt;div class="outline-text-5" id="text-org76803aa"&gt;
 &lt;p&gt;
 With this configuration your gpg-agent wraps your entire window manager.
 &lt;/p&gt;
 
 &lt;p&gt;
-This means that if you do add an ssh key to the agent from &lt;code&gt;/dev/pts/1&lt;/code&gt;, you will be able to access
-it from &lt;code&gt;/dev/pts/1&lt;/code&gt; if this respects the way you've configured your agent.
+This means that if you do add an ssh key to the agent from &lt;code&gt;"$GPG_TTY"&lt;/code&gt;, you will be able to access
+it from &lt;code&gt;"$GPG_TTY"&lt;/code&gt; if this respects the way you've configured your agent.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -796,25 +1140,20 @@ To test this behavior:
 &lt;/p&gt;
 
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;Open a terminal
-&lt;/li&gt;
-&lt;li&gt;Add an ssh key to the agent
-&lt;/li&gt;
+&lt;li&gt;Open a terminal&lt;/li&gt;
+&lt;li&gt;Add an ssh key to the agent&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-add -i ~/.ssh/somekey
 &amp;lt;feed password prompt&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;Verify you can use the key
-&lt;/li&gt;
+&lt;li&gt;Verify you can use the key&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh user@somehost-allowing-somekey-logins
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;Open a second terminal
-&lt;/li&gt;
-&lt;li&gt;Verify you can use the key without being prompted for password
-&lt;/li&gt;
+&lt;li&gt;Open a second terminal&lt;/li&gt;
+&lt;li&gt;Verify you can use the key without being prompted for password&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh user@somehost-allowing-somekey-logins
 &lt;/pre&gt;&lt;/div&gt;
@@ -823,9 +1162,9 @@ To test this behavior:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Create GPG keys&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;div id="outline-container-org03ef1db" class="outline-2"&gt;
+&lt;h2 id="org03ef1db"&gt;Create GPG keys&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org03ef1db"&gt;
 &lt;p&gt;
 Generate master key:
 &lt;/p&gt;
@@ -861,9 +1200,9 @@ Key is protected.
 gpg&amp;gt; save
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
-&lt;h3 id="sec-2-1"&gt;Optionally add your picture&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;div id="outline-container-org62a11d4" class="outline-3"&gt;
+&lt;h3 id="org62a11d4"&gt;Optionally add your picture&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org62a11d4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --edit-key &amp;lt;key-id&amp;gt;
 addphoto
 
@@ -874,12 +1213,13 @@ save
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;Configure your Yubikey&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
-&lt;h3 id="sec-3-1"&gt;Resetting defaults&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;div id="outline-container-orgc2063e2" class="outline-2"&gt;
+&lt;h2 id="orgc2063e2"&gt;Configure your Yubikey&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc2063e2"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org4f51e56" class="outline-3"&gt;
+&lt;h3 id="org4f51e56"&gt;Resetting defaults&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org4f51e56"&gt;
 &lt;p&gt;
 Optionally you may reset the status of your yubikey by doing this:
 &lt;/p&gt;
@@ -903,9 +1243,9 @@ gpg-connect-agent -r /tmp/reset_yubikey
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-2" class="outline-3"&gt;
-&lt;h3 id="sec-3-2"&gt;Test&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-2"&gt;
+&lt;div id="outline-container-org1b31007" class="outline-3"&gt;
+&lt;h3 id="org1b31007"&gt;Test&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1b31007"&gt;
 &lt;p&gt;
 List devices
 &lt;/p&gt;
@@ -913,9 +1253,9 @@ List devices
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-3" class="outline-3"&gt;
-&lt;h3 id="sec-3-3"&gt;Configuration&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-3"&gt;
+&lt;div id="outline-container-org26620f5" class="outline-3"&gt;
+&lt;h3 id="org26620f5"&gt;Configuration&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org26620f5"&gt;
 &lt;p&gt;
 Configure for HID/CCID with touch eject
 &lt;/p&gt;
@@ -929,9 +1269,9 @@ Configure key for OTP/U2F/CCID composite device with touch eject.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-4" class="outline-3"&gt;
-&lt;h3 id="sec-3-4"&gt;Default PINs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-4"&gt;
+&lt;div id="outline-container-orgef80087" class="outline-3"&gt;
+&lt;h3 id="orgef80087"&gt;Default PINs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgef80087"&gt;
 &lt;p&gt;
 The default PIN is &lt;code&gt;123456&lt;/code&gt; and the default admin PIN is &lt;code&gt;12345678&lt;/code&gt;.
 &lt;/p&gt;
@@ -961,9 +1301,9 @@ passwd
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3-5" class="outline-3"&gt;
-&lt;h3 id="sec-3-5"&gt;Identification details&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-5"&gt;
+&lt;div id="outline-container-orga1d6963" class="outline-3"&gt;
+&lt;h3 id="orga1d6963"&gt;Identification details&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orga1d6963"&gt;
 &lt;p&gt;
 Your key stores personal information, to customize it follow these steps:
 &lt;/p&gt;
@@ -979,12 +1319,13 @@ quit
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;Upload keys to GPG card&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-4-1" class="outline-3"&gt;
-&lt;h3 id="sec-4-1"&gt;Backup keys&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-1"&gt;
+&lt;div id="outline-container-org080c06a" class="outline-2"&gt;
+&lt;h2 id="org080c06a"&gt;Upload keys to GPG card&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org080c06a"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org2a3cfbe" class="outline-3"&gt;
+&lt;h3 id="org2a3cfbe"&gt;Backup keys&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2a3cfbe"&gt;
 &lt;p&gt;
 Backup keychain, primary keys, subkeys, and generate a revocation certificate for them:
 &lt;/p&gt;
@@ -997,10 +1338,9 @@ gpg --armor --gen-revoke &amp;lt;key-id&amp;gt; &amp;gt; ~/gpg_backup/primary_ke
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-4-2" class="outline-3"&gt;
-&lt;h3 id="sec-4-2"&gt;Upload your keys&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4-2"&gt;
+&lt;div id="outline-container-org9da84b0" class="outline-3"&gt;
+&lt;h3 id="org9da84b0"&gt;Upload your keys&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org9da84b0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --expert --edit-key &amp;lt;key-id&amp;gt;
 gpg&amp;gt; toggle
 gpg&amp;gt; key 1
@@ -1017,17 +1357,16 @@ gpg&amp;gt; save
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;Send your public key to keyserver&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;div id="outline-container-org2e3b5d6" class="outline-2"&gt;
+&lt;h2 id="org2e3b5d6"&gt;Send your public key to keyserver&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2e3b5d6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --send-key &amp;lt;key-id&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;Remove new keys from keyring&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;div id="outline-container-org032451c" class="outline-2"&gt;
+&lt;h2 id="org032451c"&gt;Remove new keys from keyring&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org032451c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpg --delete-secret-keys &amp;lt;key-id&amp;gt;
 gpg --delete-key &amp;lt;key-id&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -1048,49 +1387,45 @@ gpg&amp;gt; trust
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;Configure `pass'&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;div id="outline-container-orgc032ff8" class="outline-2"&gt;
+&lt;h2 id="orgc032ff8"&gt;Configure `pass'&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc032ff8"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pass init &amp;lt;key-id&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8" class="outline-2"&gt;
-&lt;h2 id="sec-8"&gt;References&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;div id="outline-container-orgef9a4d4" class="outline-2"&gt;
+&lt;h2 id="orgef9a4d4"&gt;References&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgef9a4d4"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://developers.yubico.com/PGP/Importing_keys.html"&gt;https://developers.yubico.com/PGP/Importing_keys.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf"&gt;https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/"&gt;https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developers.yubico.com/PGP/Importing_keys.html"&gt;https://developers.yubico.com/PGP/Importing_keys.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf"&gt;https://www.yubico.com/wp-content/uploads/2014/11/NEO-Manager-Quick-Start-Guide.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/"&gt;https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>gpg</category><category>pass</category><category>yubikey</category><guid>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</guid><pubDate>Fri, 23 Sep 2016 15:39:19 GMT</pubDate></item><item><title>Google IRC Channels on Freenode</title><link>https://ncouture.github.io/posts/google-freenode-irc-channels/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;div id="table-of-contents"&gt;
+&lt;/div&gt;</description><category>gpg</category><category>key-id</category><category>keys</category><category>pass</category><category>scd</category><category>yubikey</category><guid>https://ncouture.github.io/posts/configure-yubikey-neo-with-gpg-and-pass/</guid><pubDate>Fri, 23 Sep 2016 15:39:19 GMT</pubDate></item><item><title>Google IRC Channels on Freenode</title><link>https://ncouture.github.io/posts/google-freenode-irc-channels/</link><dc:creator>@UnixNick</dc:creator><description>&lt;div id="table-of-contents" role="doc-toc"&gt;
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
-&lt;div id="text-table-of-contents"&gt;
+&lt;div id="text-table-of-contents" role="doc-toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-1"&gt;#google&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-2"&gt;##googleinterns&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-3"&gt;#android&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-4"&gt;#android-dev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-5"&gt;#chromium-extensions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-6"&gt;#chromium-os-users&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-7"&gt;#chromium-support&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-8"&gt;#firebase&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-9"&gt;#googleglass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-10"&gt;#googlemaps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-11"&gt;#google-at-home&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-12"&gt;#google-containers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-13"&gt;#kubernetes-ui&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-14"&gt;#googleajaxapis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-15"&gt;#googleapis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-16"&gt;#googleglass&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-17"&gt;#googleio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-18"&gt;#googlemaps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#sec-19"&gt;#ubuntu-google&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org5ecba21"&gt;#google&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orge64cf83"&gt;##googleinterns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org869b874"&gt;#android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org00d81e1"&gt;#android-dev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org3805434"&gt;#chromium-extensions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgdeab3db"&gt;#chromium-os-users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgded8cad"&gt;#chromium-support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org3b564b9"&gt;#firebase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgfc19b82"&gt;#googleglass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org8f76303"&gt;#googlemaps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org07a912a"&gt;#google-at-home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orge7d1361"&gt;#google-containers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgf6e491c"&gt;#kubernetes-ui&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgef14059"&gt;#googleajaxapis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgbad24b6"&gt;#googleapis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#org8c52743"&gt;#googleglass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgbf2c934"&gt;#googleio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgd49c6ae"&gt;#googlemaps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ncouture.github.io/posts/google-freenode-irc-channels/#orgcc26106"&gt;#ubuntu-google&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1101,112 +1436,101 @@ There are a few official Google channels on the Freenode network but it can be a
 &lt;p&gt;
 &lt;span class="underline"&gt;Note:&lt;/span&gt; the recognized official support channels for Google products do not include IRC channels, for example refer to &lt;a href="https://cloud.google.com/support/"&gt;https://cloud.google.com/support/&lt;/a&gt; for a list of Google Cloud related resources.
 &lt;/p&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;#google&lt;/h2&gt;
+&lt;div id="outline-container-org5ecba21" class="outline-2"&gt;
+&lt;h2 id="org5ecba21"&gt;#google&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;##googleinterns&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;div id="outline-container-orge64cf83" class="outline-2"&gt;
+&lt;h2 id="orge64cf83"&gt;##googleinterns&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge64cf83"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://productforums.google.com/#!forum/en"&gt;https://productforums.google.com/#!forum/en&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.google.com/contact"&gt;https://www.google.com/contact&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.google.com/appsstatus"&gt;https://www.google.com/appsstatus&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://productforums.google.com/#!forum/en"&gt;https://productforums.google.com/#!forum/en&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.google.com/contact"&gt;https://www.google.com/contact&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.google.com/appsstatus"&gt;https://www.google.com/appsstatus&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;#android&lt;/h2&gt;
+&lt;div id="outline-container-org869b874" class="outline-2"&gt;
+&lt;h2 id="org869b874"&gt;#android&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;#android-dev&lt;/h2&gt;
+&lt;div id="outline-container-org00d81e1" class="outline-2"&gt;
+&lt;h2 id="org00d81e1"&gt;#android-dev&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;#chromium-extensions&lt;/h2&gt;
+&lt;div id="outline-container-org3805434" class="outline-2"&gt;
+&lt;h2 id="org3805434"&gt;#chromium-extensions&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;#chromium-os-users&lt;/h2&gt;
+&lt;div id="outline-container-orgdeab3db" class="outline-2"&gt;
+&lt;h2 id="orgdeab3db"&gt;#chromium-os-users&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;#chromium-support&lt;/h2&gt;
+&lt;div id="outline-container-orgded8cad" class="outline-2"&gt;
+&lt;h2 id="orgded8cad"&gt;#chromium-support&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-8" class="outline-2"&gt;
-&lt;h2 id="sec-8"&gt;#firebase&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;div id="outline-container-org3b564b9" class="outline-2"&gt;
+&lt;h2 id="org3b564b9"&gt;#firebase&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3b564b9"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="http://firebase-community.appspot.com/"&gt;http://firebase-community.appspot.com/&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://firebase-community.appspot.com/"&gt;http://firebase-community.appspot.com/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-9" class="outline-2"&gt;
-&lt;h2 id="sec-9"&gt;#googleglass&lt;/h2&gt;
+&lt;div id="outline-container-orgfc19b82" class="outline-2"&gt;
+&lt;h2 id="orgfc19b82"&gt;#googleglass&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-10" class="outline-2"&gt;
-&lt;h2 id="sec-10"&gt;#googlemaps&lt;/h2&gt;
+&lt;div id="outline-container-org8f76303" class="outline-2"&gt;
+&lt;h2 id="org8f76303"&gt;#googlemaps&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-11" class="outline-2"&gt;
-&lt;h2 id="sec-11"&gt;#google-at-home&lt;/h2&gt;
+&lt;div id="outline-container-org07a912a" class="outline-2"&gt;
+&lt;h2 id="org07a912a"&gt;#google-at-home&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-12" class="outline-2"&gt;
-&lt;h2 id="sec-12"&gt;#google-containers&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-12"&gt;
+&lt;div id="outline-container-orge7d1361" class="outline-2"&gt;
+&lt;h2 id="orge7d1361"&gt;#google-containers&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orge7d1361"&gt;
 &lt;p&gt;
 Kubernetes, containers, cAdvisor
 &lt;/p&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/tagged/kubernetes"&gt;http://stackoverflow.com/questions/tagged/kubernetes&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ"&gt;https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://groups.google.com/forum/#!forum/google-containers"&gt;https://groups.google.com/forum/#!forum/google-containers&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/tagged/kubernetes"&gt;http://stackoverflow.com/questions/tagged/kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ"&gt;https://github.com/kubernetes/kubernetes/wiki/Debugging-FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://groups.google.com/forum/#!forum/google-containers"&gt;https://groups.google.com/forum/#!forum/google-containers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-13" class="outline-2"&gt;
-&lt;h2 id="sec-13"&gt;#kubernetes-ui&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-13"&gt;
+&lt;div id="outline-container-orgf6e491c" class="outline-2"&gt;
+&lt;h2 id="orgf6e491c"&gt;#kubernetes-ui&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgf6e491c"&gt;
 &lt;p&gt;
 &lt;i&gt;previously #google-containers-ui&lt;/i&gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-14" class="outline-2"&gt;
-&lt;h2 id="sec-14"&gt;#googleajaxapis&lt;/h2&gt;
+&lt;div id="outline-container-orgef14059" class="outline-2"&gt;
+&lt;h2 id="orgef14059"&gt;#googleajaxapis&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-15" class="outline-2"&gt;
-&lt;h2 id="sec-15"&gt;#googleapis&lt;/h2&gt;
+&lt;div id="outline-container-orgbad24b6" class="outline-2"&gt;
+&lt;h2 id="orgbad24b6"&gt;#googleapis&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-16" class="outline-2"&gt;
-&lt;h2 id="sec-16"&gt;#googleglass&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-16"&gt;
+&lt;div id="outline-container-org8c52743" class="outline-2"&gt;
+&lt;h2 id="org8c52743"&gt;#googleglass&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8c52743"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://developers.google.com/glass"&gt;https://developers.google.com/glass&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/googleglass"&gt;https://github.com/googleglass&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developers.google.com/glass"&gt;https://developers.google.com/glass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/googleglass"&gt;https://github.com/googleglass&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-17" class="outline-2"&gt;
-&lt;h2 id="sec-17"&gt;#googleio&lt;/h2&gt;
+&lt;div id="outline-container-orgbf2c934" class="outline-2"&gt;
+&lt;h2 id="orgbf2c934"&gt;#googleio&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-18" class="outline-2"&gt;
-&lt;h2 id="sec-18"&gt;#googlemaps&lt;/h2&gt;
+&lt;div id="outline-container-orgd49c6ae" class="outline-2"&gt;
+&lt;h2 id="orgd49c6ae"&gt;#googlemaps&lt;/h2&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-19" class="outline-2"&gt;
-&lt;h2 id="sec-19"&gt;#ubuntu-google&lt;/h2&gt;
-&lt;/div&gt;</description><category>freenode</category><category>google cloud</category><category>IRC</category><guid>https://ncouture.github.io/posts/google-freenode-irc-channels/</guid><pubDate>Tue, 20 Sep 2016 23:09:09 GMT</pubDate></item><item><title>PlantUML Org-Mode Tests</title><link>https://ncouture.github.io/posts/plantuml-org-mode-tests/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;p&gt;
+&lt;div id="outline-container-orgcc26106" class="outline-2"&gt;
+&lt;h2 id="orgcc26106"&gt;#ubuntu-google&lt;/h2&gt;
+&lt;/div&gt;</description><category>channels</category><category>forum</category><category>freenode</category><category>google cloud</category><category>googleglass</category><category>IRC</category><guid>https://ncouture.github.io/posts/google-freenode-irc-channels/</guid><pubDate>Tue, 20 Sep 2016 23:09:09 GMT</pubDate></item><item><title>PlantUML Org-Mode Tests</title><link>https://ncouture.github.io/posts/plantuml-org-mode-tests/</link><dc:creator>@UnixNick</dc:creator><description>&lt;p&gt;
 &lt;a href="http://plantuml.com/PlantUML_Language_Reference_Guide.pdf"&gt;http://plantuml.com/PlantUML_Language_Reference_Guide.pdf&lt;/a&gt;
 &lt;/p&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Sequence diagram&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div id="outline-container-org0408dc0" class="outline-2"&gt;
+&lt;h2 id="org0408dc0"&gt;Sequence diagram&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0408dc0"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 '
 ' everything that starts with a single quote is a comment
@@ -1217,12 +1541,17 @@ Bob --&amp;gt; Alice: Authentication Response
 Alice -&amp;gt; Bob: Another authentication Request
 Alice &amp;lt;-- Bob: Another authentication Response
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Participants&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
+
+&lt;div id="org5fb82c0" class="figure"&gt;
+&lt;p&gt;&lt;img src="https://ncouture.github.io/seqdiag1.png" alt="nil"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org944bced" class="outline-2"&gt;
+&lt;h2 id="org944bced"&gt;Participants&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org944bced"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 actor Foo1
 boundary Foo2
@@ -1237,10 +1566,9 @@ Foo1 -&amp;gt; Foo5 : To database
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;Colors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;div id="outline-container-orgc9df6c4" class="outline-2"&gt;
+&lt;h2 id="orgc9df6c4"&gt;Colors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgc9df6c4"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 actor Bob #red
 ' The only difference between actor
@@ -1257,10 +1585,9 @@ Bob-&amp;gt;L: Log transaction
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;Special characters in participant names&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;div id="outline-container-org7fc5a10" class="outline-2"&gt;
+&lt;h2 id="org7fc5a10"&gt;Special characters in participant names&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org7fc5a10"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Alice -&amp;gt; "Bob()" : Hello
 "Bob()" -&amp;gt; "This is very\nlong" as Long
@@ -1271,19 +1598,18 @@ Long --&amp;gt; "Bob()" : ok
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-5" class="outline-2"&gt;
-&lt;h2 id="sec-5"&gt;Self-Addressed Message&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-5"&gt;
+&lt;div id="outline-container-org6931cdb" class="outline-2"&gt;
+&lt;h2 id="org6931cdb"&gt;Self-Addressed Message&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6931cdb"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Alice-&amp;gt;Alice: This is a signal to self.\nIt also demonstrates\nmultiline \ntext
 @enduml
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-6" class="outline-2"&gt;
-&lt;h2 id="sec-6"&gt;Arrow styles&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-6"&gt;
+&lt;div id="outline-container-orgb51dc25" class="outline-2"&gt;
+&lt;h2 id="orgb51dc25"&gt;Arrow styles&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb51dc25"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Bob -&amp;gt;x Alice
 Bob -&amp;gt; Alice
@@ -1299,10 +1625,9 @@ Bob &amp;lt;-&amp;gt;o Alice
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-7" class="outline-2"&gt;
-&lt;h2 id="sec-7"&gt;Arrow colors&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-7"&gt;
+&lt;div id="outline-container-org0a94da6" class="outline-2"&gt;
+&lt;h2 id="org0a94da6"&gt;Arrow colors&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0a94da6"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Bob -[#red]&amp;gt; Alice : hello
 Alice -[#0000FF]-&amp;gt;Bob : ok
@@ -1310,10 +1635,9 @@ Alice -[#0000FF]-&amp;gt;Bob : ok
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-8" class="outline-2"&gt;
-&lt;h2 id="sec-8"&gt;Message sequence numbering&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-8"&gt;
+&lt;div id="outline-container-org1ba165c" class="outline-2"&gt;
+&lt;h2 id="org1ba165c"&gt;Message sequence numbering&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1ba165c"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 autonumber
 Bob -&amp;gt; Alice : Authentication Request
@@ -1321,10 +1645,9 @@ Bob &amp;lt;- Alice : Authentication Response
 @enduml
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-8-1" class="outline-3"&gt;
-&lt;h3 id="sec-8-1"&gt;autonumber arguments&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-1"&gt;
+&lt;div id="outline-container-org2e77287" class="outline-3"&gt;
+&lt;h3 id="org2e77287"&gt;autonumber arguments&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2e77287"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 autonumber
 Bob -&amp;gt; Alice : Authentication Request
@@ -1339,10 +1662,9 @@ Bob &amp;lt;- Alice : Yet another authentication Response
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-8-2" class="outline-3"&gt;
-&lt;h3 id="sec-8-2"&gt;autonumber HTML properties&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8-2"&gt;
+&lt;div id="outline-container-org00e934d" class="outline-3"&gt;
+&lt;h3 id="org00e934d"&gt;autonumber HTML properties&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org00e934d"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 autonumber "&amp;lt;b&amp;gt;[000]"
 Bob -&amp;gt; Alice : Authentication Request
@@ -1358,10 +1680,9 @@ Bob &amp;lt;- Alice : Yet another authentication Response
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-9" class="outline-2"&gt;
-&lt;h2 id="sec-9"&gt;Title&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-9"&gt;
+&lt;div id="outline-container-org3340831" class="outline-2"&gt;
+&lt;h2 id="org3340831"&gt;Title&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org3340831"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 title Simple communication example
 Alice -&amp;gt; Bob: Authentication Request
@@ -1370,10 +1691,9 @@ Bob --&amp;gt; Alice: Authentication Response
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-10" class="outline-2"&gt;
-&lt;h2 id="sec-10"&gt;Caption&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-10"&gt;
+&lt;div id="outline-container-org034bc3a" class="outline-2"&gt;
+&lt;h2 id="org034bc3a"&gt;Caption&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org034bc3a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 caption fig. 1
 Alice &amp;lt;-&amp;gt; Bob: Swap position
@@ -1382,10 +1702,9 @@ Bob --&amp;gt; Alice: Who is who?
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-11" class="outline-2"&gt;
-&lt;h2 id="sec-11"&gt;Legend&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-11"&gt;
+&lt;div id="outline-container-org275d1e2" class="outline-2"&gt;
+&lt;h2 id="org275d1e2"&gt;Legend&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org275d1e2"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Alice -&amp;gt; Bob : Hello
 legend right
@@ -1396,10 +1715,9 @@ endlegend
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-12" class="outline-2"&gt;
-&lt;h2 id="sec-12"&gt;Splitting diagram&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-12"&gt;
+&lt;div id="outline-container-orgd4a4b5a" class="outline-2"&gt;
+&lt;h2 id="orgd4a4b5a"&gt;Splitting diagram&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd4a4b5a"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Alice -&amp;gt; Bob : message 1
 Alice -&amp;gt; Bob : message 2
@@ -1413,10 +1731,9 @@ Alice -&amp;gt; Bob : message 6
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-13" class="outline-2"&gt;
-&lt;h2 id="sec-13"&gt;Grouping sequences&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-13"&gt;
+&lt;div id="outline-container-org523ce94" class="outline-2"&gt;
+&lt;h2 id="org523ce94"&gt;Grouping sequences&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org523ce94"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Alice -&amp;gt; Bob: Authentication Request
 alt successful case
@@ -1437,10 +1754,9 @@ end
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-14" class="outline-2"&gt;
-&lt;h2 id="sec-14"&gt;Notes&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-14"&gt;
+&lt;div id="outline-container-orgd5018c7" class="outline-2"&gt;
+&lt;h2 id="orgd5018c7"&gt;Notes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd5018c7"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@startuml
 Alice-&amp;gt;Bob : hello
 note left: this is a first note
@@ -1455,28 +1771,24 @@ end note
 @enduml
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://ncouture.github.io/posts/plantuml-org-mode-tests/</guid><pubDate>Sat, 17 Sep 2016 15:43:08 GMT</pubDate></item><item><title>Google I/O 2016 Web Application Installation Steps</title><link>https://ncouture.github.io/posts/google-io-2016-web-application-installation-steps/</link><dc:creator>Nicolas Couture</dc:creator><description>&lt;p&gt;
+&lt;/div&gt;</description><category>alice</category><category>bob</category><category>plantuml</category><category>png</category><category>startuml</category><guid>https://ncouture.github.io/posts/plantuml-org-mode-tests/</guid><pubDate>Sat, 17 Sep 2016 15:43:08 GMT</pubDate></item><item><title>Google I/O 2016 Web Application Installation Steps</title><link>https://ncouture.github.io/posts/google-io-2016-web-application-installation-steps/</link><dc:creator>@UnixNick</dc:creator><description>&lt;p&gt;
 My personal notes on installing the I/O 2016 Web Application (in March 2016).
 &lt;/p&gt;
 
 &lt;p&gt;
 goapp deploy -application &amp;lt;app-id&amp;gt; -version &amp;lt;v&amp;gt; dist/backend/.
 &lt;/p&gt;
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;Configure Firebase&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;div id="outline-container-org225efd2" class="outline-2"&gt;
+&lt;h2 id="org225efd2"&gt;Configure Firebase&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org225efd2"&gt;
 &lt;p&gt;
 You must use the legacy Firebase dashboard. Do not use the gcloud console. –2016-05-30
 &lt;/p&gt;
 
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;Create firebase.com legacy application (&amp;lt;app&amp;gt;.firebaseio.com)
-&lt;/li&gt;
-&lt;li&gt;Get application secret from &lt;a href="https://ncouture.github.io/"&gt;https://&lt;/a&gt;&amp;lt;app ID&amp;gt;.firebaseio.com/?page=Admin
-&lt;/li&gt;
-&lt;li&gt;Insert secret in backend/server.config.&amp;lt;env&amp;gt;
-&lt;/li&gt;
+&lt;li&gt;Create firebase.com legacy application (&amp;lt;app&amp;gt;.firebaseio.com)&lt;/li&gt;
+&lt;li&gt;Get application secret from &lt;a href="https://ncouture.github.io/"&gt;https://&lt;/a&gt;&amp;lt;app ID&amp;gt;.firebaseio.com/?page=Admin&lt;/li&gt;
+&lt;li&gt;Insert secret in backend/server.config.&amp;lt;env&amp;gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;"firebase": {
   "secret": "&amp;lt;secret key&amp;gt;",
@@ -1488,42 +1800,33 @@ You must use the legacy Firebase dashboard. Do not use the gcloud console. –20
 &lt;ol class="org-ol"&gt;
 &lt;li&gt;Enable Google Plus API
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://console.cloud.google.com/apis/"&gt;https://console.cloud.google.com/apis/&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Configure credentials
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://console.cloud.google.com/apis/"&gt;https://console.cloud.google.com/apis/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Configure credentials&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;CANCELLED Google Cloud Firebase Console does &lt;b&gt;not&lt;/b&gt; work   &lt;span class="tag"&gt;&lt;span class="CANCELLED"&gt;CANCELLED&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;div id="outline-container-orgf05839d" class="outline-3"&gt;
+&lt;h3 id="orgf05839d"&gt;CANCELLED Google Cloud Firebase Console does &lt;b&gt;not&lt;/b&gt; work   &lt;span class="tag"&gt;&lt;span class="CANCELLED"&gt;CANCELLED&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf05839d"&gt;
 &lt;p&gt;
 &lt;a href="https://github.com/GoogleChrome/ioweb2016/pull/514#issuecomment-205866122"&gt;https://github.com/GoogleChrome/ioweb2016/pull/514#issuecomment-205866122&lt;/a&gt;
 &lt;/p&gt;
 
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://console.firebase.google.com/project/"&gt;https://console.firebase.google.com/project/&lt;/a&gt;&amp;lt;project name&amp;gt;/settings/database
-&lt;/li&gt;
-&lt;li&gt;Database
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://console.firebase.google.com/project/"&gt;https://console.firebase.google.com/project/&lt;/a&gt;&amp;lt;project name&amp;gt;/settings/database&lt;/li&gt;
+&lt;li&gt;Database&lt;/li&gt;
 &lt;li&gt;Database secrets
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;Show existing legacy token
-&lt;/li&gt;
-&lt;li&gt;Create custom database authentication tokens using a legacy Firebase token generator. At least one secret must exist at all times.
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;Show existing legacy token&lt;/li&gt;
+&lt;li&gt;Create custom database authentication tokens using a legacy Firebase token generator. At least one secret must exist at all times.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;Deploy&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;div id="outline-container-org74c9978" class="outline-2"&gt;
+&lt;h2 id="org74c9978"&gt;Deploy&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org74c9978"&gt;
 &lt;p&gt;
 These are my personal notes. Tested on Debian stretch.
 &lt;/p&gt;
@@ -1532,22 +1835,19 @@ These are my personal notes. Tested on Debian stretch.
 See &lt;a href="https://github.com/GoogleChrome/ioweb2016"&gt;https://github.com/GoogleChrome/ioweb2016&lt;/a&gt; for more detailed instructions.
 &lt;/p&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-1" class="outline-3"&gt;
-&lt;h3 id="sec-2-1"&gt;Download Google App Engine SDK for Go&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-1"&gt;
+&lt;div id="outline-container-orgc6f0956" class="outline-3"&gt;
+&lt;h3 id="orgc6f0956"&gt;Download Google App Engine SDK for Go&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc6f0956"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go"&gt;https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go"&gt;https://cloud.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unzip go_appengine_sdk_linux_&amp;lt;arch&amp;gt;_&amp;lt;version&amp;gt;.zip
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-2" class="outline-3"&gt;
-&lt;h3 id="sec-2-2"&gt;Configure&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-2"&gt;
+&lt;div id="outline-container-org72f2234" class="outline-3"&gt;
+&lt;h3 id="org72f2234"&gt;Configure&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org72f2234"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mv go_appengine ~/.go_appengine
 export PATH=~/.go_appengine:"$PATH"
 export GOPATH=~/.go_appengine/gopath
@@ -1555,39 +1855,36 @@ export GOROOT=~/.go_appengine/goroot
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-3" class="outline-3"&gt;
-&lt;h3 id="sec-2-3"&gt;Install node dependencies&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-3"&gt;
+&lt;div id="outline-container-org0ec053f" class="outline-3"&gt;
+&lt;h3 id="org0ec053f"&gt;Install node dependencies&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0ec053f"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-4" class="outline-3"&gt;
-&lt;h3 id="sec-2-4"&gt;Build&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-4"&gt;
+&lt;div id="outline-container-org1af5cdc" class="outline-3"&gt;
+&lt;h3 id="org1af5cdc"&gt;Build&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1af5cdc"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gulp serve:dist --env prod
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-2-5" class="outline-3"&gt;
-&lt;h3 id="sec-2-5"&gt;Deploy&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2-5"&gt;
+&lt;div id="outline-container-orge71df5e" class="outline-3"&gt;
+&lt;h3 id="orge71df5e"&gt;Deploy&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orge71df5e"&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gulp deploy:firebaserules --env prod
 goapp deploy -application &amp;lt;application ID&amp;gt; -version &amp;lt;version number&amp;gt; dist/backend/.
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;Temporary API&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-3-1" class="outline-3"&gt;
-&lt;h3 id="sec-3-1"&gt;Enable in dist&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3-1"&gt;
+&lt;div id="outline-container-org1a4baa5" class="outline-2"&gt;
+&lt;h2 id="org1a4baa5"&gt;Temporary API&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org1a4baa5"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgb51acdb" class="outline-3"&gt;
+&lt;h3 id="orgb51acdb"&gt;Enable in dist&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgb51acdb"&gt;
 &lt;p&gt;
 After building the app:
 &lt;/p&gt;
@@ -1596,13 +1893,11 @@ After building the app:
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;div id="outline-container-sec-4" class="outline-2"&gt;
-&lt;h2 id="sec-4"&gt;Live Stream&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-4"&gt;
+&lt;div id="outline-container-org6ea81f5" class="outline-2"&gt;
+&lt;h2 id="org6ea81f5"&gt;Live Stream&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org6ea81f5"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;&lt;a href="http://localhost:3000/io2016/api/v1/livestream"&gt;http://localhost:3000/io2016/api/v1/livestream&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:3000/io2016/api/v1/livestream"&gt;http://localhost:3000/io2016/api/v1/livestream&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>io2016</category><category>progressive web application</category><guid>https://ncouture.github.io/posts/google-io-2016-web-application-installation-steps/</guid><pubDate>Sat, 17 Sep 2016 15:09:12 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>app</category><category>appengine</category><category>deploy</category><category>dist</category><category>go</category><category>io2016</category><category>progressive web application</category><guid>https://ncouture.github.io/posts/google-io-2016-web-application-installation-steps/</guid><pubDate>Sat, 17 Sep 2016 15:09:12 GMT</pubDate></item></channel></rss>

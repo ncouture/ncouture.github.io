@@ -2,7 +2,7 @@
 .. title: Google IRC Channels on Freenode
 .. slug: google-freenode-irc-channels
 .. date: 2016-09-20 23:09:09 UTC
-.. tags: google cloud, IRC, freenode
+.. tags: freenode, google cloud, IRC, channels, forum, googleglass
 .. category: cloud
 .. link: 
 .. description: Google Cloud IRC channels on freenode
